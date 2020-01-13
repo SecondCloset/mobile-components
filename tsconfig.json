@@ -28,7 +28,7 @@
     "build",
     "storybook",
     "**/*.spec.ts",
-    "**/*.stories.js",
+    "**/*.stories.tsx",
     "App.tsx",
     "android",
     "ios",

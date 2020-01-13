@@ -1,10 +1,9 @@
 .storybook
 build
 src
-.babelrc
+babel.config.js
 .eslintignore
 .eslintrc
 .gitignore
 .prettierrc
 package-lock.json
-webpack.config.js

@@ -1,6 +1,6 @@
 {
   "name": "mobile-components-test",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Second Closet Component Library",
   "scripts": {
     "start": "expo start",
@@ -12,7 +12,6 @@
     "storybook": "start-storybook -p 5694",
     "build": "rm -rf dist && tsc"
   },
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -20,12 +19,6 @@
   "author": "Anthony Langford <anthony.langford@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "expo": "~36.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-screens": "2.0.0-alpha.12",
-    "react-native-web": "~0.11.7",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
@@ -53,8 +46,18 @@
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react-native": "^3.8.1",
+    "expo": "~36.0.0",
     "prettier": "^1.19.1",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-screens": "2.0.0-alpha.12",
     "react-native-storybook-loader": "^1.8.1",
+    "react-native-web": "~0.11.7",
     "typescript": "^3.7.4"
+  },
+  "peerDependencies": {
+    "react": "16.8.3",
+    "react-dom": "16.8.3"
   }
 }
