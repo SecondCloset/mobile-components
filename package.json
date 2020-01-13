@@ -1,6 +1,6 @@
 {
   "name": "mobile-components-test",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "Second Closet Component Library",
   "scripts": {
     "start": "expo start",
@@ -12,6 +12,7 @@
     "storybook": "start-storybook -p 5694",
     "build": "rm -rf dist && tsc"
   },
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
