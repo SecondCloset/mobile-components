@@ -1,0 +1,60 @@
+{
+  "name": "mobile-components-test",
+  "version": "1.0.2",
+  "description": "Second Closet Component Library",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "prestorybook": "rnstl --searchDir ./src --pattern '**/*.stories.tsx'",
+    "storybook": "start-storybook -p 5694",
+    "build": "rm -rf dist && tsc"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "typings": "dist/index.d.ts",
+  "author": "Anthony Langford <anthony.langford@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "expo": "~36.0.0",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-web": "~0.11.7",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.0",
+    "@babel/preset-typescript": "^7.8.0",
+    "@storybook/addon-actions": "^5.3.2",
+    "@storybook/addon-links": "^5.3.2",
+    "@storybook/addons": "^5.3.2",
+    "@storybook/react-native": "^5.3.2",
+    "@storybook/react-native-server": "^5.3.2",
+    "@types/node": "^13.1.6",
+    "@types/react": "~16.9.0",
+    "@types/react-native": "~0.60.23",
+    "@types/styled-components": "^4.4.2",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
+    "babel-preset-expo": "^8.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react-native": "^3.8.1",
+    "prettier": "^1.19.1",
+    "react-native-storybook-loader": "^1.8.1",
+    "typescript": "^3.7.4"
+  }
+}
