@@ -1,6 +1,6 @@
 {
   "name": "mobile-components-test",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Second Closet Component Library",
   "scripts": {
     "start": "expo start",
