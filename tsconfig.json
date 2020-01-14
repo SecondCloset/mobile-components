@@ -19,7 +19,8 @@
     "sourceMap": true,
     "rootDirs": ["src"],
     "baseUrl": "src",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noImplicitAny": false
   },
   "include": ["src/**/*"],
   "exclude": [
