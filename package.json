@@ -12,7 +12,6 @@
     "storybook": "start-storybook -p 5694",
     "build": "rm -rf dist && tsc"
   },
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -20,6 +19,7 @@
   "author": "Anthony Langford <anthony.langford@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "react-native-loader": "^1.2.1",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
