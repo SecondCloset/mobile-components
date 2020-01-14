@@ -1,7 +1,7 @@
 {
-  "name": "mobile-components-test",
-  "version": "1.2.3",
-  "description": "Second Closet Component Library",
+  "name": "@scdevelopers/mobile-components",
+  "version": "1.0.0",
+  "description": "Second Closet React Native Component Library",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -60,5 +60,6 @@
   "peerDependencies": {
     "react": "16.8.3",
     "react-dom": "16.8.3"
-  }
+  },
+  "title": "Second Closet React Native Component Library"
 }
