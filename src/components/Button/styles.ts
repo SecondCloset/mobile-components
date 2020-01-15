@@ -2,46 +2,43 @@ import styled from "styled-components/native";
 import colors from "../../styles/colors";
 
 //helpers
-const getBackgroundColor = (color?: string, type?: string) => {
-  const colorLibrary = Object.keys(colors);
-  const color_: string = color || colors.BLUE;
-  if (type === "outline") return colors.WHITE;
-  if (colorLibrary.includes(color_.toUpperCase()))
-    return colors[color_.toUpperCase()];
-  return color_;
+const getColorHexCodeFromString = (color: string): string => {
+  const c = color.toUpperCase() || "BLUE";
+  return colors[c] || color;
 };
 
-const getBorderColor = (color?: string, type?: string) => {
-  const colorLibrary = Object.keys(colors);
-  const color_: string = color || colors.BLUE;
-  if (type === "outline") return color_;
-  if (colorLibrary.includes(color_.toUpperCase()))
-    return colors[color_.toUpperCase()];
-  return color_;
+const getBackgroundColor = (color: string, type: string): string => {
+  if (type === "primary") return getColorHexCodeFromString(color);
+  else return colors.TRANSPARENT;
 };
 
-const getTextColor = (color?: string, type?: string) => {
-  const color_: string = color || colors.BLUE;
-  if (type === "outline") return color_;
-  switch (color_) {
-    case "yellow":
-      return colors.CHARCOAL;
-    default:
-      return colors.WHITE;
-  }
+const getBorderColor = (color: string, type: string): string => {
+  if (type === "outline") return getColorHexCodeFromString(color);
+  else if (type === "primary") return getBackgroundColor(color, type);
+  else return colors.TRANSPARENT;
 };
 
+const getTextColor = (color: string, type: string) => {
+  if (type === "primary") {
+    switch (color) {
+      case "yellow":
+        return colors.CHARCOAL;
+      default:
+        return colors.WHITE;
+    }
+  } else return getColorHexCodeFromString(color);
+};
 //interfaces
 interface ContainerProps {
-  color?: string;
-  type?: string;
+  color: string;
+  type: string;
   shape?: string;
   disabled?: boolean;
 }
 
 interface ButtonTextProps {
-  color?: string;
-  type?: string;
+  color: string;
+  type: string;
   disabled?: boolean;
 }
 

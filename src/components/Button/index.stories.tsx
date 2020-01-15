@@ -11,8 +11,13 @@ storiesOf("Button", module)
   .add("Outline Default", () => (
     <Button text="arrived" type="outline" onPress={action("clicked-text")} />
   ))
-  .add("Yellow", () => (
-    <Button text="next" color="yellow" onPress={action("clicked-text")} />
+  .add("Primary Yellow", () => (
+    <Button
+      text="next"
+      color="yellow"
+      type="primary"
+      onPress={action("clicked-text")}
+    />
   ))
   .add("Outline Green", () => (
     <Button
@@ -32,7 +37,7 @@ storiesOf("Button", module)
   ))
   .add("Disabled", () => (
     <Button
-      disabled={true}
+      disabled
       text="disabled 1"
       color="blue"
       type="outline"
@@ -44,7 +49,16 @@ storiesOf("Button", module)
     <Button
       text="sausage 1"
       color="red"
-      type="default"
+      type="primary"
+      shape="rounded"
+      onPress={action("clicked-text")}
+    />
+  ))
+  .add("Disabled Sausage", () => (
+    <Button
+      disabled
+      text="sausage 1"
+      type="primary"
       shape="rounded"
       onPress={action("clicked-text")}
     />
