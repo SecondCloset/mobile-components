@@ -14,7 +14,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = props => {
-  const { disabled, text, type, loading, color, shape } = props;
+  const {
+    disabled,
+    text,
+    type = "default",
+    loading,
+    color = "blue",
+    shape,
+  } = props;
 
   if (loading)
     return (
