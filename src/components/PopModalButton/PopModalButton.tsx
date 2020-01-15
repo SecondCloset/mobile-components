@@ -6,10 +6,11 @@ import {
   MenuOption,
   MenuOptionText,
   MenuButton,
-  MenuButtonText,
 } from "./styles";
 import { Animated, View, Dimensions } from "react-native";
 import { startCase } from "lodash";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../../styles/colors";
 
 interface OptionsProps {
   label: string;
@@ -129,7 +130,11 @@ const PopModalButton: React.FC<PopModalButtonProps> = props => {
   return (
     <>
       <MenuButton onPress={toggleMenu}>
-        <MenuButtonText fontSize={props.fontSize || null}>...</MenuButtonText>
+        <MaterialCommunityIcons
+          name="dots-horizontal"
+          size={32}
+          color={colors.CHARCOAL}
+        />
       </MenuButton>
       {renderBackdrop()}
       {renderModal()}

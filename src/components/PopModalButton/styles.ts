@@ -12,10 +12,6 @@ const getTextColor = (color?: string) => {
 };
 
 //interfaces
-interface MenuButtonTextProps {
-  fontSize?: number | null;
-}
-
 interface MenuOptionProps {
   isLast?: boolean;
 }
@@ -25,13 +21,10 @@ interface MenuOptionTextProps {
 }
 
 const MenuButton = styled.TouchableOpacity`
-  align-items: center;
+  padding: 5px 10px 0;
   justify-content: center;
+  align-items: center;
   background-color: ${colors.TRANSPARENT};
-`;
-
-const MenuButtonText = styled.Text<MenuButtonTextProps>`
-  font-size: ${props => props.fontSize || 18};
 `;
 
 const Backdrop = styled.View`
@@ -76,12 +69,4 @@ const MenuOptionText = styled.Text<MenuOptionTextProps>`
   color: ${props => getTextColor(props.color)};
 `;
 
-export {
-  Container,
-  MenuOption,
-  Backdrop,
-  Menu,
-  MenuButton,
-  MenuOptionText,
-  MenuButtonText,
-};
+export { Container, MenuOption, Backdrop, Menu, MenuButton, MenuOptionText };

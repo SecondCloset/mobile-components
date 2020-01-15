@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react-native";
-import CenterView from "../CenterView";
+import { View } from "react-native";
 import PopModalButton from "./PopModalButton";
 
 const options = [
@@ -17,5 +17,7 @@ const options = [
 ];
 
 storiesOf("PopModalButton", module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .addDecorator(getStory => (
+    <View style={{ width: "100%", flex: 1 }}>{getStory()}</View>
+  ))
   .add("Default", () => <PopModalButton options={options} fontSize={25} />);
