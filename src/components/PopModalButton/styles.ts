@@ -52,8 +52,7 @@ const Menu = styled.TouchableOpacity`
   width: ${Dimensions.get("window").width};
   z-index: 2;
   background-color: ${colors.TRANSPARENT};
-  padding-horizontal: 10;
-  padding-vertical: 30;
+  padding: 30px 10px;
   position: absolute;
   bottom: 0px;
   justify-content: flex-end;
@@ -66,7 +65,7 @@ const Container = styled.View`
 `;
 
 const MenuOption = styled.TouchableOpacity<MenuOptionProps>`
-  padding-vertical: 20;
+  padding: 20px 0 0;
   border-bottom-width: ${props => (props.isLast ? 0 : 1)};
   border-bottom-color: ${colors.GREY_LIGHT};
   flex-direction: row;

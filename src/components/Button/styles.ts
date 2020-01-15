@@ -46,8 +46,7 @@ interface ButtonTextProps {
 }
 
 const Container = styled.TouchableOpacity<ContainerProps>`
-  padding-horizontal: 15;
-  padding-vertical: 8;
+  padding: 8px 15px;
   background-color: ${props =>
     props.disabled
       ? colors.WHITE
@@ -68,7 +67,7 @@ const ButtonText = styled.Text<ButtonTextProps>`
 `;
 
 const ButtonLoader = styled.View`
-  margin-top: 20;
+  margin: 20px 0 0;
   justify-content: center;
   align-items: center;
 `;

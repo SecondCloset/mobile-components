@@ -5,10 +5,14 @@
 
 function loadStories() {
 	require('../src/components/Button/index.stories');
+	require('../src/components/Card/index.stories');
+	require('../src/components/PopModalButton/index.stories');
 }
 
 const stories = [
-	'../src/components/Button/index.stories'
+	'../src/components/Button/index.stories',
+	'../src/components/Card/index.stories',
+	'../src/components/PopModalButton/index.stories'
 ];
 
 module.exports = {

@@ -11,11 +11,9 @@ const Container = styled.View<ContainerProps>`
   border-color: ${colors.GREY_MID};
   border-radius: 8;
   border-width: 1;
-  shadow-color: ${props =>
-    props.type === "box" ? colors.GREY : colors.TRANSPARENT};
-  shadow-offset: 0px 2px;
+  box-shadow: 0px 2px 3.84px
+    ${props => (props.type === "box" ? colors.GREY : colors.TRANSPARENT)};
   shadow-opacity: 0.25;
-  shadow-radius: 3.84;
   elevation: 5;
 `;
 

@@ -12,7 +12,6 @@
     "storybook": "start-storybook -p 5694",
     "build": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc"
   },
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -21,7 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "react-native-loader": "^1.2.1",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "typescript-styled-plugin": "^0.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",

@@ -14,6 +14,8 @@ const colors: Colors = {
   RED: "#da4453",
   YELLOW: "#ffd33d",
   WHITE: "#ffffff",
+  TRANSPARENT: "transparent",
+  TRANSPARENT_GREY: "rgba(0,0,0,0.25)",
 };
 
 export default colors;
