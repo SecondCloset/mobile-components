@@ -6,6 +6,7 @@ const CenterView = styled.View`
   justify-content: center;
   align-items: center;
   background-color: #f5fcff;
+  padding: 10px;
 `;
 
 export default CenterView;
