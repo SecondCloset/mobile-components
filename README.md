@@ -16,8 +16,8 @@ yarn add @scdevelopers/mobile-components
 ## 🔨 Usage
 
 ```jsx
-import { CenterView } from '@scdevelopers/mobile-components';
-import { Text } from 'react-native';
+import { CenterView } from "@scdevelopers/mobile-components";
+import { Text } from "react-native";
 
 ReactDOM.render(
   <CenterView>
@@ -39,5 +39,9 @@ Or clone locally:
 git clone git@github.com:SecondCloset/mobile-components.git
 cd mobile-components
 npm install
-npm start # This starts Storybook
+npm run storybook # This compiles the stories
+npm start # This starts expo
+npm run build # This builds the dist folder to be published
+npm version patch # Run npm version [<newversion> | major | minor | patch ] to bump the version number
+npm publish
 ```
