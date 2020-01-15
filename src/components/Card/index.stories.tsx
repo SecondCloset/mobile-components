@@ -8,11 +8,11 @@ storiesOf("Card", module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add("Default", () => (
     <Card>
-      <Text>Hello</Text>
+      <Text style={{ padding: 30 }}>Default</Text>
     </Card>
   ))
   .add("Box", () => (
     <Card type="box">
-      <Text>Hello</Text>
+      <Text style={{ padding: 30 }}>Box Type Card</Text>
     </Card>
   ));

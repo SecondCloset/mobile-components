@@ -52,7 +52,7 @@ const Menu = styled.TouchableOpacity`
   width: ${Dimensions.get("window").width};
   z-index: 2;
   background-color: ${colors.TRANSPARENT};
-  padding: 30px 10px;
+  padding: 10px;
   position: absolute;
   bottom: 0px;
   justify-content: flex-end;
@@ -60,12 +60,12 @@ const Menu = styled.TouchableOpacity`
 
 const Container = styled.View`
   background-color: ${colors.WHITE};
-  border-radius: 8;
+  border-radius: 10;
   margin: 5px;
 `;
 
 const MenuOption = styled.TouchableOpacity<MenuOptionProps>`
-  padding: 20px 0 0;
+  padding: 20px 0;
   border-bottom-width: ${props => (props.isLast ? 0 : 1)};
   border-bottom-color: ${colors.GREY_LIGHT};
   flex-direction: row;

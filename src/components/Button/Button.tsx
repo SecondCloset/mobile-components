@@ -1,6 +1,6 @@
 import React from "react";
+import { ActivityIndicator } from "react-native";
 import { Container, ButtonText, ButtonLoader } from "./styles";
-import { Bubbles } from "react-native-loader";
 import colors from "../../styles/colors";
 
 interface ButtonProps {
@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = props => {
   if (loading)
     return (
       <ButtonLoader>
-        <Bubbles size={5} color={colors.GREY} />
+        <ActivityIndicator size={"small"} color={colors.GREY} />
       </ButtonLoader>
     );
 

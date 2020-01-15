@@ -19,7 +19,6 @@
   "author": "Anthony Langford <anthony.langford@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "react-native-loader": "^1.2.1",
     "styled-components": "^4.4.1",
     "typescript-styled-plugin": "^0.15.0"
   },
