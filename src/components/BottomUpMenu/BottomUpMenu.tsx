@@ -15,13 +15,13 @@ interface OptionsProps {
   textColor?: string;
 }
 
-interface PopMenuButtonProps {
+interface BottomUpMenuProps {
   options: OptionsProps[];
   visible: boolean;
   onHide: () => void;
 }
 
-const PopMenuButton: React.FC<PopMenuButtonProps> = props => {
+const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
   const windowHeight = Dimensions.get("window").height;
   const [animatedModalHeight] = useState(new Animated.Value(0));
   const [animatedOpacity] = useState(new Animated.Value(0));
@@ -137,4 +137,4 @@ const PopMenuButton: React.FC<PopMenuButtonProps> = props => {
   );
 };
 
-export default PopMenuButton;
+export default BottomUpMenu;
