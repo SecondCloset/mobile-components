@@ -1,40 +1,26 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Backdrop,
-  Menu,
-  MenuOption,
-  MenuOptionText,
-  MenuButton,
-} from "./styles";
-import { Animated, View, Dimensions } from "react-native";
-import { startCase } from "lodash";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import colors from "../../styles/colors";
-
-interface OptionsProps {
-  label: string;
-  onPress?: () => void;
-  textColor?: string;
-}
+import { Backdrop, ModalContainer, ModalWrap } from "./styles";
+import { Animated, Dimensions } from "react-native";
 
 interface PopModalButtonProps {
-  options: OptionsProps[];
-  fontSize?: number | null;
+  children: React.ReactElement | React.ReactElement[];
+  visible: boolean;
+  onHide: () => void;
 }
 
 const PopModalButton: React.FC<PopModalButtonProps> = props => {
   const windowHeight = Dimensions.get("window").height;
-
-  const [modalVisible, setModalVisible] = useState(false);
   const [animatedModalHeight] = useState(new Animated.Value(0));
   const [animatedOpacity] = useState(new Animated.Value(0));
 
   const slideUp = () => {
-    Animated.timing(animatedModalHeight, {
-      toValue: windowHeight,
-      duration: 400,
-    }).start();
+    Animated.sequence([
+      Animated.delay(100),
+      Animated.timing(animatedModalHeight, {
+        toValue: windowHeight,
+        duration: 400,
+      }),
+    ]).start();
   };
 
   const slideDown = () => {
@@ -59,62 +45,24 @@ const PopModalButton: React.FC<PopModalButtonProps> = props => {
   };
 
   useEffect(() => {
-    const slide: () => void = modalVisible ? slideUp : slideDown;
-    const animateBackdrop: () => void = modalVisible
+    const slide: () => void = props.visible ? slideUp : slideDown;
+    const animateBackdrop: () => void = props.visible
       ? showBackdrop
       : hideBackdrop;
     slide();
     animateBackdrop();
-  }, [modalVisible]);
-
-  const toggleMenu = () => {
-    setModalVisible(!modalVisible);
-  };
-
-  const renderMenuOption = (
-    label: string,
-    textColor?: string,
-    onPress?: (() => void) | null,
-    isLast?: boolean
-  ) => {
-    const closeModalOnPress = () => {
-      if (onPress) onPress();
-      toggleMenu();
-    };
-
-    return (
-      <MenuOption key={label} onPress={closeModalOnPress} isLast={isLast}>
-        <MenuOptionText color={textColor}>{startCase(label)}</MenuOptionText>
-      </MenuOption>
-    );
-  };
-
-  const renderMenuOptions = () => {
-    return props.options.map((option, index) => {
-      const { label, textColor, onPress } = option;
-
-      if (index === props.options.length - 1) {
-        return renderMenuOption(label, textColor, onPress, true);
-      }
-      return renderMenuOption(label, textColor, onPress);
-    });
-  };
+  }, [props.visible]);
 
   const renderModal = () => {
-    const AnimatedMenu = Animated.createAnimatedComponent(Menu);
+    const AnimatedModal = Animated.createAnimatedComponent(ModalContainer);
     return (
-      <AnimatedMenu
+      <AnimatedModal
         style={{ height: animatedModalHeight }}
-        onPress={toggleMenu}
+        onPress={props.onHide}
         activeOpacity={1}
       >
-        <View>
-          <Container>{renderMenuOptions()}</Container>
-          <Container>
-            {renderMenuOption("cancel", "black", null, true)}
-          </Container>
-        </View>
-      </AnimatedMenu>
+        <ModalWrap visible={props.visible}>{props.children}</ModalWrap>
+      </AnimatedModal>
     );
   };
 
@@ -122,20 +70,13 @@ const PopModalButton: React.FC<PopModalButtonProps> = props => {
     const AnimatedBackdrop = Animated.createAnimatedComponent(Backdrop);
     return (
       <AnimatedBackdrop
-        style={{ opacity: animatedOpacity, zIndex: modalVisible ? 1 : -2 }}
+        style={{ opacity: animatedOpacity, zIndex: props.visible ? 1 : -2 }}
       />
     );
   };
 
   return (
     <>
-      <MenuButton onPress={toggleMenu}>
-        <MaterialCommunityIcons
-          name="dots-horizontal"
-          size={32}
-          color={colors.CHARCOAL}
-        />
-      </MenuButton>
       {renderBackdrop()}
       {renderModal()}
     </>

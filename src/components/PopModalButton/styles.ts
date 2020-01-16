@@ -2,30 +2,10 @@ import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
 
-//helpers
-const getTextColor = (color?: string) => {
-  const colorLibrary = Object.keys(colors);
-  const color_ = color || colors.BLACK;
-  if (colorLibrary.includes(color_.toUpperCase()))
-    return colors[color_.toUpperCase()];
-  return color_;
-};
-
-//interfaces
-interface MenuOptionProps {
-  isLast?: boolean;
+//interface
+interface ModalWrapProp {
+  visible: boolean;
 }
-
-interface MenuOptionTextProps {
-  color?: string;
-}
-
-const MenuButton = styled.TouchableOpacity`
-  padding: 5px 10px 0;
-  justify-content: center;
-  align-items: center;
-  background-color: ${colors.TRANSPARENT};
-`;
 
 const Backdrop = styled.View`
   position: absolute;
@@ -37,36 +17,24 @@ const Backdrop = styled.View`
   height: ${Dimensions.get("window").height}px;
   justify-content: flex-end;
   flex: 1;
-  border-width: 5px;
   color: blue;
 `;
 
-const Menu = styled.TouchableOpacity`
+const ModalContainer = styled.TouchableOpacity`
   width: ${Dimensions.get("window").width}px;
   z-index: 2;
   background-color: ${colors.TRANSPARENT};
-  padding: 10px;
   position: absolute;
   bottom: 0px;
   justify-content: flex-end;
 `;
 
-const Container = styled.View`
+const ModalWrap = styled.View<ModalWrapProp>`
+  width: ${Dimensions.get("window").width}px;
   background-color: ${colors.WHITE};
-  border-radius: 10px;
-  margin: 5px;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 `;
 
-const MenuOption = styled.TouchableOpacity<MenuOptionProps>`
-  padding: 20px 0;
-  border-bottom-width: ${props => (props.isLast ? 0 : 1)}px;
-  border-bottom-color: ${colors.GREY_LIGHT};
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const MenuOptionText = styled.Text<MenuOptionTextProps>`
-  color: ${props => getTextColor(props.color)};
-`;
-
-export { Container, MenuOption, Backdrop, Menu, MenuButton, MenuOptionText };
+export { ModalContainer, ModalWrap, Backdrop };
