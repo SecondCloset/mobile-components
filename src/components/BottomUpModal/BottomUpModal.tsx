@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Backdrop, ModalContainer, ModalWrap } from "./styles";
 import { Animated, Dimensions } from "react-native";
 
-interface PopModalButtonProps {
+interface BottomUpModalProps {
   children: React.ReactElement | React.ReactElement[];
   visible: boolean;
   onHide: () => void;
 }
 
-const PopModalButton: React.FC<PopModalButtonProps> = props => {
+const BottomUpModal: React.FC<BottomUpModalProps> = props => {
   const windowHeight = Dimensions.get("window").height;
   const [animatedModalHeight] = useState(new Animated.Value(0));
   const [animatedOpacity] = useState(new Animated.Value(0));
@@ -83,4 +83,4 @@ const PopModalButton: React.FC<PopModalButtonProps> = props => {
   );
 };
 
-export default PopModalButton;
+export default BottomUpModal;

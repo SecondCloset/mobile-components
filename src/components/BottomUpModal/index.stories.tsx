@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
 import { View, Button, Text } from "react-native";
-import PopModalButton from "./PopModalButton";
+import BottomUpModal from "./BottomUpModal";
 
-const PopModalShowcase = () => {
+const BottomUpModalShowcase = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
       <Button title="Open Modal" onPress={() => setModalVisible(true)} />
-      <PopModalButton
+      <BottomUpModal
         onHide={() => setModalVisible(false)}
         visible={modalVisible}
       >
@@ -18,13 +18,13 @@ const PopModalShowcase = () => {
         <Text>hi</Text>
         <Text>hi</Text>
         <Text>hi</Text>
-      </PopModalButton>
+      </BottomUpModal>
     </>
   );
 };
 
-storiesOf("PopModalButton", module)
+storiesOf("BottomUpModal", module)
   .addDecorator(getStory => (
     <View style={{ width: "100%", flex: 1 }}>{getStory()}</View>
   ))
-  .add("Default", () => <PopModalShowcase />);
+  .add("Default", () => <BottomUpModalShowcase />);
