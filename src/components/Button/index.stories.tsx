@@ -41,7 +41,6 @@ storiesOf("Button", module)
       text="disabled 1"
       color="blue"
       type="outline"
-      shape="default"
       onPress={action("clicked-text")}
     />
   ))

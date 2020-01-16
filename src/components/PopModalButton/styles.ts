@@ -37,7 +37,7 @@ const Backdrop = styled.View`
   height: ${Dimensions.get("window").height};
   justify-content: flex-end;
   flex: 1;
-  border-width: 5;
+  border-width: 5px;
   color: blue;
 `;
 
@@ -53,7 +53,7 @@ const Menu = styled.TouchableOpacity`
 
 const Container = styled.View`
   background-color: ${colors.WHITE};
-  border-radius: 10;
+  border-radius: 10px;
   margin: 5px;
 `;
 
