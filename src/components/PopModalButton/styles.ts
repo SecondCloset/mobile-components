@@ -33,8 +33,8 @@ const Backdrop = styled.View`
   top: 0;
   right: 0;
   background-color: ${colors.TRANSPARENT_GREY};
-  width: ${Dimensions.get("window").width};
-  height: ${Dimensions.get("window").height};
+  width: ${Dimensions.get("window").width}px;
+  height: ${Dimensions.get("window").height}px;
   justify-content: flex-end;
   flex: 1;
   border-width: 5px;
@@ -42,7 +42,7 @@ const Backdrop = styled.View`
 `;
 
 const Menu = styled.TouchableOpacity`
-  width: ${Dimensions.get("window").width};
+  width: ${Dimensions.get("window").width}px;
   z-index: 2;
   background-color: ${colors.TRANSPARENT};
   padding: 10px;
@@ -59,7 +59,7 @@ const Container = styled.View`
 
 const MenuOption = styled.TouchableOpacity<MenuOptionProps>`
   padding: 20px 0;
-  border-bottom-width: ${props => (props.isLast ? 0 : 1)};
+  border-bottom-width: ${props => (props.isLast ? 0 : 1)}px;
   border-bottom-color: ${colors.GREY_LIGHT};
   flex-direction: row;
   justify-content: center;
