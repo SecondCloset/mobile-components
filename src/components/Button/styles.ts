@@ -30,16 +30,17 @@ const getTextColor = (color: string, type: string) => {
 };
 //interfaces
 interface ContainerProps {
-  color: string;
-  type: string;
-  shape?: string;
+  color: "yellow" | "blue" | "red" | string;
+  type: "primary" | "outline" | "default";
+  shape?: "rounded";
   disabled?: boolean;
 }
 
 interface ButtonTextProps {
-  color: string;
-  type: string;
+  color: "yellow" | "blue" | "red" | string;
+  type: "primary" | "outline" | "default";
   disabled?: boolean;
+  fontSize: number;
 }
 
 const Container = styled.TouchableOpacity<ContainerProps>`
@@ -48,10 +49,10 @@ const Container = styled.TouchableOpacity<ContainerProps>`
     props.disabled
       ? colors.WHITE
       : getBackgroundColor(props.color, props.type)};
-  border-radius: ${props => (props.shape === "rounded" ? 30 : 5)};
+  border-radius: ${props => (props.shape === "rounded" ? "30px" : "5px")};
   border-color: ${props =>
     props.disabled ? colors.GREY : getBorderColor(props.color, props.type)};
-  border-width: 1;
+  border-width: 1px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,6 +62,7 @@ const Container = styled.TouchableOpacity<ContainerProps>`
 const ButtonText = styled.Text<ButtonTextProps>`
   color: ${props =>
     props.disabled ? colors.GREY : getTextColor(props.color, props.type)};
+  font-size: ${props => `${props.fontSize}px` || null};
 `;
 
 const ButtonLoader = styled.View`

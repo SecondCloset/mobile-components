@@ -6,10 +6,11 @@ import colors from "../../styles/colors";
 interface ButtonProps {
   disabled?: boolean;
   text: string;
-  type?: string;
-  shape?: string;
-  color?: string;
+  type?: "primary" | "outline";
+  shape?: "rounded";
+  color?: "yellow" | "blue" | "red" | string;
   loading?: boolean;
+  fontSize?: number;
   onPress: () => void;
 }
 
@@ -21,6 +22,8 @@ const Button: React.FC<ButtonProps> = props => {
     loading,
     color = "blue",
     shape,
+    onPress,
+    fontSize = 18,
   } = props;
 
   if (loading)
@@ -31,9 +34,20 @@ const Button: React.FC<ButtonProps> = props => {
     );
 
   return (
-    <Container disabled={disabled} color={color} type={type} shape={shape}>
-      <ButtonText disabled={disabled} color={color} type={type}>
-        {text.toUpperCase()}
+    <Container
+      disabled={disabled}
+      color={color}
+      type={type}
+      shape={shape}
+      onPress={onPress}
+    >
+      <ButtonText
+        disabled={disabled}
+        color={color}
+        type={type}
+        fontSize={fontSize}
+      >
+        {text}
       </ButtonText>
     </Container>
   );
