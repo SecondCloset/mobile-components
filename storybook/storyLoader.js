@@ -8,13 +8,15 @@ function loadStories() {
 	require('../src/components/BottomUpModal/index.stories');
 	require('../src/components/Button/index.stories');
 	require('../src/components/Card/index.stories');
+	require('../src/components/DropdownSelect/index.stories');
 }
 
 const stories = [
 	'../src/components/BottomUpMenu/index.stories',
 	'../src/components/BottomUpModal/index.stories',
 	'../src/components/Button/index.stories',
-	'../src/components/Card/index.stories'
+	'../src/components/Card/index.stories',
+	'../src/components/DropdownSelect/index.stories'
 ];
 
 module.exports = {
