@@ -9,14 +9,14 @@ import {
 import { Animated, View, Dimensions } from "react-native";
 import { startCase } from "lodash";
 
-interface OptionsProps {
+interface Option {
   label: string;
   onPress?: () => void;
   textColor?: string;
 }
 
 interface BottomUpMenuProps {
-  options: OptionsProps[];
+  options: Option[];
   visible: boolean;
   onHide: () => void;
 }
@@ -124,13 +124,6 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
 
   return (
     <>
-      {/* <MenuButton onPress={toggleMenu}>
-        <MaterialCommunityIcons
-          name="dots-horizontal"
-          size={32}
-          color={colors.CHARCOAL}
-        />
-      </MenuButton> */}
       {renderBackdrop()}
       {renderMenu()}
     </>
