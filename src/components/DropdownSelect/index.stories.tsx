@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
 import CenterView from "../CenterView";
-import { Alert } from "react-native";
+import { View, Text } from "react-native";
 import DropdownSelect from "./DropdownSelect";
 
 const DropdownSelectShowcase = () => {
@@ -26,6 +26,19 @@ const DropdownSelectShowcase = () => {
   );
 };
 
-storiesOf("DropdownSelect", module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add("Default", () => <DropdownSelectShowcase />);
+storiesOf("DropdownSelect", module).add("Default", () => (
+  <View
+    style={{
+      flex: 1,
+      width: "100%",
+      alignItems: "center",
+      justifyContent: "flex-start",
+    }}
+  >
+    <DropdownSelectShowcase />
+    <Text>content</Text>
+    <Text>content</Text>
+    <Text>content</Text>
+    <Text>content</Text>
+  </View>
+));

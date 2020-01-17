@@ -5,6 +5,7 @@ const DEFAULT_FONT_SIZE = 18;
 const OptionListContainer = styled.View`
   border: 1px solid ${colors.GREY_MID};
   border-radius: 4px;
+  background: white;
 `;
 
 interface OptionButtonProps {
@@ -16,7 +17,6 @@ const OptionButton = styled.TouchableOpacity<OptionButtonProps>`
   border-bottom-width: 1px;
   border-bottom-color: ${props =>
     props.isLast ? colors.TRANSPARENT : colors.GREY_MID};
-  background: white;
   border-radius: 4px;
 `;
 
