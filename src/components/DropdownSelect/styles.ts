@@ -1,17 +1,16 @@
 import styled from "styled-components/native";
 
-interface ContainerProps {
-  type?: string;
-}
-
-const Container = styled.View<ContainerProps>`
+const Container = styled.View`
   display: flex;
-  flex: 1;
+  z-index: 500;
 `;
 
 const OptionListAnimateContainer = styled.View`
-  margin-top: 10px;
   overflow: hidden;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  right: 0px;
 `;
 
 export { Container, OptionListAnimateContainer };
