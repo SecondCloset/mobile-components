@@ -1,10 +1,10 @@
 import React from "react";
 import { OptionListContainer, OptionButton, OptionButtonText } from "./styles";
-import { Option } from "../DropdownSelect";
+import { Option, DropdownSelectProps } from "../DropdownSelect";
 
 interface DropListProps {
   fontSize?: number;
-  onSelect: (key: string, value: string) => void;
+  onSelect: DropdownSelectProps["onSelect"];
   options: Option[];
 }
 
@@ -17,9 +17,7 @@ const DropList: React.FC<DropListProps> = props => {
         const isLast = index === options.length - 1;
         return (
           <OptionButton
-            onPress={() => {
-              onSelect(key, value);
-            }}
+            onPress={() => onSelect(key, value)}
             isLast={isLast}
             key={key}
             activeOpacity={1}
