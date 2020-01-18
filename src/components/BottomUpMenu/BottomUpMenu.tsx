@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Backdrop,
-  Menu,
-  MenuOption,
-  MenuOptionText,
-} from "./styles";
-import { Animated, View, Dimensions } from "react-native";
-import { startCase } from "lodash";
+import { Backdrop, AnimatedMenuContainer } from "./styles";
+import { Animated, Dimensions } from "react-native";
+import Menu from "./Menu";
 
-interface Option {
+export interface Option {
   label: string;
   onPress?: () => void;
   textColor?: string;
@@ -66,49 +60,17 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
     animateBackdrop();
   }, [props.visible]);
 
-  const renderMenuOption = (
-    label: string,
-    textColor?: string,
-    onPress?: (() => void) | null,
-    isLast?: boolean
-  ) => {
-    const closeModalOnPress = () => {
-      if (onPress) onPress();
-      props.onHide();
-    };
-
-    return (
-      <MenuOption key={label} onPress={closeModalOnPress} isLast={isLast}>
-        <MenuOptionText color={textColor}>{startCase(label)}</MenuOptionText>
-      </MenuOption>
-    );
-  };
-
-  const renderMenuOptions = () => {
-    return props.options.map((option, index) => {
-      const { label, textColor, onPress } = option;
-
-      if (index === props.options.length - 1) {
-        return renderMenuOption(label, textColor, onPress, true);
-      }
-      return renderMenuOption(label, textColor, onPress);
-    });
-  };
-
   const renderMenu = () => {
-    const AnimatedMenu = Animated.createAnimatedComponent(Menu);
+    const AnimatedMenu = Animated.createAnimatedComponent(
+      AnimatedMenuContainer
+    );
     return (
       <AnimatedMenu
         style={{ height: animatedModalHeight }}
         onPress={props.onHide}
         activeOpacity={1}
       >
-        <View>
-          <Container>{renderMenuOptions()}</Container>
-          <Container>
-            {renderMenuOption("cancel", "black", null, true)}
-          </Container>
-        </View>
+        <Menu options={props.options} onHide={props.onHide} />
       </AnimatedMenu>
     );
   };

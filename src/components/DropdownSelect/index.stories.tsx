@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
-import CenterView from "../CenterView";
 import { View, Text } from "react-native";
 import DropdownSelect from "./DropdownSelect";
 
-const DropdownSelectShowcase = () => {
+const DropdownSelectShowcase = props => {
   const [selectedKey, setSelectedKey] = useState(null);
   const options = [
     { key: "1", name: "Apple", value: "apple" },
@@ -13,32 +12,33 @@ const DropdownSelectShowcase = () => {
   ];
 
   return (
-    <DropdownSelect
-      onSelect={(key, value) => {
-        setSelectedKey(key);
+    <View
+      style={{
+        flex: 1,
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "flex-start",
       }}
-      selectedKey={selectedKey}
-      options={options}
-      fontSize={16}
-      placeholder="Please select a fruit"
-      width={250}
-    />
+    >
+      <DropdownSelect
+        onSelect={(key, value) => {
+          setSelectedKey(key);
+        }}
+        selectedKey={selectedKey}
+        options={options}
+        fontSize={16}
+        placeholder="Please select a fruit"
+        width={props.width}
+      />
+      <Text>content</Text>
+      <Text>content</Text>
+      <Text>content</Text>
+      <Text>content</Text>
+    </View>
   );
 };
 
-storiesOf("DropdownSelect", module).add("Default", () => (
-  <View
-    style={{
-      flex: 1,
-      width: "100%",
-      alignItems: "center",
-      justifyContent: "flex-start",
-    }}
-  >
-    <DropdownSelectShowcase />
-    <Text>content</Text>
-    <Text>content</Text>
-    <Text>content</Text>
-    <Text>content</Text>
-  </View>
-));
+storiesOf("DropdownSelect", module)
+  .add("80% width", () => <DropdownSelectShowcase width="80%" />)
+  .add("no width", () => <DropdownSelectShowcase />)
+  .add("250 width", () => <DropdownSelectShowcase width={250} />);

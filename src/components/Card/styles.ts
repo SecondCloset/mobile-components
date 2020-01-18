@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
+import { CardProps } from "./Card";
 
 interface ContainerProps {
-  type?: string;
+  type?: CardProps["type"];
 }
 
 const Container = styled.View<ContainerProps>`

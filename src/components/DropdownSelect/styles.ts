@@ -1,8 +1,19 @@
 import styled from "styled-components/native";
+import { DropdownSelectProps } from "./DropdownSelect";
 
-const Container = styled.View`
-  display: flex;
-  z-index: 500;
+interface ContainerProps {
+  width?: DropdownSelectProps["width"];
+}
+
+const getWidth = (width?: ContainerProps["width"]): string => {
+  if (!width) return "100%";
+  if (typeof width === "string") return width;
+  return `${width}px`;
+};
+
+const Container = styled.View<ContainerProps>`
+  z-index: 5000;
+  width: ${props => getWidth(props.width)};
 `;
 
 const OptionListAnimateContainer = styled.View`

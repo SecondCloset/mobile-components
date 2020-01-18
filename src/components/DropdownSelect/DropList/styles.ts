@@ -6,6 +6,7 @@ const OptionListContainer = styled.View`
   border: 1px solid ${colors.GREY_MID};
   border-radius: 4px;
   background: white;
+  width: 100%;
 `;
 
 interface OptionButtonProps {
