@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "./styles";
 
-interface CardProps {
-  type?: string;
+export interface CardProps {
+  type?: "box" | string;
   children: any;
 }
 

@@ -5,16 +5,16 @@ import DropdownButton from "./DropdownButton";
 import DropList from "./DropList";
 
 export interface Option {
-  key: string;
+  key: string | number;
   name: string;
   value: any;
 }
 
-interface DropdownSelectProps {
+export interface DropdownSelectProps {
   options: Option[];
-  selectedKey?: string;
-  width?: number;
-  onSelect: (key: string, value: any) => void;
+  selectedKey?: Option["key"];
+  width?: number | string;
+  onSelect: (key: Option["key"], value: Option["value"]) => void;
   placeholder?: string;
   fontSize?: number;
 }
@@ -45,7 +45,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = props => {
   }, [expanded]);
 
   const renderDropdownButton = (): React.ReactElement => {
-    const { width = 200, placeholder, selectedKey, options, fontSize } = props;
+    const { placeholder, selectedKey, options, fontSize } = props;
     const selectedName = options.find(opt => opt.key === selectedKey)?.name;
     return (
       <DropdownButton
@@ -53,7 +53,6 @@ const DropdownSelect: React.FC<DropdownSelectProps> = props => {
         buttonText={selectedName}
         onPress={() => setExpanded(e => !e)}
         fontSize={fontSize}
-        width={width}
       />
     );
   };
@@ -79,7 +78,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = props => {
   };
 
   return (
-    <Container>
+    <Container width={props.width}>
       {renderDropdownButton()}
       {renderOptionList()}
     </Container>

@@ -1,13 +1,10 @@
 import styled from "styled-components/native";
 import colors from "../../../styles/colors";
+import { DropdownButtonProps } from "./DropdownButton";
 const DEFAULT_FONT_SIZE = 18;
 
-interface ButtonProps {
-  width: number;
-}
-
-const Button = styled.TouchableOpacity<ButtonProps>`
-  width: ${props => props.width}px;
+const Button = styled.TouchableOpacity`
+  width: 100%;
   padding: 10px;
   display: flex;
   flex-direction: row;
@@ -19,7 +16,7 @@ const Button = styled.TouchableOpacity<ButtonProps>`
 `;
 
 interface ButtonTextProps {
-  fontSize?: number;
+  fontSize?: DropdownButtonProps["fontSize"];
   isCharcoal: boolean;
 }
 

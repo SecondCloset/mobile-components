@@ -2,28 +2,20 @@ import React from "react";
 import { Button, ButtonText } from "./styles";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "../../../styles/colors";
+import { DropdownSelectProps } from "../DropdownSelect";
 
-interface DropdownButtonProps {
-  width: number;
-  buttonText?: string;
-  fontSize?: number;
+export interface DropdownButtonProps {
+  fontSize?: DropdownSelectProps["fontSize"];
+  placeholder?: DropdownSelectProps["placeholder"];
   onPress: () => void;
-  placeholder?: string;
+  buttonText?: string;
 }
 
 const DropdownButton: React.FC<DropdownButtonProps> = props => {
-  const {
-    width = 200,
-    buttonText,
-    fontSize,
-    onPress,
-    placeholder = "-----------",
-  } = props;
-
+  const { buttonText, fontSize, onPress, placeholder = "-----------" } = props;
   const isCharcoal = !!buttonText;
-
   return (
-    <Button width={width} onPress={onPress}>
+    <Button onPress={onPress}>
       <ButtonText fontSize={fontSize} isCharcoal={isCharcoal}>
         {buttonText || placeholder}
       </ButtonText>
