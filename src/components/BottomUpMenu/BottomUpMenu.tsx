@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Backdrop, AnimatedMenuContainer } from "./styles";
-import { Animated, Dimensions } from "react-native";
+import { Modal, Animated, Dimensions } from "react-native";
 import Menu from "./Menu";
 
 export interface Option {
@@ -18,14 +18,13 @@ interface BottomUpMenuProps {
 const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
   const windowHeight = Dimensions.get("window").height;
   const [animatedModalHeight] = useState(new Animated.Value(0));
-  const [animatedOpacity] = useState(new Animated.Value(0));
 
   const slideUp = () => {
     Animated.sequence([
       Animated.delay(100),
       Animated.timing(animatedModalHeight, {
         toValue: windowHeight,
-        duration: 400,
+        duration: 200,
       }),
     ]).start();
   };
@@ -37,27 +36,9 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
     }).start();
   };
 
-  const showBackdrop = () => {
-    Animated.timing(animatedOpacity, {
-      toValue: 1,
-      duration: 400,
-    }).start();
-  };
-
-  const hideBackdrop = () => {
-    Animated.timing(animatedOpacity, {
-      toValue: 0,
-      duration: 400,
-    }).start();
-  };
-
   useEffect(() => {
-    const slide: () => void = props.visible ? slideUp : slideDown;
-    const animateBackdrop: () => void = props.visible
-      ? showBackdrop
-      : hideBackdrop;
-    slide();
-    animateBackdrop();
+    if (props.visible) slideUp();
+    else slideDown();
   }, [props.visible]);
 
   const renderMenu = () => {
@@ -75,20 +56,10 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
     );
   };
 
-  const renderBackdrop = () => {
-    const AnimatedBackdrop = Animated.createAnimatedComponent(Backdrop);
-    return (
-      <AnimatedBackdrop
-        style={{ opacity: animatedOpacity, zIndex: props.visible ? 1 : -2 }}
-      />
-    );
-  };
-
   return (
-    <>
-      {renderBackdrop()}
-      {renderMenu()}
-    </>
+    <Modal visible={props.visible} transparent={true} animationType="fade">
+      <Backdrop>{renderMenu()}</Backdrop>
+    </Modal>
   );
 };
 

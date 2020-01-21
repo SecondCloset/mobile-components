@@ -7,12 +7,9 @@ const Backdrop = styled.View`
   left: 0;
   top: 0;
   right: 0;
+  bottom: 0;
   background-color: ${colors.TRANSPARENT_GREY};
-  width: ${Dimensions.get("window").width}px;
-  height: ${Dimensions.get("window").height}px;
   justify-content: flex-end;
-  flex: 1;
-  color: blue;
 `;
 
 const AnimatedMenuContainer = styled.TouchableOpacity`
