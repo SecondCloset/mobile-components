@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Backdrop, ModalContainer, ModalWrap } from "./styles";
-import { Animated, Dimensions } from "react-native";
+import React, { useEffect, useState } from "react";
+import { ModalContainer, ModalWrap } from "./styles";
+import { Modal, Animated, Dimensions } from "react-native";
 
 interface BottomUpModalProps {
   children: React.ReactElement | React.ReactElement[];
@@ -11,7 +11,6 @@ interface BottomUpModalProps {
 const BottomUpModal: React.FC<BottomUpModalProps> = props => {
   const windowHeight = Dimensions.get("window").height;
   const [animatedModalHeight] = useState(new Animated.Value(0));
-  const [animatedOpacity] = useState(new Animated.Value(0));
 
   const slideUp = () => {
     Animated.sequence([
@@ -30,56 +29,26 @@ const BottomUpModal: React.FC<BottomUpModalProps> = props => {
     }).start();
   };
 
-  const showBackdrop = () => {
-    Animated.timing(animatedOpacity, {
-      toValue: 1,
-      duration: 400,
-    }).start();
-  };
-
-  const hideBackdrop = () => {
-    Animated.timing(animatedOpacity, {
-      toValue: 0,
-      duration: 400,
-    }).start();
-  };
-
   useEffect(() => {
-    const slide: () => void = props.visible ? slideUp : slideDown;
-    const animateBackdrop: () => void = props.visible
-      ? showBackdrop
-      : hideBackdrop;
-    slide();
-    animateBackdrop();
+    if (props.visible) slideUp();
+    else slideDown();
   }, [props.visible]);
 
-  const renderModal = () => {
-    const AnimatedModal = Animated.createAnimatedComponent(ModalContainer);
+  const renderModalContent = () => {
+    const AnimatedModalWrap = Animated.createAnimatedComponent(ModalWrap);
     return (
-      <AnimatedModal
-        style={{ height: animatedModalHeight }}
-        onPress={props.onHide}
-        activeOpacity={1}
-      >
-        <ModalWrap visible={props.visible}>{props.children}</ModalWrap>
-      </AnimatedModal>
-    );
-  };
-
-  const renderBackdrop = () => {
-    const AnimatedBackdrop = Animated.createAnimatedComponent(Backdrop);
-    return (
-      <AnimatedBackdrop
-        style={{ opacity: animatedOpacity, zIndex: props.visible ? 1 : -2 }}
-      />
+      <AnimatedModalWrap style={{ maxHeight: animatedModalHeight }}>
+        {props.children}
+      </AnimatedModalWrap>
     );
   };
 
   return (
-    <>
-      {renderBackdrop()}
-      {renderModal()}
-    </>
+    <Modal visible={props.visible} transparent={true} animationType="fade">
+      <ModalContainer activeOpacity={1} onPress={props.onHide}>
+        {renderModalContent()}
+      </ModalContainer>
+    </Modal>
   );
 };
 

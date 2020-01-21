@@ -9,7 +9,7 @@ const colors: Colors = {
   CHARCOAL: "#404041",
   ORANGE: "#F5A623",
   GREEN: "#37BC9B",
-  GREY: "#9b9b9b",
+  GREY: "#9B9B9B",
   GREY_LIGHT: "#eeeeee",
   GREY_MID: "#d5d5d5",
   RED: "#FF3A52",
