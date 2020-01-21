@@ -8,12 +8,12 @@ const BottomUpModalShowcase = () => {
 
   const options = [
     {
-      label: "report",
+      label: "Report",
       onPress: () => console.log("pressed report"),
       textColor: "red",
     },
     {
-      label: "copy link",
+      label: "Copy Link",
       onPress: () => console.log("copied to clipboard"),
       textColor: "black",
     },

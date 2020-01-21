@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Container,
   ButtonContainer,
   ButtonText,
   List,
@@ -41,10 +40,10 @@ const Menu: React.FC<MenuProps> = props => {
   };
 
   return (
-    <Container>
+    <>
       {renderList()}
       {renderCancelButton()}
-    </Container>
+    </>
   );
 };
 

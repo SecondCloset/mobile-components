@@ -1,8 +1,6 @@
 import styled from "styled-components/native";
 import colors from "../../../styles/colors";
 
-const Container = styled.View``;
-
 const ButtonContainer = styled.TouchableOpacity`
   background-color: ${colors.WHITE};
   border-radius: 10px;
@@ -43,4 +41,4 @@ const ListItemText = styled.Text<ListItemTextProps>`
   color: ${props => props.color || colors.CHARCOAL};
 `;
 
-export { Container, ButtonContainer, ButtonText, List, ListItem, ListItemText };
+export { ButtonContainer, ButtonText, List, ListItem, ListItemText };
