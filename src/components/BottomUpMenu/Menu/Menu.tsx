@@ -22,7 +22,14 @@ const Menu: React.FC<MenuProps> = props => {
           const { label, onPress, textColor } = option;
           const isLast = index === options.length - 1;
           return (
-            <ListItem onPress={onPress} isLast={isLast} key={label}>
+            <ListItem
+              onPress={() => {
+                onPress && onPress();
+                props.onHide();
+              }}
+              isLast={isLast}
+              key={label}
+            >
               <ListItemText color={textColor}>{label}</ListItemText>
             </ListItem>
           );
