@@ -13,35 +13,9 @@ npm install @scdevelopers/mobile-components
 yarn add @scdevelopers/mobile-components
 ```
 
-## 🔨 Usage
+## Components
 
-```jsx
-import { CenterView } from "@scdevelopers/mobile-components";
-import { Text } from "react-native";
-
-ReactDOM.render(
-  <CenterView>
-    <Text>Carpe Diem</Text>
-  </CenterView>,
-  mountNode
-);
-```
-
-## ⌨️ Development
-
-Use Gitpod, a free online dev environment for GitHub.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/SecondCloset/mobile-components)
-
-Or clone locally:
-
-```bash
-git clone git@github.com:SecondCloset/mobile-components.git
-cd mobile-components
-npm install
-npm run storybook # This compiles the stories
-npm start # This starts expo
-npm run build # This builds the dist folder to be published
-npm version patch # Run npm version [<newversion> | major | minor | patch ] to bump the version number
-npm publish
-```
+- [Button](https://github.com/SecondCloset/mobile-components/tree/master/doc/Button.md)
+- [BottomUpMenu](https://github.com/SecondCloset/mobile-components/tree/master/doc/BottomUpMenu.md)
+- [BottomUpModal](https://github.com/SecondCloset/mobile-components/tree/master/doc/BottomUpModal.md)
+- [Card](https://github.com/SecondCloset/mobile-components/tree/master/doc/Card.md)
