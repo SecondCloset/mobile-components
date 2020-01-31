@@ -6,11 +6,11 @@
 ## 📦 Install
 
 ```bash
-npm install @scdevelopers/mobile-components
+npm install @secondcloset/mobile-components
 ```
 
 ```bash
-yarn add @scdevelopers/mobile-components
+yarn add @secondcloset/mobile-components
 ```
 
 ## Components
@@ -23,15 +23,10 @@ yarn add @scdevelopers/mobile-components
 - [DropdownSelect](https://github.com/SecondCloset/mobile-components/blob/master/docs/DropdownSelect.md)
 
 ```jsx
-import { Button } from "react-native";
+import { Button } from "@secondcloset/mobile-components";
 
 ReactDOM.render(
-  <Button
-    text="Carpe Diem"
-    onPress={() => {
-      console.log("Sieze the Day");
-    }}
-  />,
+  <Button text="Carpe Diem" onPress={() => console.log("Sieze the Day")} />,
   mountNode
 );
 ```
