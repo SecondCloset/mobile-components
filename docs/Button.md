@@ -1,6 +1,8 @@
 # Button
 
-A standard button component.
+An awesome button component.
+
+<!--- https://www.tablesgenerator.com/markdown_tables -->
 
 | prop     | isRequired? | dataType | defaultValue | possibleValues                                                                     |
 | -------- | ----------- | -------- | ------------ | ---------------------------------------------------------------------------------- |
@@ -14,88 +16,93 @@ A standard button component.
 | fontSize | no          | number   | 18           |                                                                                    |
 
 <br/>
-<br/>
 
 ## 🔨 Usage
 
 ```jsx
-import { CenterView } from "@scdevelopers/mobile-components";
 import { Button } from "react-native";
 
 ReactDOM.render(
-<Button text="BACK" onPress={props.navigation.goBack} />
+  <Button text="BACK" onPress={props.navigation.goBack} />,
   mountNode
 );
 ```
 
 ![Back Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_back.png?raw=true)
 
+<br/>
+
 ```jsx
 ReactDOM.render(
-    <Button
-      text="READY TO GO"
-      color="yellow"
-      type="primary"
-      onPress={alert("Truck is ready to go!")}
-    />
+  <Button
+    text="READY TO GO"
+    color="yellow"
+    type="primary"
+    onPress={alert("Truck is ready to go!")}
+  />,
   mountNode
 );
 ```
 
 ![Ready Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_ready.png?raw=true)
 
+<br/>
+
 ```jsx
 ReactDOM.render(
-    <Button
-      text="ARRIVED"
-      color="green"
-      type="outline"
-      onPress={()=> {alert("Truck has arrived!")}}
-    />
+  <Button
+    text="ARRIVED"
+    color="green"
+    type="outline"
+    onPress={() => {
+      alert("Truck has arrived!");
+    }}
+  />,
   mountNode
 );
 ```
 
 ![Arrived Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_arrived.png?raw=true)
 
+<br/>
+
 ```jsx
 ReactDOM.render(
-    <Button
-      disabled
-      text="DISABLED"
-      color="blue"
-      type="outline"
-      onPress={() => {}}
-    />
+  <Button
+    disabled
+    text="DISABLED"
+    color="blue"
+    type="outline"
+    onPress={() => {}}
+  />,
   mountNode
 );
 ```
 
 ![Disabled Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_disabled.png?raw=true)
 
+<br/>
+
 ```jsx
 ReactDOM.render(
-    <Button
-      text="SAUSAGE"
-      color="red"
-      type="primary"
-      shape="rounded"
-      onPress={() => console.log("Free hot dogs!")}
-    />
+  <Button
+    text="SAUSAGE"
+    color="red"
+    type="primary"
+    shape="rounded"
+    onPress={() => console.log("Free hot dogs!")}
+  />,
   mountNode
 );
 ```
 
 ![Sausage Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_sausage.png?raw=true)
 
+<br/>
+
 ```jsx
 ReactDOM.render(
-    <Button
-      loading
-      text="LOADING"
-      shape="rounded"
-      onPress={() => {}}
-    />
+  <Button loading text="LOADING" shape="rounded" onPress={() => {}} />,
   mountNode
 );
 ```
