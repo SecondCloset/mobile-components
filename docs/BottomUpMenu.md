@@ -6,18 +6,18 @@ A versatile menu component with a transparent overlaying view.
 
 #### Menu Props
 
-| prop    | isRequired? | dataType | possibleValues               |
-| ------- | ----------- | -------- | ---------------------------- |
-| options | yes         | array    | (See options table)          |
-| visible | yes         | boolean  | true, false                  |
-| onHide  | yes         | function | () => setModalVisible(false) |
+| prop    | isRequired? | dataType |
+| ------- | ----------- | -------- |
+| options | yes         | array    |
+| visible | yes         | boolean  |
+| onHide  | yes         | function |
 
 #### Options
 
 | key       | isRequired? | dataType | defaultValue | possibleValues                                                                    |
 | --------- | ----------- | -------- | ------------ | --------------------------------------------------------------------------------- |
-| label     | yes         | string   |              | "Some Button Text Here"                                                           |
-| onPress   | yes         | function |              | () => void                                                                        |
+| label     | yes         | string   |              |                                                                                   |
+| onPress   | yes         | function |              |                                                                                   |
 | textColor | no          | string   | "black"      | "blue", "green", "red" (or other colors/rgb value in string format ie. "#ff0000") |
 
 <br/>
@@ -39,7 +39,6 @@ const options = [
   {
     label: "Copy Link",
     onPress: () => console.log("copied to clipboard"),
-    textColor: "black",
   },
 ];
 

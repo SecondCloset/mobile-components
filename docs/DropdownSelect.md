@@ -6,19 +6,19 @@ A standard dropdown component.
 
 #### Dropdown Props
 
-| prop        | isRequired? | dataType       | possibleValues      |
-| ----------- | ----------- | -------------- | ------------------- |
-| options     | yes         | array          | (See options table) |
-| selectedKey | no          | any            | Option["key"]       |
-| width       | no          | number, string | 250, "80%"          |
+| prop        | isRequired? | dataType       | possibleValues |
+| ----------- | ----------- | -------------- | -------------- |
+| options     | yes         | array          |                |
+| selectedKey | no          | any            |                |
+| width       | no          | number, string | 250, "80%"     |
 
 #### Options
 
-| key   | isRequired? | dataType       | possibleValues                |
-| ----- | ----------- | -------------- | ----------------------------- |
-| key   | yes         | string, number | "key", 1                      |
-| name  | yes         | string         | "apple", "banana", "orange"   |
-| value | yes         | any            | { color: "red", quantity: 4 } |
+| key   | isRequired? | dataType       |
+| ----- | ----------- | -------------- |
+| key   | yes         | string, number |
+| name  | yes         | string         |
+| value | yes         | any            |
 
 <br/>
 
@@ -55,10 +55,6 @@ ReactDOM.render(
       placeholder="Please select a fruit"
       width={props.width}
     />
-    <Text>content</Text>
-    <Text>content</Text>
-    <Text>content</Text>
-    <Text>content</Text>
   </View>,
   mountNode
 );

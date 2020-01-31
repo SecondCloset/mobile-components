@@ -4,11 +4,11 @@ An animated modal component with a transparent overlaying view.
 
 <!--- https://www.tablesgenerator.com/markdown_tables -->
 
-| prop     | isRequired? | dataType | possibleValues               |
-| -------- | ----------- | -------- | ---------------------------- |
-| children | yes         | array    | React.ReactElement           |
-| visible  | yes         | boolean  | true, false                  |
-| onHide   | yes         | function | () => setModalVisible(false) |
+| prop     | isRequired? | dataType      |
+| -------- | ----------- | ------------- |
+| children | yes         | React element |
+| visible  | yes         | boolean       |
+| onHide   | yes         | function      |
 
 <br/>
 
