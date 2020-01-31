@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
-import { View, Button, Text } from "react-native";
+import { View, Button } from "react-native";
 import BottomUpMenu from "./BottomUpMenu";
 
 const BottomUpModalShowcase = () => {

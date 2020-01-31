@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 export interface Option {
   label: string;
-  onPress?: () => void;
+  onPress: () => void;
   textColor?: string;
 }
 

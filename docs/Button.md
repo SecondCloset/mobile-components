@@ -20,7 +20,7 @@ An awesome button component.
 ## 🔨 Usage
 
 ```jsx
-import { Button } from "react-native";
+import { Button } from "@secondcloset/mobile-components";
 
 ReactDOM.render(
   <Button text="BACK" onPress={props.navigation.goBack} />,
