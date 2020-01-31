@@ -1,4 +1,4 @@
-# Button
+# Avatar
 
 A legendary avatar component.
 
@@ -15,15 +15,14 @@ A legendary avatar component.
 ## 🔨 Usage
 
 ```jsx
-import { CenterView } from "@scdevelopers/mobile-components";
-import { Button } from "react-native";
+import { Avatar } from "react-native";
 
 ReactDOM.render(<Avatar firstName="Anthony" lastName="Langford" />, mountNode);
 ```
 
 <br/>
 
-![Avatar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/avatar.png?raw=true)
+![Avatar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar.png?raw=true)
 
 ```jsx
 ReactDOM.render(
@@ -32,4 +31,4 @@ ReactDOM.render(
 );
 ```
 
-![Avatar With Name](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/avatar_with_name.png?raw=true)
+![Avatar With Name](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar_with_name.png?raw=true)
