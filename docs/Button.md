@@ -8,11 +8,11 @@ An awesome button component.
 | -------- | ----------- | -------- | ------------ | ---------------------------------------------------------------------------------- |
 | onPress  | yes         | function |              |                                                                                    |
 | text     | yes         | string   |              |                                                                                    |
-| disabled | no          | boolean  | false        | true, false                                                                        |
+| disabled | no          | boolean  | false        |                                                                                    |
 | type     | no          | string   | "default"    | "primary", "outline"                                                               |
 | shape    | no          | string   | "default"    | "rounded"                                                                          |
 | color    | no          | string   | "blue"       | "yellow", "blue", "red" (or other colors/rgb value in string format ie. "#ff0000") |
-| loading  | no          | boolean  | false        | true, false                                                                        |
+| loading  | no          | boolean  | false        |                                                                                    |
 | fontSize | no          | number   | 18           |                                                                                    |
 
 <br/>

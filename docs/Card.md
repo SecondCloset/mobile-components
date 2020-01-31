@@ -2,10 +2,10 @@
 
 A standard card component.
 
-| prop     | isRequired? | dataType        | possibleValues           |
-| -------- | ----------- | --------------- | ------------------------ |
-| type     | no          | string          | "box"                    |
-| children | yes         | React.ReactNode | <Text>Hello World</Text> |
+| prop     | isRequired? | dataType        | possibleValues |
+| -------- | ----------- | --------------- | -------------- |
+| type     | no          | string          | "box"          |
+| children | yes         | React.ReactNode |                |
 
 <br/>
 <br/>
