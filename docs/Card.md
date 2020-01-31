@@ -5,7 +5,7 @@ A standard card component.
 | prop     | isRequired? | dataType        | possibleValues           |
 | -------- | ----------- | --------------- | ------------------------ |
 | type     | no          | string          | "box"                    |
-| children | yes         | React.component | <Text>Hello World</Text> |
+| children | yes         | React.ReactNode | <Text>Hello World</Text> |
 
 <br/>
 <br/>
@@ -15,7 +15,8 @@ A standard card component.
 ###### Default Style
 
 ```jsx
-import { Card } from "react-native";
+import { Card } from "@secondcloset/mobile-components";
+import { Text } from "react-native";
 
 ReactDOM.render(
     <Card>

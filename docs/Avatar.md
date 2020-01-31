@@ -15,7 +15,7 @@ A legendary avatar component.
 ## 🔨 Usage
 
 ```jsx
-import { Avatar } from "react-native";
+import { Avatar } from "@secondcloset/mobile-components";
 
 ReactDOM.render(<Avatar firstName="Anthony" lastName="Langford" />, mountNode);
 ```
