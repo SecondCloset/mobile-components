@@ -4,11 +4,12 @@ A legendary avatar component.
 
 <!--- https://www.tablesgenerator.com/markdown_tables -->
 
-| prop      | isRequired? | dataType | defaultValue | possibleValues |
-| --------- | ----------- | -------- | ------------ | -------------- |
-| firstName | yes         | string   |              | "Anthony"      |
-| lastName  | yes         | string   |              | "Langford"     |
-| withName  | no          | boolean  | false        | true, false    |
+| prop      | isRequired? | dataType | defaultValue |
+| --------- | ----------- | -------- | ------------ |
+| firstName | yes         | string   |              |
+| lastName  | yes         | string   |              |
+| withName  | no          | boolean  | false        |
+| color     | no          | string   |              |
 
 <br/>
 
@@ -20,9 +21,9 @@ import { Avatar } from "@secondcloset/mobile-components";
 ReactDOM.render(<Avatar firstName="Anthony" lastName="Langford" />, mountNode);
 ```
 
-<br/>
-
 ![Avatar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar.png?raw=true)
+
+<br/>
 
 ```jsx
 ReactDOM.render(
@@ -32,3 +33,19 @@ ReactDOM.render(
 ```
 
 ![Avatar With Name](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar_with_name.png?raw=true)
+
+<br/>
+
+```jsx
+ReactDOM.render(
+  <Avatar
+    withName
+    firstName="Anthony"
+    lastName="Langford"
+    color="cornflowerblue"
+  />,
+  mountNode
+);
+```
+
+![Avatar With Explicit Color](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar_with_colour.png?raw=true)

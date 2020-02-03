@@ -29,24 +29,30 @@ interface AvatarWrapperProps {
   color?: string;
 }
 
-export const AvatarWrapper = styled.View<AvatarWrapperProps>`
-  padding: 10px;
-  border-radius: 25px;
-  background-color: ${props =>
-    props.color ? props.color : sample(avatarColors)};
-`;
-
-export const TextWrapper = styled.View`
+export const InitialsWrapper = styled.View<AvatarWrapperProps>`
   display: flex;
   justify-content: center;
-  align-content: center;
-  padding: 0 0 0 16px;
+  align-items: center;
+  border-radius: 40px;
+  background-color: ${props =>
+    props.color ? props.color : sample(avatarColors)};
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
 `;
 
 export const Initials = styled.Text`
   color: ${colors.WHITE};
   font-size: 16px;
   font-weight: 700;
+`;
+
+export const NameWrapper = styled.View`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0 0 0 8px;
 `;
 
 export const Name = styled.Text`
