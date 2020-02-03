@@ -10,6 +10,7 @@ interface AvatarProps {
   firstName: string;
   lastName: string;
   withName?: boolean;
+  color?: string;
 }
 
 const Avatar: React.FC<AvatarProps> = ({ firstName, lastName, withName }) => {
