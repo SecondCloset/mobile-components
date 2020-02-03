@@ -1,7 +1,13 @@
 import React from "react";
 
 // Components
-import { Wrapper, AvatarWrapper, TextWrapper, Initials, Name } from "./styles";
+import {
+  Wrapper,
+  InitialsWrapper,
+  Initials,
+  NameWrapper,
+  Name,
+} from "./styles";
 
 // Helpers
 import { capitalize } from "lodash";
@@ -13,7 +19,12 @@ interface AvatarProps {
   color?: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ firstName, lastName, withName }) => {
+const Avatar: React.FC<AvatarProps> = ({
+  firstName,
+  lastName,
+  withName,
+  color,
+}) => {
   const formattedFirstName = capitalize(firstName);
   const formattedLastName = capitalize(lastName);
   const capitalFirstLetter = capitalize(firstName.charAt(0));
@@ -21,13 +32,13 @@ const Avatar: React.FC<AvatarProps> = ({ firstName, lastName, withName }) => {
 
   return (
     <Wrapper>
-      <AvatarWrapper>
+      <InitialsWrapper color={color}>
         <Initials>{`${capitalFirstLetter}${capitalLastLetter}`}</Initials>
-      </AvatarWrapper>
+      </InitialsWrapper>
       {withName ? (
-        <TextWrapper>
+        <NameWrapper>
           <Name>{`${formattedFirstName} ${formattedLastName}`}</Name>
-        </TextWrapper>
+        </NameWrapper>
       ) : null}
     </Wrapper>
   );
