@@ -13,7 +13,7 @@ export const Wrapper = styled.View`
   max-height: 40px;
 `;
 
-const avatarColors = [
+export const avatarColors = [
   "#b83b5e",
   "#f25d9c",
   "#f08a5d",
@@ -25,10 +25,15 @@ const avatarColors = [
   "#005691",
 ];
 
-export const AvatarWrapper = styled.View`
+interface AvatarWrapperProps {
+  color?: string;
+}
+
+export const AvatarWrapper = styled.View<AvatarWrapperProps>`
   padding: 10px;
   border-radius: 25px;
-  background-color: ${sample(avatarColors)};
+  background-color: ${props =>
+    props.color ? props.color : sample(avatarColors)};
 `;
 
 export const TextWrapper = styled.View`
