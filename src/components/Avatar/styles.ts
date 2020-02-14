@@ -11,6 +11,7 @@ export const Wrapper = styled.View`
   flex-direction: row;
   flex: 1;
   max-height: 40px;
+  align-items: center;
 `;
 
 export const avatarColors = [
@@ -27,24 +28,27 @@ export const avatarColors = [
 
 interface AvatarWrapperProps {
   color?: string;
+  size?: number;
 }
 
 export const InitialsWrapper = styled.View<AvatarWrapperProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
+  border-radius: 100px;
   background-color: ${props =>
     props.color ? props.color : sample(avatarColors)};
-  min-width: 40px;
-  max-width: 40px;
-  min-height: 40px;
-  max-height: 40px;
+  width: ${props => props.size || 40}px;
+  height: ${props => props.size || 40}px;
 `;
 
-export const Initials = styled.Text`
+interface InitialsProps {
+  fontSize?: number;
+}
+
+export const Initials = styled.Text<InitialsProps>`
   color: ${colors.WHITE};
-  font-size: 16px;
+  font-size: ${props => props.fontSize || 16}px;
   font-weight: 700;
 `;
 
@@ -55,7 +59,7 @@ export const NameWrapper = styled.View`
   padding: 0 0 0 8px;
 `;
 
-export const Name = styled.Text`
-  font-size: 16px;
+export const Name = styled.Text<InitialsProps>`
+  font-size: ${props => props.fontSize || 16}px;
   font-weight: 300;
 `;

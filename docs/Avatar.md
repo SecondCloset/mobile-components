@@ -10,6 +10,8 @@ A legendary avatar component.
 | lastName  | yes         | string   |              |
 | withName  | no          | boolean  | false        |
 | color     | no          | string   |              |
+| size      | no          | number   | 40           |
+| fontSize  | no          | number   | 16           |
 
 <br/>
 

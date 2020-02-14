@@ -16,4 +16,14 @@ storiesOf("Avatar", module)
       lastName="Langford"
       color="cornflowerblue"
     />
+  ))
+  .add("With Different Size and FontSize", () => (
+    <Avatar
+      withName
+      firstName="Anthony"
+      lastName="Langford"
+      color="cornflowerblue"
+      size={100}
+      fontSize={30}
+    />
   ));
