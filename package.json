@@ -1,6 +1,6 @@
 {
   "name": "@secondcloset/mobile-components",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "description": "Second Closet React Native Component Library",
   "scripts": {
     "start": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && expo start",
