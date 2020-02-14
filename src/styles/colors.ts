@@ -14,6 +14,7 @@ interface Colors {
   WHITE: string;
   TRANSPARENT: string;
   TRANSPARENT_GREY: string;
+  APP_BACKGROUND: string;
   [index: string]: string;
 }
 
