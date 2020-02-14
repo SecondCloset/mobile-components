@@ -17,6 +17,8 @@ interface AvatarProps {
   lastName: string;
   withName?: boolean;
   color?: string;
+  size?: number;
+  fontSize?: number;
 }
 
 const Avatar: React.FC<AvatarProps> = ({
@@ -24,6 +26,8 @@ const Avatar: React.FC<AvatarProps> = ({
   lastName,
   withName,
   color,
+  fontSize,
+  size,
 }) => {
   const formattedFirstName = capitalize(firstName);
   const formattedLastName = capitalize(lastName);
@@ -32,12 +36,16 @@ const Avatar: React.FC<AvatarProps> = ({
 
   return (
     <Wrapper>
-      <InitialsWrapper color={color}>
-        <Initials>{`${capitalFirstLetter}${capitalLastLetter}`}</Initials>
+      <InitialsWrapper color={color} size={size}>
+        <Initials
+          fontSize={fontSize}
+        >{`${capitalFirstLetter}${capitalLastLetter}`}</Initials>
       </InitialsWrapper>
       {withName ? (
         <NameWrapper>
-          <Name>{`${formattedFirstName} ${formattedLastName}`}</Name>
+          <Name
+            fontSize={fontSize}
+          >{`${formattedFirstName} ${formattedLastName}`}</Name>
         </NameWrapper>
       ) : null}
     </Wrapper>
