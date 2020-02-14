@@ -5,7 +5,7 @@ import Avatar from "./Avatar";
 
 storiesOf("Avatar", module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add("Default", () => <Avatar firstName="Baby" lastName="Jesus" />)
+  .add("Default", () => <Avatar firstName="Bryan" lastName="Joker" />)
   .add("With Name", () => (
     <Avatar withName firstName="Anthony" lastName="Langford" />
   ))

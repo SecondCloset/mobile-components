@@ -11,6 +11,7 @@ function loadStories() {
 	require('../src/components/Card/index.stories');
 	require('../src/components/Drawer/index.stories');
 	require('../src/components/DropdownSelect/index.stories');
+	require('../src/components/Searchbar/index.stories');
 }
 
 const stories = [
@@ -20,7 +21,8 @@ const stories = [
 	'../src/components/Button/index.stories',
 	'../src/components/Card/index.stories',
 	'../src/components/Drawer/index.stories',
-	'../src/components/DropdownSelect/index.stories'
+	'../src/components/DropdownSelect/index.stories',
+	'../src/components/Searchbar/index.stories'
 ];
 
 module.exports = {
