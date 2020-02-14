@@ -33,6 +33,7 @@ const colors: Colors = {
   WHITE: "#ffffff",
   TRANSPARENT: "transparent",
   TRANSPARENT_GREY: "rgba(0,0,0,0.25)",
+  APP_BACKGROUND: "#fbfbfb",
 };
 
 export default colors;
