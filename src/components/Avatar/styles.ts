@@ -9,8 +9,6 @@ import { sample } from "lodash";
 export const Wrapper = styled.View`
   display: flex;
   flex-direction: row;
-  flex: 1;
-  max-height: 40px;
   align-items: center;
 `;
 

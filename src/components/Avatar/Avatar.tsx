@@ -34,6 +34,17 @@ const Avatar: React.FC<AvatarProps> = ({
   const capitalFirstLetter = capitalize(firstName.charAt(0));
   const capitalLastLetter = capitalize(lastName.charAt(0));
 
+  const renderFullName = () => {
+    if (!withName) return null;
+    return (
+      <NameWrapper>
+        <Name
+          fontSize={fontSize}
+        >{`${formattedFirstName} ${formattedLastName}`}</Name>
+      </NameWrapper>
+    );
+  };
+
   return (
     <Wrapper>
       <InitialsWrapper color={color} size={size}>
@@ -41,13 +52,7 @@ const Avatar: React.FC<AvatarProps> = ({
           fontSize={fontSize}
         >{`${capitalFirstLetter}${capitalLastLetter}`}</Initials>
       </InitialsWrapper>
-      {withName ? (
-        <NameWrapper>
-          <Name
-            fontSize={fontSize}
-          >{`${formattedFirstName} ${formattedLastName}`}</Name>
-        </NameWrapper>
-      ) : null}
+      {renderFullName()}
     </Wrapper>
   );
 };
