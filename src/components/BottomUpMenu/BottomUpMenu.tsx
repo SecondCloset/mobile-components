@@ -21,7 +21,6 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = props => {
 
   const slideUp = () => {
     Animated.sequence([
-      Animated.delay(100),
       Animated.timing(animatedModalHeight, {
         toValue: windowHeight,
         duration: 200,
