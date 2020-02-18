@@ -11,8 +11,13 @@ storiesOf("Card", module)
       <Text style={{ padding: 30 }}>Default</Text>
     </Card>
   ))
-  .add("Box", () => (
-    <Card type="box">
+  .add("With Shadow", () => (
+    <Card withShadow>
+      <Text style={{ padding: 30 }}>Box Type Card</Text>
+    </Card>
+  ))
+  .add("With Border", () => (
+    <Card withBorder>
       <Text style={{ padding: 30 }}>Box Type Card</Text>
     </Card>
   ));
