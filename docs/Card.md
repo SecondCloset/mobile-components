@@ -34,9 +34,9 @@ ReactDOM.render(
 
 ```jsx
 ReactDOM.render(
-    <Card type="box">
-      <Text style={{ padding: 30 }}>Box Type Card</Text>
-    </Card>
+  <Card type="box">
+    <Text style={{ padding: 30 }}>Box Type Card</Text>
+  </Card>,
   mountNode
 );
 ```
