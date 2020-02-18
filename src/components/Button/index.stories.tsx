@@ -11,20 +11,22 @@ storiesOf("Button", module)
   .add("Outline Default", () => (
     <Button text="ARRIVED" type="outline" onPress={action("clicked-text")} />
   ))
-  .add("Primary Yellow", () => (
+  .add("Primary Yellow With 150px Set Width", () => (
     <Button
       text="NEXT"
       color="yellow"
       type="primary"
       onPress={action("clicked-text")}
+      width={150}
     />
   ))
-  .add("Outline Green", () => (
+  .add("Outline Green With 60% Set Width", () => (
     <Button
       text="ARRIVED"
       color="green"
       type="outline"
       onPress={action("clicked-text")}
+      width="60%"
     />
   ))
   .add("Loading", () => (
