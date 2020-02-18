@@ -45,6 +45,7 @@ export const DrawerClosetButtonWrap = styled.View<DrawerClosetButtonWrapProps>`
   left: 0;
   right: 0;
   top: ${getStatusBarHeight()}px;
+  z-index: 2;
 `;
 
 export const DrawerClosetButton = styled.TouchableOpacity`
