@@ -4,6 +4,7 @@ import {
   DrawerWrap,
   DrawerClosetButton,
   DrawerClosetButtonWrap,
+  DrawerContentWrapper,
 } from "./styles";
 import { Modal, Animated, Dimensions } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
@@ -15,6 +16,7 @@ interface DrawerProps {
   onHide: () => void;
   direction?: "right" | "left";
   closeButtonPosition?: "right" | "left";
+  backgroundColor?: string;
 }
 
 const Drawer: React.FC<DrawerProps> = props => {
@@ -73,8 +75,10 @@ const Drawer: React.FC<DrawerProps> = props => {
 
     return (
       <AnimatedDrawerWrap style={style}>
-        {renderCloseButtonRow()}
-        {props.children}
+        <DrawerContentWrapper backgroundColor={props.backgroundColor}>
+          {renderCloseButtonRow()}
+          {props.children}
+        </DrawerContentWrapper>
       </AnimatedDrawerWrap>
     );
   };

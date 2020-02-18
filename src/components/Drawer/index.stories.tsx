@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
-import { View, SafeAreaView, Button, Text } from "react-native";
+import { View, Button, Text } from "react-native";
 import Drawer from "./Drawer";
 
 const DrawerShowcase = props => {
@@ -14,15 +14,7 @@ const DrawerShowcase = props => {
         visible={modalVisible}
         {...props}
       >
-        <SafeAreaView
-          style={{
-            backgroundColor: "#ffffe0",
-            flex: 1,
-            width: "100%",
-          }}
-        >
-          <Text>Hello World!</Text>
-        </SafeAreaView>
+        <Text>Hello World!</Text>
       </Drawer>
     </>
   );
@@ -34,4 +26,7 @@ storiesOf("Drawer", module)
   ))
   .add("Full width", () => <DrawerShowcase />)
   .add("80% width", () => <DrawerShowcase width="80%" />)
-  .add("Open from left", () => <DrawerShowcase direction="left" />);
+  .add("Open from left", () => <DrawerShowcase direction="left" />)
+  .add("With Background Color", () => (
+    <DrawerShowcase backgroundColor="#ffffe0" />
+  ));
