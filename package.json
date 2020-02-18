@@ -19,6 +19,7 @@
   "author": "Anthony Langford <anthony.langford@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "react-native-status-bar-height": "^2.4.0",
     "styled-components": "^5.0.0",
     "typescript-styled-plugin": "^0.15.0"
   },

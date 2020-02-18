@@ -13,6 +13,7 @@ An animated drawer component with a transparent overlaying view.
 | width               | no          | string, number | "100%"       |                 |
 | direction           | no          | string         | "right"      | "right", "left" |
 | closeButtonPosition | no          | string         | "right"      | "right", "left" |
+| backgroundColor     | no          | string         | "white"      |                 |
 
 <br/>
 
@@ -20,7 +21,7 @@ An animated drawer component with a transparent overlaying view.
 
 ```jsx
 import React, { useState } from "react";
-import { View, SafeAreaView, Button, Text } from "react-native";
+import { View, Button, Text } from "react-native";
 import { Drawer } from "@secondcloset/mobile-components";
 
 const DrawerShowcase = props => {
@@ -33,12 +34,9 @@ const DrawerShowcase = props => {
         onHide={() => setModalVisible(false)}
         visible={modalVisible}
         width="80%"
+        backgroundColor="#ffffe0"
       >
-        <SafeAreaView
-          style={{ backgroundColor: "#ffffe0", flex: 1, width: "100%" }}
-        >
-          <Text>Hello World</Text>
-        </SafeAreaView>
+        <Text>Hello World</Text>
       </Drawer>
     </>
   );
