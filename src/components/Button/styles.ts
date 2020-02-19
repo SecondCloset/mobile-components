@@ -33,6 +33,7 @@ interface ContainerProps {
   color: "yellow" | "blue" | "red" | string;
   type: "primary" | "outline" | "default";
   shape?: "rounded";
+  width?: number | string;
   disabled?: boolean;
 }
 
@@ -43,8 +44,15 @@ interface ButtonTextProps {
   fontSize: number;
 }
 
+const getButtonWidth = value => {
+  if (typeof value === "number") {
+    return `${value}px`;
+  }
+  return value;
+};
+
 const Container = styled.TouchableOpacity<ContainerProps>`
-  padding: 8px 15px;
+  padding: 10px 20px;
   background-color: ${props =>
     props.disabled
       ? colors.WHITE
@@ -54,6 +62,7 @@ const Container = styled.TouchableOpacity<ContainerProps>`
     props.disabled ? colors.GREY : getBorderColor(props.color, props.type)};
   border-width: 1px;
   display: flex;
+  width: ${props => getButtonWidth(props.width)};
   flex-direction: row;
   justify-content: center;
   align-items: center;

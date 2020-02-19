@@ -4,16 +4,17 @@ An awesome button component.
 
 <!--- https://www.tablesgenerator.com/markdown_tables -->
 
-| prop     | isRequired? | dataType | defaultValue | possibleValues                                                                     |
-| -------- | ----------- | -------- | ------------ | ---------------------------------------------------------------------------------- |
-| onPress  | yes         | function |              |                                                                                    |
-| text     | yes         | string   |              |                                                                                    |
-| disabled | no          | boolean  | false        |                                                                                    |
-| type     | no          | string   | "default"    | "primary", "outline"                                                               |
-| shape    | no          | string   | "default"    | "rounded"                                                                          |
-| color    | no          | string   | "blue"       | "yellow", "blue", "red" (or other colors/rgb value in string format ie. "#ff0000") |
-| loading  | no          | boolean  | false        |                                                                                    |
-| fontSize | no          | number   | 18           |                                                                                    |
+| prop     | isRequired? | dataType       | defaultValue | possibleValues                                                                     |
+| -------- | ----------- | -------------- | ------------ | ---------------------------------------------------------------------------------- |
+| onPress  | yes         | function       |              |                                                                                    |
+| text     | yes         | string         |              |                                                                                    |
+| disabled | no          | boolean        | false        |                                                                                    |
+| type     | no          | string         | "default"    | "primary", "outline"                                                               |
+| width    | no          | string, number | "100%"       | "50%", 200                                                                         |
+| shape    | no          | string         | "default"    | "rounded"                                                                          |
+| color    | no          | string         | "blue"       | "yellow", "blue", "red" (or other colors/rgb value in string format ie. "#ff0000") |
+| loading  | no          | boolean        | false        |                                                                                    |
+| fontSize | no          | number         | 13           |                                                                                    |
 
 <br/>
 
@@ -38,6 +39,7 @@ ReactDOM.render(
     text="READY TO GO"
     color="yellow"
     type="primary"
+    width={150}
     onPress={alert("Truck is ready to go!")}
   />,
   mountNode
@@ -54,6 +56,7 @@ ReactDOM.render(
     text="ARRIVED"
     color="green"
     type="outline"
+    width="60%"
     onPress={() => {
       alert("Truck has arrived!");
     }}

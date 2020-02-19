@@ -8,6 +8,7 @@ interface ButtonProps {
   text: string;
   type?: "primary" | "outline";
   shape?: "rounded";
+  width?: number | string;
   color?: "yellow" | "blue" | "red" | string;
   loading?: boolean;
   fontSize?: number;
@@ -23,7 +24,8 @@ const Button: React.FC<ButtonProps> = props => {
     color = "blue",
     shape,
     onPress,
-    fontSize = 18,
+    fontSize = 13,
+    width = "100%",
   } = props;
 
   if (loading)
@@ -40,6 +42,7 @@ const Button: React.FC<ButtonProps> = props => {
       type={type}
       shape={shape}
       onPress={onPress}
+      width={width}
     >
       <ButtonText
         disabled={disabled}
