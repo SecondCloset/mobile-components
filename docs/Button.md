@@ -4,17 +4,17 @@ An awesome button component.
 
 <!--- https://www.tablesgenerator.com/markdown_tables -->
 
-| prop     | isRequired? | dataType       | defaultValue | possibleValues                                                                     |
-| -------- | ----------- | -------------- | ------------ | ---------------------------------------------------------------------------------- |
-| onPress  | yes         | function       |              |                                                                                    |
-| text     | yes         | string         |              |                                                                                    |
-| disabled | no          | boolean        | false        |                                                                                    |
-| type     | no          | string         | "default"    | "primary", "outline"                                                               |
-| width    | no          | string, number | "100%"       | "50%", 200                                                                         |
-| shape    | no          | string         | "default"    | "rounded"                                                                          |
-| color    | no          | string         | "blue"       | "yellow", "blue", "red" (or other colors/rgb value in string format ie. "#ff0000") |
-| loading  | no          | boolean        | false        |                                                                                    |
-| fontSize | no          | number         | 13           |                                                                                    |
+| prop     | isRequired? | dataType       | defaultValue | possibleValues                                                            |
+| -------- | ----------- | -------------- | ------------ | ------------------------------------------------------------------------- |
+| onPress  | yes         | function       |              |                                                                           |
+| text     | yes         | string         |              |                                                                           |
+| disabled | no          | boolean        | false        |                                                                           |
+| type     | no          | string         | "default"    | "primary", "outline"                                                      |
+| width    | no          | string, number | "100%"       | "50%", 200                                                                |
+| shape    | no          | string         |              | "rounded"                                                                 |
+| color    | no          | string         | "blue"       | "yellow", "blue", "red", "yellowLight" (or other hex value ie. "#ff0000") |
+| loading  | no          | boolean        | false        |                                                                           |
+| fontSize | no          | number         | 13           |                                                                           |
 
 <br/>
 
@@ -24,48 +24,35 @@ An awesome button component.
 import { Button } from "@secondcloset/mobile-components";
 
 ReactDOM.render(
-  <Button text="BACK" onPress={props.navigation.goBack} />,
-  mountNode
-);
-```
-
-![Back Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_back.png?raw=true)
-
-<br/>
-
-```jsx
-ReactDOM.render(
   <Button
-    text="READY TO GO"
+    text="BUTTON"
     color="yellow"
     type="primary"
     width={150}
-    onPress={alert("Truck is ready to go!")}
+    onPress={alert("Button Clicked")}
   />,
   mountNode
 );
 ```
 
-![Ready Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_ready.png?raw=true)
+![Yellow Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/yellow_button.png?raw=true)
 
 <br/>
 
 ```jsx
 ReactDOM.render(
   <Button
-    text="ARRIVED"
+    text="BUTTON"
     color="green"
     type="outline"
     width="60%"
-    onPress={() => {
-      alert("Truck has arrived!");
-    }}
+    onPress={() => alert("Button Clicked")}
   />,
   mountNode
 );
 ```
 
-![Arrived Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_arrived.png?raw=true)
+![Green Outline Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/green_outline_button.png?raw=true)
 
 <br/>
 
@@ -73,7 +60,7 @@ ReactDOM.render(
 ReactDOM.render(
   <Button
     disabled
-    text="DISABLED"
+    text="BUTTON"
     color="blue"
     type="outline"
     onPress={() => {}}
@@ -82,7 +69,7 @@ ReactDOM.render(
 );
 ```
 
-![Disabled Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_disabled.png?raw=true)
+![Disabled Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/disabled_button.png?raw=true)
 
 <br/>
 

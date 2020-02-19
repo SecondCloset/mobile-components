@@ -7,22 +7,53 @@ import Button from "./Button";
 
 storiesOf("Button", module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add("Default", () => <Button text="BACK" onPress={action("clicked-text")} />)
-  .add("Outline Default", () => (
-    <Button text="ARRIVED" type="outline" onPress={action("clicked-text")} />
-  ))
-  .add("Primary Yellow With 150px Set Width", () => (
+  .add("Yellow", () => (
     <Button
-      text="NEXT"
       color="yellow"
+      text="BUTTON"
       type="primary"
       onPress={action("clicked-text")}
       width={150}
     />
   ))
+  .add("Blue", () => (
+    <Button
+      color="blue"
+      text="BUTTON"
+      type="primary"
+      onPress={action("clicked-text")}
+      width={150}
+    />
+  ))
+  .add("Red", () => (
+    <Button
+      color="red"
+      text="BUTTON"
+      type="primary"
+      onPress={action("clicked-text")}
+      width={150}
+    />
+  ))
+  .add("YellowLight", () => (
+    <Button
+      color="yellowLight"
+      text="BUTTON"
+      type="primary"
+      onPress={action("clicked-text")}
+      width={150}
+    />
+  ))
+  .add("No width", () => (
+    <Button
+      text="BUTTON"
+      color="yellow"
+      type="primary"
+      onPress={action("clicked-text")}
+    />
+  ))
   .add("Outline Green With 60% Set Width", () => (
     <Button
-      text="ARRIVED"
+      text="BUTTON"
       color="green"
       type="outline"
       onPress={action("clicked-text")}
@@ -32,7 +63,7 @@ storiesOf("Button", module)
   .add("Loading", () => (
     <Button
       loading
-      text="LOADING"
+      text="BUTTON"
       shape="rounded"
       onPress={action("clicked-text")}
     />
@@ -40,7 +71,7 @@ storiesOf("Button", module)
   .add("Disabled", () => (
     <Button
       disabled
-      text="DISABLED"
+      text="BUTTON"
       color="blue"
       type="outline"
       onPress={action("clicked-text")}
@@ -48,7 +79,7 @@ storiesOf("Button", module)
   ))
   .add("Sausage", () => (
     <Button
-      text="SAUSAGE"
+      text="BUTTON"
       color="red"
       type="primary"
       shape="rounded"
@@ -58,7 +89,7 @@ storiesOf("Button", module)
   .add("Disabled Sausage", () => (
     <Button
       disabled
-      text="SAUSAGE 1"
+      text="BUTTON 1"
       type="primary"
       shape="rounded"
       onPress={action("clicked-text")}
@@ -66,7 +97,7 @@ storiesOf("Button", module)
   ))
   .add("Custom", () => (
     <Button
-      text="APOLLO"
+      text="BUTTON"
       color="#fcc522"
       type="outline"
       shape="rounded"
