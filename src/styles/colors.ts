@@ -11,6 +11,7 @@ interface Colors {
   GREY_MID: string;
   RED: string;
   YELLOW: string;
+  YELLOW_LIGHT: string;
   WHITE: string;
   TRANSPARENT: string;
   TRANSPARENT_GREY: string;
@@ -26,15 +27,16 @@ const colors: Colors = {
   ORANGE: "#F5A623",
   GREEN: "#37BC9B",
   LIME_GREEN: "#49DB86",
-  GREY: "#9b9b9b",
-  GREY_LIGHT: "#eeeeee",
-  GREY_MID: "#d5d5d5",
+  GREY: "#9B9B9B",
+  GREY_LIGHT: "#EEEEEE",
+  GREY_MID: "#D5D5D5",
   RED: "#FF3A52",
-  YELLOW: "#ffd33d",
-  WHITE: "#ffffff",
+  YELLOW: "#FFD33D",
+  YELLOW_LIGHT: "#FFECAD",
+  WHITE: "#FFFFFF",
   TRANSPARENT: "transparent",
   TRANSPARENT_GREY: "rgba(0,0,0,0.25)",
-  APP_BACKGROUND: "#fbfbfb",
+  APP_BACKGROUND: "#FBFBFB",
 };
 
 export default colors;

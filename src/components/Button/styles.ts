@@ -1,55 +1,65 @@
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
+import { ButtonProps } from "./Button";
+
+const DEFAULT_COLOR = "blue";
+const DEFAULT_FONT_SIZE = 13;
+const DEFAULT_TYPE = "default";
+const DEFAULT_WIDTH = "100%";
 
 //helpers
-const getColorHexCodeFromString = (color: string): string => {
-  const c = color.toUpperCase() || "BLUE";
+const getColorHexCodeFromString = (color: string = DEFAULT_COLOR): string => {
+  const c = color.toUpperCase();
+  if (c === "YELLOWLIGHT") return colors.YELLOW_LIGHT;
   return colors[c] || color;
 };
 
-const getBackgroundColor = (color: string, type: string): string => {
+const getBackgroundColor = (
+  color: string = DEFAULT_COLOR,
+  type: string = DEFAULT_TYPE
+): string => {
   if (type === "primary") return getColorHexCodeFromString(color);
   else return colors.TRANSPARENT;
 };
 
-const getBorderColor = (color: string, type: string): string => {
+const getBorderColor = (
+  color: string = DEFAULT_COLOR,
+  type: string = DEFAULT_TYPE
+): string => {
   if (type === "outline") return getColorHexCodeFromString(color);
   else if (type === "primary") return getBackgroundColor(color, type);
   else return colors.TRANSPARENT;
 };
 
-const getTextColor = (color: string, type: string) => {
+const getTextColor = (
+  color: string = DEFAULT_COLOR,
+  type: string = DEFAULT_TYPE
+) => {
   if (type === "primary") {
     switch (color) {
       case "yellow":
+      case "yellowLight":
         return colors.CHARCOAL;
       default:
         return colors.WHITE;
     }
   } else return getColorHexCodeFromString(color);
 };
-//interfaces
-interface ContainerProps {
-  color: "yellow" | "blue" | "red" | string;
-  type: "primary" | "outline" | "default";
-  shape?: "rounded";
-  width?: number | string;
-  disabled?: boolean;
-}
 
-interface ButtonTextProps {
-  color: "yellow" | "blue" | "red" | string;
-  type: "primary" | "outline" | "default";
-  disabled?: boolean;
-  fontSize: number;
-}
-
-const getButtonWidth = value => {
+const getButtonWidth = (value: ButtonProps["width"] = DEFAULT_WIDTH) => {
   if (typeof value === "number") {
     return `${value}px`;
   }
   return value;
 };
+
+interface ContainerProps {
+  color: ButtonProps["color"];
+  type: ButtonProps["type"];
+  shape?: ButtonProps["shape"];
+  width?: ButtonProps["width"];
+  disabled?: ButtonProps["disabled"];
+}
 
 const Container = styled.TouchableOpacity<ContainerProps>`
   padding: 10px 20px;
@@ -68,10 +78,17 @@ const Container = styled.TouchableOpacity<ContainerProps>`
   align-items: center;
 `;
 
+interface ButtonTextProps {
+  color: ButtonProps["color"];
+  type: ButtonProps["type"];
+  disabled?: ButtonProps["disabled"];
+  fontSize?: ButtonProps["fontSize"];
+}
+
 const ButtonText = styled.Text<ButtonTextProps>`
   color: ${props =>
     props.disabled ? colors.GREY : getTextColor(props.color, props.type)};
-  font-size: ${props => `${props.fontSize}px` || null};
+  font-size: ${props => props.fontSize || DEFAULT_FONT_SIZE}px;
 `;
 
 const ButtonLoader = styled.View`

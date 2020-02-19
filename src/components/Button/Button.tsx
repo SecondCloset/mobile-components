@@ -3,13 +3,13 @@ import { ActivityIndicator } from "react-native";
 import { Container, ButtonText, ButtonLoader } from "./styles";
 import colors from "../../styles/colors";
 
-interface ButtonProps {
+export interface ButtonProps {
   disabled?: boolean;
   text: string;
   type?: "primary" | "outline";
   shape?: "rounded";
   width?: number | string;
-  color?: "yellow" | "blue" | "red" | string;
+  color?: "yellow" | "blue" | "red" | "yellowLight" | string;
   loading?: boolean;
   fontSize?: number;
   onPress: () => void;
@@ -19,13 +19,13 @@ const Button: React.FC<ButtonProps> = props => {
   const {
     disabled,
     text,
-    type = "default",
+    type,
     loading,
-    color = "blue",
+    color,
     shape,
     onPress,
-    fontSize = 13,
-    width = "100%",
+    fontSize,
+    width,
   } = props;
 
   if (loading)
