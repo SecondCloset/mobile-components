@@ -2,7 +2,7 @@ import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
 
-const ModalContainer = styled.TouchableOpacity`
+export const ModalContainer = styled.View`
   z-index: 2;
   background-color: ${colors.TRANSPARENT_GREY};
   position: absolute;
@@ -13,7 +13,13 @@ const ModalContainer = styled.TouchableOpacity`
   justify-content: flex-end;
 `;
 
-const ModalWrap = styled.View`
+export const TransparentLayerForClosing = styled.TouchableOpacity`
+  width: 100%;
+  flex: 1;
+  background: ${colors.TRANSPARENT};
+`;
+
+export const ModalWrap = styled.View`
   width: ${Dimensions.get("window").width}px;
   background-color: ${colors.WHITE};
   padding: 10px;
@@ -21,5 +27,3 @@ const ModalWrap = styled.View`
   border-top-left-radius: 10px;
   z-index: 5;
 `;
-
-export { ModalContainer, ModalWrap };
