@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { ModalContainer, ModalWrap } from "./styles";
+import {
+  ModalContainer,
+  ModalWrap,
+  TransparentLayerForClosing,
+} from "./styles";
 import { Modal, Animated, Dimensions } from "react-native";
 
 interface BottomUpModalProps {
@@ -45,7 +49,8 @@ const BottomUpModal: React.FC<BottomUpModalProps> = props => {
 
   return (
     <Modal visible={props.visible} transparent={true} animationType="fade">
-      <ModalContainer activeOpacity={1} onPress={props.onHide}>
+      <ModalContainer>
+        <TransparentLayerForClosing activeOpacity={1} onPress={props.onHide} />
         {renderModalContent()}
       </ModalContainer>
     </Modal>
