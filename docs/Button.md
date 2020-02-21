@@ -58,13 +58,7 @@ ReactDOM.render(
 
 ```jsx
 ReactDOM.render(
-  <Button
-    disabled
-    text="BUTTON"
-    color="blue"
-    type="outline"
-    onPress={() => {}}
-  />,
+  <Button disabled text="BUTTON" color="blue" onPress={() => {}} />,
   mountNode
 );
 ```

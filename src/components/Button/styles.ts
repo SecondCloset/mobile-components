@@ -65,11 +65,13 @@ const Container = styled.TouchableOpacity<ContainerProps>`
   padding: 10px 20px;
   background-color: ${props =>
     props.disabled
-      ? colors.WHITE
+      ? colors.GREY_LIGHT
       : getBackgroundColor(props.color, props.type)};
   border-radius: ${props => (props.shape === "rounded" ? "30px" : "5px")};
   border-color: ${props =>
-    props.disabled ? colors.GREY : getBorderColor(props.color, props.type)};
+    props.disabled
+      ? colors.GREY_LIGHT
+      : getBorderColor(props.color, props.type)};
   border-width: 1px;
   display: flex;
   width: ${props => getButtonWidth(props.width)};
@@ -87,7 +89,7 @@ interface ButtonTextProps {
 
 const ButtonText = styled.Text<ButtonTextProps>`
   color: ${props =>
-    props.disabled ? colors.GREY : getTextColor(props.color, props.type)};
+    props.disabled ? colors.GREY_MID : getTextColor(props.color, props.type)};
   font-size: ${props => props.fontSize || DEFAULT_FONT_SIZE}px;
 `;
 
