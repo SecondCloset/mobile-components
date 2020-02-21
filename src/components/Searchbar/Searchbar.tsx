@@ -12,6 +12,7 @@ import {
   Loader,
 } from "./styles";
 import { isEmpty } from "lodash";
+import { TextInput } from "react-native";
 
 export interface Option {
   label: string;
@@ -41,9 +42,9 @@ const Searchbar: React.FC<SearchbarProps> = props => {
   const [timer, setTimer] = useState();
   const [textInput, setTextInput] = useState("");
   const [listVisible, setListVisible] = useState(false);
-  const inputRef = useRef(null);
+  const inputRef = useRef<TextInput>(null);
 
-  const triggerSearch = text => {
+  const triggerSearch = (text: string) => {
     if (text.trim() === "") return setListVisible(false);
     clearTimeout(timer);
     const newTimer = setTimeout(
@@ -58,7 +59,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
       <InputBar
         listVisible={listVisible}
         onPress={() => {
-          inputRef.current.focus();
+          inputRef?.current?.focus();
         }}
       >
         <AntDesign name="search1" size={18} color="black" />
@@ -79,7 +80,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     );
   };
 
-  const renderHighlightedResult = value => {
+  const renderHighlightedResult = (value: string) => {
     const lettersArr = value.toLowerCase().split("");
     return lettersArr.map((l, i) => {
       return (
