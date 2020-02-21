@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ActivityIndicator } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "../../styles/colors";
@@ -24,6 +24,7 @@ export interface SearchbarProps {
   searchResults: Option[];
   loading?: boolean;
   onOptionSelect: (value: any) => void;
+  backgroundColor?: string;
 }
 
 const SEARCH_DELAY_IN_MS = 200;
@@ -35,10 +36,12 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     onOptionSelect,
     placeholder = "Start typing something...",
     loading = false,
+    backgroundColor = "transparent",
   } = props;
   const [timer, setTimer] = useState();
   const [textInput, setTextInput] = useState("");
   const [listVisible, setListVisible] = useState(false);
+  const inputRef = useRef(null);
 
   const triggerSearch = text => {
     if (text.trim() === "") return setListVisible(false);
@@ -52,9 +55,15 @@ const Searchbar: React.FC<SearchbarProps> = props => {
 
   const renderInputBar = () => {
     return (
-      <InputBar listVisible={listVisible}>
+      <InputBar
+        listVisible={listVisible}
+        onPress={() => {
+          inputRef.current.focus();
+        }}
+      >
         <AntDesign name="search1" size={18} color="black" />
         <InputText
+          ref={inputRef}
           onChangeText={text => {
             setListVisible(true);
             setTextInput(text);
@@ -120,14 +129,17 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     };
 
     return (
-      <ResultsContainer keyboardShouldPersistTaps="handled">
+      <ResultsContainer
+        keyboardShouldPersistTaps="handled"
+        backgroundColor={backgroundColor}
+      >
         {renderContent()}
       </ResultsContainer>
     );
   };
 
   return (
-    <Container listVisible={listVisible}>
+    <Container listVisible={listVisible} backgroundColor={backgroundColor}>
       {renderInputBar()}
       {renderSearchResults()}
     </Container>

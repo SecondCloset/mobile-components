@@ -3,6 +3,7 @@ import colors from "../../styles/colors";
 
 interface ContainerProps {
   listVisible?: boolean;
+  backgroundColor?: string;
 }
 
 export const Container = styled.View<ContainerProps>`
@@ -18,13 +19,14 @@ export const Container = styled.View<ContainerProps>`
   border-bottom-left-radius: ${props => (props.listVisible ? 0 : 5)}px;
   border-bottom-right-radius: ${props => (props.listVisible ? 0 : 5)}px;
   z-index: 5000;
+  background: ${props => props.backgroundColor || "white"};
 `;
 
 interface InputBarProps {
   listVisible?: boolean;
 }
 
-export const InputBar = styled.View<InputBarProps>`
+export const InputBar = styled.TouchableOpacity<InputBarProps>`
   flex-direction: row;
   padding: 5px 0;
   border-bottom-color: ${colors.GREY_MID};
@@ -53,7 +55,11 @@ export const HighlightedText = styled.Text<HighlightedTextProps>`
   color: ${props => (props.isBlack ? colors.BLACK : colors.GREY)};
 `;
 
-export const ResultsContainer = styled.ScrollView`
+interface ResultsContainerProps {
+  backgroundColor?: string;
+}
+
+export const ResultsContainer = styled.ScrollView<ResultsContainerProps>`
   position: absolute;
   top: 50px;
   left: -1px;
@@ -64,7 +70,7 @@ export const ResultsContainer = styled.ScrollView`
   border-radius: 5px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  background: white;
+  background: ${props => props.backgroundColor || "white"};
   max-height: 165px;
 `;
 

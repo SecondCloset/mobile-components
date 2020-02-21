@@ -6,13 +6,14 @@ A standard search bar component.
 
 #### Searchbar Props
 
-| prop           | isRequired? | dataType         | defaultValue                |
-| -------------- | ----------- | ---------------- | --------------------------- |
-| placeholder    | no          | string           | "Start typing something..." |
-| searchFunction | yes         | function(string) |                             |
-| searchResults  | yes         | options array    |                             |
-| loading        | no          | boolean          |                             |
-| onOptionSelect | yes         | function(value)  |                             |
+| prop            | isRequired? | dataType         | defaultValue                |
+| --------------- | ----------- | ---------------- | --------------------------- |
+| placeholder     | no          | string           | "Start typing something..." |
+| searchFunction  | yes         | function(string) |                             |
+| searchResults   | yes         | options array    |                             |
+| loading         | no          | boolean          |                             |
+| onOptionSelect  | yes         | function(value)  |                             |
+| backgroundColor | no          | string           | "white"                     |
 
 #### Option
 
