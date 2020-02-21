@@ -65,6 +65,7 @@ const SearchbarShowcase = props => {
         searchFunction={searchFunction}
         searchResults={createResultsArray(searchResults)}
         placeholder="Search for a fruit..."
+        backgroundColor={props.backgroundColor}
         loading={loading}
         onOptionSelect={value => {
           console.log(`${value} selected.`);
@@ -78,4 +79,6 @@ const SearchbarShowcase = props => {
   );
 };
 
-storiesOf("Searchbar", module).add("default", () => <SearchbarShowcase />);
+storiesOf("Searchbar", module)
+  .add("default", () => <SearchbarShowcase />)
+  .add("with BG color", () => <SearchbarShowcase backgroundColor="#FFECAD" />);
