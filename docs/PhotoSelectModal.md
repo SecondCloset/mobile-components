@@ -56,8 +56,8 @@ const PhotoSelectModalShowcase = props => {
 };
 ```
 
-![Camera Shoot](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/PhotoSelectModal/camera.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/PhotoSelectModal/camera.png?raw=true" alt="Camera Shoot" width="200">
 
-![Photo Gallery](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/PhotoSelectModal/gallery.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/PhotoSelectModal/gallery.png?raw=true" alt="Photo Gallery" width="200">
 
 <br/>
