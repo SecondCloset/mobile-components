@@ -20,7 +20,7 @@ A legendary avatar component.
 ```jsx
 import { Avatar } from "@secondcloset/mobile-components";
 
-ReactDOM.render(<Avatar firstName="Anthony" lastName="Langford" />, mountNode);
+<Avatar firstName="Anthony" lastName="Langford" />;
 ```
 
 ![Avatar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar.png?raw=true)
@@ -28,10 +28,7 @@ ReactDOM.render(<Avatar firstName="Anthony" lastName="Langford" />, mountNode);
 <br/>
 
 ```jsx
-ReactDOM.render(
-  <Avatar withName firstName="Anthony" lastName="Langford" />,
-  mountNode
-);
+<Avatar withName firstName="Anthony" lastName="Langford" />
 ```
 
 ![Avatar With Name](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar_with_name.png?raw=true)
@@ -39,15 +36,12 @@ ReactDOM.render(
 <br/>
 
 ```jsx
-ReactDOM.render(
-  <Avatar
-    withName
-    firstName="Anthony"
-    lastName="Langford"
-    color="cornflowerblue"
-  />,
-  mountNode
-);
+<Avatar
+  withName
+  firstName="Anthony"
+  lastName="Langford"
+  color="cornflowerblue"
+/>
 ```
 
 ![Avatar With Explicit Color](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Avatar/avatar_with_colour.png?raw=true)

@@ -27,32 +27,34 @@ A versatile menu component with a transparent overlaying view.
 ```jsx
 import React, { useState } from "react";
 import { Button, BottomUpMenu } from "@secondcloset/mobile-components";
+import { View } from "react-native";
 
-const [modalVisible, setModalVisible] = useState(false);
+const ButtonUpMenuShowcase = () => {
+  const [modalVisible, setModalVisible] = useState(false);
 
-const options = [
-  {
-    label: "Report",
-    onPress: () => console.log("pressed report"),
-    textColor: "red",
-  },
-  {
-    label: "Copy Link",
-    onPress: () => console.log("copied to clipboard"),
-  },
-];
+  const options = [
+    {
+      label: "Report",
+      onPress: () => console.log("pressed report"),
+      textColor: "red",
+    },
+    {
+      label: "Copy Link",
+      onPress: () => console.log("copied to clipboard"),
+    },
+  ];
 
-ReactDOM.render(
-  <>
-    <Button text="Open Menu" onPress={() => setModalVisible(true)} />
-    <BottomUpMenu
-      options={options}
-      onHide={() => setModalVisible(false)}
-      visible={modalVisible}
-    />
-  </>,
-  mountNode
-);
+  return (
+    <View style={{ width: "100%", flex: 1 }}>
+      <Button text="Open Menu" onPress={() => setModalVisible(true)} />
+      <BottomUpMenu
+        options={options}
+        onHide={() => setModalVisible(false)}
+        visible={modalVisible}
+      />
+    </View>
+  );
+};
 ```
 
 ![Sample Menu](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/BottomUpMenu/bottom_menu.png?raw=true)

@@ -28,36 +28,30 @@ A standard dropdown component.
 import { View, Text } from "react-native";
 import { DropdownSelect } from "@secondcloset/mobile-components";
 
-const [selectedKey, setSelectedKey] = useState(null);
+const DropdownSelectShowcase = () => {
+  const [selectedKey, setSelectedKey] = useState(null);
 
-const options = [
-  { key: "1", name: "Apple", value: "apple" },
-  { key: "2", name: "Banana", value: "banana" },
-  { key: "3", name: "Orange", value: "orange" },
-];
+  const options = [
+    { key: "1", name: "Apple", value: "apple" },
+    { key: "2", name: "Banana", value: "banana" },
+    { key: "3", name: "Orange", value: "orange" },
+  ];
 
-ReactDOM.render(
-  <View
-    style={{
-      flex: 1,
-      width: "100%",
-      alignItems: "center",
-      justifyContent: "flex-start",
-    }}
-  >
-    <DropdownSelect
-      onSelect={(key, value) => {
-        setSelectedKey(key);
-      }}
-      selectedKey={selectedKey}
-      options={options}
-      fontSize={16}
-      placeholder="Please select a fruit"
-      width={props.width}
-    />
-  </View>,
-  mountNode
-);
+  return (
+    <View style={{ flex: 1, width: "100%" }}>
+      <DropdownSelect
+        onSelect={(key, value) => {
+          setSelectedKey(key);
+        }}
+        selectedKey={selectedKey}
+        options={options}
+        fontSize={16}
+        placeholder="Please select a fruit"
+        width={props.width}
+      />
+    </View>
+  );
+};
 ```
 
 ![Sample Dropdown](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/DropdownSelect/sample_dropdown.png?raw=true)

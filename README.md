@@ -27,11 +27,7 @@ yarn add @secondcloset/mobile-components
 
 ```jsx
 import { Button } from "@secondcloset/mobile-components";
-
-ReactDOM.render(
-  <Button text="Carpe Diem" onPress={() => console.log("Seize the Day")} />,
-  mountNode
-);
+<Button text="Carpe Diem" onPress={() => console.log("Seize the Day")} />;
 ```
 
 ## ⌨️ Development

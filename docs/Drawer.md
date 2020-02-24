@@ -28,7 +28,7 @@ const DrawerShowcase = props => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <>
+    <View style={{ width: "100%", flex: 1 }}>
       <Button title="Open Drawer" onPress={() => setModalVisible(true)} />
       <Drawer
         onHide={() => setModalVisible(false)}
@@ -38,11 +38,9 @@ const DrawerShowcase = props => {
       >
         <Text>Hello World</Text>
       </Drawer>
-    </>
+    </View>
   );
 };
-
-ReactDOM.render(<DrawerShowcase />, mountNode);
 ```
 
 ![Sample Drawer](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Drawer/drawer.png?raw=true)

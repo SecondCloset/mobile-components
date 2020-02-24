@@ -19,12 +19,9 @@ A standard card component.
 import { Card } from "@secondcloset/mobile-components";
 import { Text } from "react-native";
 
-ReactDOM.render(
-    <Card withBorder>
-      <Text style={{ padding: 30 }}>Default</Text>
-    </Card>
-  mountNode
-);
+<Card withBorder>
+  <Text style={{ padding: 30 }}>Default</Text>
+</Card>;
 ```
 
 ![Card With Border](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Card/withBorder.png?raw=true)
@@ -32,12 +29,9 @@ ReactDOM.render(
 ###### With Shadow Style
 
 ```jsx
-ReactDOM.render(
-  <Card withShadow>
-    <Text style={{ padding: 30 }}>Box Type Card</Text>
-  </Card>,
-  mountNode
-);
+<Card withShadow>
+  <Text style={{ padding: 30 }}>Box Type Card</Text>
+</Card>
 ```
 
 ![Card With Shadow](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Card/withShadow.png?raw=true)

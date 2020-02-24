@@ -55,41 +55,34 @@ const db = [
   "cherry",
 ];
 
-const [searchResults, setSearchResults] = useState([]);
+const SearchbarShowcase = () => {
+  const [searchResults, setSearchResults] = useState([]);
 
-const searchFunction = value => {
-  const filteredResults = db.filter(option => option.includes(value));
-  setSearchResults(filteredResults);
+  const searchFunction = value => {
+    const filteredResults = db.filter(option => option.includes(value));
+    setSearchResults(filteredResults);
+  };
+
+  const createResultsArray = results => {
+    return results.map(r => {
+      return { label: r, value: r };
+    });
+  };
+
+  return (
+    <View style={{ flex: 1, width: "100%" }}>
+      <Searchbar
+        searchFunction={searchFunction}
+        searchResults={createResultsArray(searchResults)}
+        placeholder="Search for a fruit..."
+        loading={loading}
+        onOptionSelect={value => {
+          console.log(`${value} selected.`);
+        }}
+      />
+    </View>
+  );
 };
-
-const createResultsArray = results => {
-  return results.map(r => {
-    return { label: r, value: r };
-  });
-};
-
-ReactDOM.render(
-  <View
-    style={{
-      flex: 1,
-      width: "100%",
-      alignItems: "center",
-      justifyContent: "flex-start",
-      padding: 20,
-    }}
-  >
-    <Searchbar
-      searchFunction={searchFunction}
-      searchResults={createResultsArray(searchResults)}
-      placeholder="Search for a fruit..."
-      loading={loading}
-      onOptionSelect={value => {
-        console.log(`${value} selected.`);
-      }}
-    />
-  </View>,
-  mountNode
-);
 ```
 
 ![Collapsed Searchbar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Searchbar/collapsed_searchbar.png?raw=true)
