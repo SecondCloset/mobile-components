@@ -56,8 +56,6 @@ const SearchbarShowcase = props => {
       style={{
         flex: 1,
         width: "100%",
-        alignItems: "center",
-        justifyContent: "flex-start",
         padding: 20,
       }}
     >
