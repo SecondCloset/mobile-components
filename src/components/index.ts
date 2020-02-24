@@ -6,3 +6,4 @@ export { default as BottomUpModal } from "./BottomUpModal";
 export { default as DropdownSelect } from "./DropdownSelect";
 export { default as Drawer } from "./Drawer";
 export { default as Searchbar } from "./Searchbar";
+export { default as PhotoSelectModal } from "./PhotoSelectModal";
