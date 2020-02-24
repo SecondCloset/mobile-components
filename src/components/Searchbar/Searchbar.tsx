@@ -37,7 +37,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     onOptionSelect,
     placeholder = "Start typing something...",
     loading = false,
-    backgroundColor = "transparent",
+    backgroundColor,
   } = props;
   const [timer, setTimer] = useState();
   const [textInput, setTextInput] = useState("");
@@ -61,6 +61,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
         onPress={() => {
           inputRef?.current?.focus();
         }}
+        activeOpacity={1}
       >
         <AntDesign name="search1" size={18} color="black" />
         <InputText
