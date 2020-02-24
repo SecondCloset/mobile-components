@@ -22,6 +22,7 @@ yarn add @secondcloset/mobile-components
 - [Card](https://github.com/SecondCloset/mobile-components/blob/master/docs/Card.md)
 - [Drawer](https://github.com/SecondCloset/mobile-components/blob/master/docs/Drawer.md)
 - [DropdownSelect](https://github.com/SecondCloset/mobile-components/blob/master/docs/DropdownSelect.md)
+- [PhotoSelectModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/PhotoSelectModal.md)
 - [Searchbar](https://github.com/SecondCloset/mobile-components/blob/master/docs/Searchbar.md)
 
 ```jsx
