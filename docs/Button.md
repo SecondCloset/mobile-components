@@ -23,16 +23,13 @@ An awesome button component.
 ```jsx
 import { Button } from "@secondcloset/mobile-components";
 
-ReactDOM.render(
-  <Button
-    text="BUTTON"
-    color="yellow"
-    type="primary"
-    width={150}
-    onPress={alert("Button Clicked")}
-  />,
-  mountNode
-);
+<Button
+  text="BUTTON"
+  color="yellow"
+  type="primary"
+  width={150}
+  onPress={alert("Button Clicked")}
+/>;
 ```
 
 ![Yellow Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/yellow_button.png?raw=true)
@@ -40,16 +37,13 @@ ReactDOM.render(
 <br/>
 
 ```jsx
-ReactDOM.render(
-  <Button
-    text="BUTTON"
-    color="green"
-    type="outline"
-    width="60%"
-    onPress={() => alert("Button Clicked")}
-  />,
-  mountNode
-);
+<Button
+  text="BUTTON"
+  color="green"
+  type="outline"
+  width="60%"
+  onPress={() => alert("Button Clicked")}
+/>
 ```
 
 ![Green Outline Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/green_outline_button.png?raw=true)
@@ -57,10 +51,7 @@ ReactDOM.render(
 <br/>
 
 ```jsx
-ReactDOM.render(
-  <Button disabled text="BUTTON" color="blue" onPress={() => {}} />,
-  mountNode
-);
+<Button disabled text="BUTTON" color="blue" onPress={() => {}} />
 ```
 
 ![Disabled Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/disabled_button.png?raw=true)
@@ -68,16 +59,13 @@ ReactDOM.render(
 <br/>
 
 ```jsx
-ReactDOM.render(
-  <Button
-    text="SAUSAGE"
-    color="red"
-    type="primary"
-    shape="rounded"
-    onPress={() => console.log("Free hot dogs!")}
-  />,
-  mountNode
-);
+<Button
+  text="SAUSAGE"
+  color="red"
+  type="primary"
+  shape="rounded"
+  onPress={() => console.log("Free hot dogs!")}
+/>
 ```
 
 ![Sausage Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_sausage.png?raw=true)
@@ -85,10 +73,7 @@ ReactDOM.render(
 <br/>
 
 ```jsx
-ReactDOM.render(
-  <Button loading text="LOADING" shape="rounded" onPress={() => {}} />,
-  mountNode
-);
+<Button loading text="LOADING" shape="rounded" onPress={() => {}} />
 ```
 
 ![Loading Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Button/button_loading.png?raw=true)

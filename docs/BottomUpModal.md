@@ -17,24 +17,25 @@ An animated modal component with a transparent overlaying view.
 ```jsx
 import React, { useState } from "react";
 import { Button, BottomUpModal } from "@secondcloset/mobile-components";
+import { View } from "react-native";
 
-const [modalVisible, setModalVisible] = useState(false);
+const BottomUpModalShowcase = props => {
+  const [modalVisible, setModalVisible] = useState(false);
 
-ReactDOM.render(
-  <>
-    <Button text="Open Modal" onPress={() => setModalVisible(true)} />
-    <BottomUpModal onHide={() => setModalVisible(false)} visible={modalVisible}>
-      <Text>hi</Text>
-      <Text>hi</Text>
-      <Text>hi</Text>
-      <Text>hi</Text>
-      <Text>hi</Text>
-    </BottomUpModal>
-  </>,
-  mountNode
-);
+  return (
+    <View style={{ width: "100%", flex: 1 }}>
+      <Button text="Open Modal" onPress={() => setModalVisible(true)} />
+      <BottomUpModal
+        onHide={() => setModalVisible(false)}
+        visible={modalVisible}
+      >
+        <Text>some content</Text>
+        <Text>underneath</Text>
+      </BottomUpModal>
+    </View>
+  );
+};
 ```
 
 ![Sample Modal](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/BottomUpModal/bottom_modal.png?raw=true)
-
 <br/>
