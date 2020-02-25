@@ -5,7 +5,7 @@ import DropdownButton from "./DropdownButton";
 import DropList from "./DropList";
 
 export interface Option {
-  key: string | number;
+  key: string;
   name: string;
   value: any;
 }
