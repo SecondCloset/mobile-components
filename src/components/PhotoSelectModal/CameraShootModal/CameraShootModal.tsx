@@ -70,7 +70,7 @@ const CameraShootModal: React.FC<CameraShootModalProps> = props => {
       const isAvailable = await DeviceMotion.isAvailableAsync();
       if (isAvailable) DeviceMotion.addListener(onMotionChange);
     })();
-    () => DeviceMotion.removeAllListeners();
+    return () => DeviceMotion.removeAllListeners();
   }, []);
 
   const renderErrorMessage = (error: string) => {
