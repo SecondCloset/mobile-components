@@ -14,11 +14,11 @@ A standard dropdown component.
 
 #### Options
 
-| key   | isRequired? | dataType       |
-| ----- | ----------- | -------------- |
-| key   | yes         | string, number |
-| name  | yes         | string         |
-| value | yes         | any            |
+| key   | isRequired? | dataType |
+| ----- | ----------- | -------- |
+| key   | yes         | string   |
+| name  | yes         | string   |
+| value | yes         | any      |
 
 <br/>
 
