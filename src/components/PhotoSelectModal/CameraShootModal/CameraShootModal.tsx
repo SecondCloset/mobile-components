@@ -56,6 +56,7 @@ const orientationCalculation = deviceMotion => {
 const CameraShootModal: React.FC<CameraShootModalProps> = props => {
   const [hasPermission, setHasPermission] = useState();
   const [deviceOrientation, setDeviceOrientation] = useState(0);
+  const [listener, setListener] = useState();
   const camera = useRef<Camera>(null);
 
   const onMotionChange = motion => {
@@ -68,9 +69,9 @@ const CameraShootModal: React.FC<CameraShootModalProps> = props => {
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === "granted");
       const isAvailable = await DeviceMotion.isAvailableAsync();
-      if (isAvailable) DeviceMotion.addListener(onMotionChange);
+      if (isAvailable) setListener(DeviceMotion.addListener(onMotionChange));
     })();
-    return () => DeviceMotion.removeAllListeners();
+    return () => listener?.remove();
   }, []);
 
   const renderErrorMessage = (error: string) => {
