@@ -55,3 +55,13 @@ export const DrawerClosetButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
+
+interface ClosetAreaProps {
+  width: number;
+}
+
+export const ClosetArea = styled.TouchableOpacity<ClosetAreaProps>`
+  flex: 1;
+  width: ${props => props.width}px;
+  background: ${colors.TRANSPARENT};
+`;
