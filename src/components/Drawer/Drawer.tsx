@@ -5,6 +5,7 @@ import {
   DrawerClosetButton,
   DrawerClosetButtonWrap,
   DrawerContentWrapper,
+  ClosetArea,
 } from "./styles";
 import { Modal, Animated, Dimensions } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
@@ -29,13 +30,14 @@ const Drawer: React.FC<DrawerProps> = props => {
   } else if (typeof width === "number") {
     drawerWidth = width;
   }
+  const direction = props.direction || "right";
 
   const [animatedModalWidth] = useState(new Animated.Value(0));
 
   const slide = () => {
     Animated.timing(animatedModalWidth, {
       toValue: drawerWidth,
-      duration: 300,
+      duration: 200,
     }).start();
   };
 
@@ -64,7 +66,6 @@ const Drawer: React.FC<DrawerProps> = props => {
   };
 
   const renderModalContent = () => {
-    const direction = props.direction || "right";
     const AnimatedDrawerWrap = Animated.createAnimatedComponent(DrawerWrap);
     const style = {
       maxWidth: animatedModalWidth,
@@ -83,9 +84,35 @@ const Drawer: React.FC<DrawerProps> = props => {
     );
   };
 
+  const renderLeftCloseArea = () => {
+    if (direction === "left") return null;
+    return (
+      <ClosetArea
+        width={windowWidth - drawerWidth}
+        activeOpacity={1}
+        onPress={collapse}
+      />
+    );
+  };
+
+  const renderRightCloseArea = () => {
+    if (direction === "right") return null;
+    return (
+      <ClosetArea
+        width={windowWidth - drawerWidth}
+        activeOpacity={1}
+        onPress={collapse}
+      />
+    );
+  };
+
   return (
     <Modal visible={props.visible} transparent={true} animationType="none">
-      <DrawerContainer>{renderModalContent()}</DrawerContainer>
+      <DrawerContainer>
+        {renderLeftCloseArea()}
+        {renderModalContent()}
+        {renderRightCloseArea()}
+      </DrawerContainer>
     </Modal>
   );
 };
