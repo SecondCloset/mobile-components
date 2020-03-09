@@ -8,8 +8,9 @@ A standard search bar component.
 
 | prop            | isRequired? | dataType         | defaultValue                |
 | --------------- | ----------- | ---------------- | --------------------------- |
+| value           | no          | string           |                             |
 | placeholder     | no          | string           | "Start typing something..." |
-| searchFunction  | yes         | function(string) |                             |
+| onSearch        | yes         | function(string) |                             |
 | searchResults   | yes         | options array    |                             |
 | loading         | no          | boolean          |                             |
 | onOptionSelect  | yes         | function(value)  |                             |

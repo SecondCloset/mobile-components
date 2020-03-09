@@ -20,8 +20,9 @@ export interface Option {
 }
 
 export interface SearchbarProps {
+  value?: string;
   placeholder?: string;
-  searchFunction: (value: string) => void;
+  onSearch: (value: string) => void;
   searchResults: Option[];
   loading?: boolean;
   onOptionSelect: (value: any) => void;
@@ -32,7 +33,7 @@ const SEARCH_DELAY_IN_MS = 200;
 
 const Searchbar: React.FC<SearchbarProps> = props => {
   const {
-    searchFunction,
+    onSearch,
     searchResults,
     onOptionSelect,
     placeholder = "Start typing something...",
@@ -40,7 +41,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     backgroundColor,
   } = props;
   const [timer, setTimer] = useState();
-  const [textInput, setTextInput] = useState("");
+  const [textInput, setTextInput] = useState(props.value || "");
   const [listVisible, setListVisible] = useState(false);
   const inputRef = useRef<TextInput>(null);
 
@@ -48,7 +49,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     if (text.trim() === "") return setListVisible(false);
     clearTimeout(timer);
     const newTimer = setTimeout(
-      () => searchFunction(text.trim()),
+      () => onSearch(text.trim()),
       SEARCH_DELAY_IN_MS
     );
     setTimer(newTimer);
