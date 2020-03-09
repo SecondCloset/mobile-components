@@ -31,7 +31,7 @@ const SearchbarShowcase = props => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const searchFunction = async string => {
+  const onSearch = async string => {
     setLoading(true);
     const emptyString = string.length === 0;
     if (emptyString) return setSearchResults([]);
@@ -60,7 +60,7 @@ const SearchbarShowcase = props => {
       }}
     >
       <Searchbar
-        searchFunction={searchFunction}
+        onSearch={onSearch}
         searchResults={createResultsArray(searchResults)}
         placeholder="Search for a fruit..."
         backgroundColor={props.backgroundColor}
