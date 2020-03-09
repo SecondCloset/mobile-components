@@ -68,6 +68,7 @@ const SearchbarShowcase = props => {
         onOptionSelect={value => {
           console.log(`${value} selected.`);
         }}
+        value={props.value}
       />
       <Text>content</Text>
       <Text>content</Text>
@@ -79,4 +80,5 @@ const SearchbarShowcase = props => {
 
 storiesOf("Searchbar", module)
   .add("default", () => <SearchbarShowcase />)
-  .add("with BG color", () => <SearchbarShowcase backgroundColor="#FFECAD" />);
+  .add("with BG color", () => <SearchbarShowcase backgroundColor="#FFECAD" />)
+  .add("with initial value", () => <SearchbarShowcase value="hello bro" />);

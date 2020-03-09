@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ActivityIndicator } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "../../styles/colors";
@@ -41,9 +41,13 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     backgroundColor,
   } = props;
   const [timer, setTimer] = useState();
-  const [textInput, setTextInput] = useState(props.value || "");
+  const [textInput, setTextInput] = useState("");
   const [listVisible, setListVisible] = useState(false);
   const inputRef = useRef<TextInput>(null);
+
+  useEffect(() => {
+    setTextInput(props.value || "");
+  }, [props.value]);
 
   const triggerSearch = (text: string) => {
     if (text.trim() === "") return setListVisible(false);
