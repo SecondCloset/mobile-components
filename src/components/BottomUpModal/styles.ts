@@ -22,7 +22,6 @@ export const TransparentLayerForClosing = styled.TouchableOpacity`
 export const ModalWrap = styled.View`
   width: ${Dimensions.get("window").width}px;
   background-color: ${colors.WHITE};
-  padding: 10px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   z-index: 5;
