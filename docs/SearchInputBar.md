@@ -1,10 +1,10 @@
-# SearchBar
+# SearchInputBar
 
 A standard search bar component.
 
 <!--- https://www.tablesgenerator.com/markdown_tables -->
 
-#### SearchBar Props
+#### SearchInputBar Props
 
 | prop            | isRequired? | dataType         | defaultValue                |
 | --------------- | ----------- | ---------------- | --------------------------- |
@@ -30,7 +30,7 @@ A standard search bar component.
 ```jsx
 import React, { useState } from "react";
 import { View } from "react-native";
-import { SearchBar } from "@secondcloset/mobile-components";
+import { SearchInputBar } from "@secondcloset/mobile-components";
 
 const db = [
   "apple",
@@ -72,7 +72,7 @@ const SearchbarShowcase = () => {
 
   return (
     <View style={{ flex: 1, width: "100%" }}>
-      <SearchBar
+      <SearchInputBar
         value={value}
         onChange={onChange}
         searchResults={createResultsArray(searchResults)}
@@ -84,8 +84,8 @@ const SearchbarShowcase = () => {
 };
 ```
 
-![Collapsed SearchBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/SearchBar/collapsed_searchbar.png?raw=true)
+![Collapsed SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/SearchInputBar/collapsed_searchbar.png?raw=true)
 
-![SearchBar With Results](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/SearchBar/searchbar_with_results.png?raw=true)
+![SearchInputBar With Results](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/SearchInputBar/searchbar_with_results.png?raw=true)
 
 <br/>

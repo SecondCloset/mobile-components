@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
 import { View, Text } from "react-native";
-import SearchBar from "./SearchBar";
+import SearchInputBar from "./SearchInputBar";
 
 const db = [
   "apple",
@@ -27,7 +27,7 @@ const db = [
   "cherry",
 ];
 
-const SearchBarShowcase = props => {
+const SearchInputBarShowcase = props => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState("");
@@ -66,7 +66,7 @@ const SearchBarShowcase = props => {
         padding: 20,
       }}
     >
-      <SearchBar
+      <SearchInputBar
         value={value}
         onChange={v => {
           setValue(v);
@@ -90,7 +90,7 @@ const SearchBarShowcase = props => {
   );
 };
 
-storiesOf("SearchBar", module)
-  .add("default", () => <SearchBarShowcase />)
-  .add("with BG color", () => <SearchBarShowcase backgroundColor="#FFECAD" />)
-  .add("with initial value", () => <SearchBarShowcase value="hello bro" />);
+storiesOf("SearchInputBar", module)
+  .add("default", () => <SearchInputBarShowcase />)
+  .add("with BG color", () => <SearchInputBarShowcase backgroundColor="#FFECAD" />)
+  .add("with initial value", () => <SearchInputBarShowcase value="hello bro" />);
