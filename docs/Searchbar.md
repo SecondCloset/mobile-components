@@ -1,19 +1,19 @@
-# Searchbar
+# SearchBar
 
 A standard search bar component.
 
 <!--- https://www.tablesgenerator.com/markdown_tables -->
 
-#### Searchbar Props
+#### SearchBar Props
 
 | prop            | isRequired? | dataType         | defaultValue                |
 | --------------- | ----------- | ---------------- | --------------------------- |
 | value           | no          | string           |                             |
+| onChange        | yes         | function(string) |                             |
 | placeholder     | no          | string           | "Start typing something..." |
-| onSearch        | yes         | function(string) |                             |
-| searchResults   | yes         | options array    |                             |
+| searchResults   | yes         | Options array    |                             |
 | loading         | no          | boolean          |                             |
-| onOptionSelect  | yes         | function(value)  |                             |
+| onOptionSelect  | yes         | function(Option) |                             |
 | backgroundColor | no          | string           | "white"                     |
 
 #### Option
@@ -30,7 +30,7 @@ A standard search bar component.
 ```jsx
 import React, { useState } from "react";
 import { View } from "react-native";
-import { Searchbar } from "@secondcloset/mobile-components";
+import { SearchBar } from "@secondcloset/mobile-components";
 
 const db = [
   "apple",
@@ -58,36 +58,34 @@ const db = [
 
 const SearchbarShowcase = () => {
   const [searchResults, setSearchResults] = useState([]);
-
-  const searchFunction = value => {
-    const filteredResults = db.filter(option => option.includes(value));
-    setSearchResults(filteredResults);
-  };
+  const [value, setValue] = useState("");
 
   const createResultsArray = results => {
-    return results.map(r => {
-      return { label: r, value: r };
-    });
+    return results.map(r => ({ label: r, value: r }));
+  };
+
+  const onChange = v => {
+    setValue(v);
+    const newResult = db.filter(i => i.includes(v));
+    setSearchResults(newResult);
   };
 
   return (
     <View style={{ flex: 1, width: "100%" }}>
-      <Searchbar
-        searchFunction={searchFunction}
+      <SearchBar
+        value={value}
+        onChange={onChange}
         searchResults={createResultsArray(searchResults)}
         placeholder="Search for a fruit..."
-        loading={loading}
-        onOptionSelect={value => {
-          console.log(`${value} selected.`);
-        }}
+        onOptionSelect={option => setValue(options.label)}
       />
     </View>
   );
 };
 ```
 
-![Collapsed Searchbar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Searchbar/collapsed_searchbar.png?raw=true)
+![Collapsed SearchBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/SearchBar/collapsed_searchbar.png?raw=true)
 
-![Searchbar With Results](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Searchbar/searchbar_with_results.png?raw=true)
+![SearchBar With Results](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/SearchBar/searchbar_with_results.png?raw=true)
 
 <br/>

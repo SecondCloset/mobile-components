@@ -1,2 +1,2 @@
-import Searchbar from "./Searchbar";
-export default Searchbar;
+import SearchBar from "./SearchBar";
+export default SearchBar;
