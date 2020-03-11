@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
 import { View, Text } from "react-native";
-import Searchbar from "./Searchbar";
+import SearchBar from "./SearchBar";
 
 const db = [
   "apple",
@@ -27,20 +27,27 @@ const db = [
   "cherry",
 ];
 
-const SearchbarShowcase = props => {
+const SearchBarShowcase = props => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("");
+  const [timer, setTimer] = useState();
 
-  const onSearch = async string => {
+  const lowerCaseRemovedSpaces = (s: string) => {
+    return s.replace(/\s+/g, "").toLowerCase();
+  };
+
+  const fetchDataFromBackend = async (v: string) => {
     setLoading(true);
-    const emptyString = string.length === 0;
-    if (emptyString) return setSearchResults([]);
-    const lowerCaseRemovedSpaces = s => s.replace(/\s+/g, "").toLowerCase();
-    const filteredResults = db.filter(option =>
-      lowerCaseRemovedSpaces(option).includes(lowerCaseRemovedSpaces(string))
-    );
-
+    if (!v.trim()) {
+      setSearchResults([]);
+      setLoading(false);
+    }
     await new Promise(resolve => setTimeout(resolve, 500));
+
+    const filteredResults = db.filter(option =>
+      lowerCaseRemovedSpaces(option).includes(lowerCaseRemovedSpaces(v))
+    );
     setSearchResults(filteredResults);
     setLoading(false);
   };
@@ -59,16 +66,21 @@ const SearchbarShowcase = props => {
         padding: 20,
       }}
     >
-      <Searchbar
-        onSearch={onSearch}
+      <SearchBar
+        value={value}
+        onChange={v => {
+          setValue(v);
+          clearTimeout(timer);
+          const newTimer = setTimeout(() => fetchDataFromBackend(v), 500);
+          setTimer(newTimer);
+        }}
         searchResults={createResultsArray(searchResults)}
         placeholder="Search for a fruit..."
         backgroundColor={props.backgroundColor}
         loading={loading}
-        onOptionSelect={value => {
-          console.log(`${value} selected.`);
+        onOptionSelect={({ label }) => {
+          setValue(label);
         }}
-        value={props.value}
       />
       <Text>content</Text>
       <Text>content</Text>
@@ -78,7 +90,7 @@ const SearchbarShowcase = props => {
   );
 };
 
-storiesOf("Searchbar", module)
-  .add("default", () => <SearchbarShowcase />)
-  .add("with BG color", () => <SearchbarShowcase backgroundColor="#FFECAD" />)
-  .add("with initial value", () => <SearchbarShowcase value="hello bro" />);
+storiesOf("SearchBar", module)
+  .add("default", () => <SearchBarShowcase />)
+  .add("with BG color", () => <SearchBarShowcase backgroundColor="#FFECAD" />)
+  .add("with initial value", () => <SearchBarShowcase value="hello bro" />);

@@ -19,45 +19,29 @@ export interface Option {
   value: any;
 }
 
-export interface SearchbarProps {
-  value?: string;
+export interface SearchBarProps {
+  value: string;
+  onChange: (value: string) => any;
   placeholder?: string;
-  onSearch: (value: string) => void;
   searchResults: Option[];
   loading?: boolean;
-  onOptionSelect: (value: any) => void;
+  onOptionSelect: (option: Option) => any;
   backgroundColor?: string;
 }
 
-const SEARCH_DELAY_IN_MS = 200;
-
-const Searchbar: React.FC<SearchbarProps> = props => {
+const SearchBar: React.FC<SearchBarProps> = props => {
   const {
-    onSearch,
     searchResults,
     onOptionSelect,
-    placeholder = "Start typing something...",
     loading = false,
     backgroundColor,
   } = props;
-  const [timer, setTimer] = useState();
-  const [textInput, setTextInput] = useState("");
   const [listVisible, setListVisible] = useState(false);
   const inputRef = useRef<TextInput>(null);
 
   useEffect(() => {
-    setTextInput(props.value || "");
+    if (!props.value.trim()) setListVisible(false);
   }, [props.value]);
-
-  const triggerSearch = (text: string) => {
-    if (text.trim() === "") return setListVisible(false);
-    clearTimeout(timer);
-    const newTimer = setTimeout(
-      () => onSearch(text.trim()),
-      SEARCH_DELAY_IN_MS
-    );
-    setTimer(newTimer);
-  };
 
   const renderInputBar = () => {
     return (
@@ -71,28 +55,27 @@ const Searchbar: React.FC<SearchbarProps> = props => {
         <AntDesign name="search1" size={18} color="black" />
         <InputText
           ref={inputRef}
-          onChangeText={text => {
+          onChangeText={(text: string) => {
             setListVisible(true);
-            setTextInput(text);
-            triggerSearch(text);
+            props.onChange(text);
           }}
-          value={textInput}
+          value={props.value}
           autoCorrect={false}
           clearButtonMode="while-editing"
-          placeholder={placeholder}
+          placeholder={props.placeholder || "Start typing something..."}
           autoCapitalize="none"
         />
       </InputBar>
     );
   };
 
-  const renderHighlightedResult = (value: string) => {
-    const lettersArr = value.toLowerCase().split("");
+  const renderHighlightedResult = (resultLabel: string) => {
+    const lettersArr = resultLabel.toLowerCase().split("");
     return lettersArr.map((l, i) => {
       return (
         <HighlightedText
           key={l + i}
-          isBlack={textInput.toLowerCase().includes(l)}
+          isBlack={props.value.toLowerCase().includes(l)}
         >
           {l}
         </HighlightedText>
@@ -100,9 +83,8 @@ const Searchbar: React.FC<SearchbarProps> = props => {
     });
   };
 
-  const onResultPress = ({ label, value }) => {
-    onOptionSelect(value);
-    setTextInput(label.toLowerCase());
+  const onResultPress = (option: Option) => {
+    onOptionSelect(option);
     setListVisible(false);
   };
 
@@ -115,11 +97,13 @@ const Searchbar: React.FC<SearchbarProps> = props => {
         </SearchResultRow>
       );
     });
+
     const noResultsMessage = (
       <SearchResultRow key="no result" activeOpacity={1}>
         <HighlightedText>No Results Found</HighlightedText>
       </SearchResultRow>
     );
+
     const loadingCircle = (
       <SearchResultRow key="loading" activeOpacity={1}>
         <Loader>
@@ -128,7 +112,7 @@ const Searchbar: React.FC<SearchbarProps> = props => {
       </SearchResultRow>
     );
 
-    const noResults = !!textInput && isEmpty(searchResults);
+    const noResults = !!props.value.trim() && isEmpty(searchResults);
     const renderContent = () => {
       if (loading) return loadingCircle;
       if (noResults) return noResultsMessage;
@@ -153,4 +137,4 @@ const Searchbar: React.FC<SearchbarProps> = props => {
   );
 };
 
-export default Searchbar;
+export default SearchBar;
