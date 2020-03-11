@@ -23,7 +23,7 @@ yarn add @secondcloset/mobile-components
 - [Drawer](https://github.com/SecondCloset/mobile-components/blob/master/docs/Drawer.md)
 - [DropdownSelect](https://github.com/SecondCloset/mobile-components/blob/master/docs/DropdownSelect.md)
 - [PhotoSelectModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/PhotoSelectModal.md)
-- [Searchbar](https://github.com/SecondCloset/mobile-components/blob/master/docs/Searchbar.md)
+- [SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/SearchInputBar.md)
 
 ```jsx
 import { Button } from "@secondcloset/mobile-components";

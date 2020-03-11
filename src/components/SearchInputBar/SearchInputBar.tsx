@@ -19,7 +19,7 @@ export interface Option {
   value: any;
 }
 
-export interface SearchBarProps {
+export interface SearchInputBarProps {
   value: string;
   onChange: (value: string) => any;
   placeholder?: string;
@@ -29,7 +29,7 @@ export interface SearchBarProps {
   backgroundColor?: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = props => {
+const SearchInputBar: React.FC<SearchInputBarProps> = props => {
   const {
     searchResults,
     onOptionSelect,
@@ -137,4 +137,4 @@ const SearchBar: React.FC<SearchBarProps> = props => {
   );
 };
 
-export default SearchBar;
+export default SearchInputBar;
