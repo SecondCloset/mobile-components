@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, BoxShadowContainer } from "./styles";
 
 export interface CardProps {
   withShadow?: boolean;
@@ -8,11 +8,17 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = props => {
-  return (
-    <Container withShadow={props.withShadow} withBorder={props.withBorder}>
-      {props.children}
-    </Container>
-  );
+  if (props.withShadow) {
+    return (
+      <BoxShadowContainer>
+        <Container withBorder={props.withBorder}>{props.children}</Container>
+      </BoxShadowContainer>
+    );
+  } else {
+    return (
+      <Container withBorder={props.withBorder}>{props.children}</Container>
+    );
+  }
 };
 
 export default Card;
