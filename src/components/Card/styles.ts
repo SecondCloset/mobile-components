@@ -17,6 +17,7 @@ const Container = styled.View<ContainerProps>`
     ${props => (props.withShadow ? colors.GREY : colors.TRANSPARENT)};
   shadow-opacity: 0.25;
   elevation: 5;
+  overflow: hidden;
 `;
 
 export { Container };
