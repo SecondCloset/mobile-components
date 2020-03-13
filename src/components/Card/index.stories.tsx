@@ -22,7 +22,7 @@ storiesOf("Card", module)
     </Card>
   ))
   .add("custom", () => (
-    <Card withBorder>
+    <Card withBorder withShadow>
       <View style={{ width: "100%", backgroundColor: "#FFECAD" }}>
         <Text style={{ padding: 30 }}>Box Type Card</Text>
       </View>
