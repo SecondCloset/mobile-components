@@ -7,3 +7,4 @@ export { default as DropdownSelect } from "./DropdownSelect";
 export { default as Drawer } from "./Drawer";
 export { default as SearchInputBar } from "./SearchInputBar";
 export { default as PhotoSelectModal } from "./PhotoSelectModal";
+export { default as ButtonGroup } from "./ButtonGroup";
