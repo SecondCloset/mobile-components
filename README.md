@@ -1,7 +1,7 @@
 <h1 align=center>Second Closet's React Native Component Library</h1>
 <p align=center>A World Class Component Library </p>
 
-[![Dependencies](https://img.shields.io/david/anthony-langford/address-lookup)](https://david-dm.org/anthony-langford/address-lookup) [![DevDependencies](https://img.shields.io/david/dev/anthony-langford/address-lookup)](https://david-dm.org/anthony-langford/address-lookup?type=dev) ![Rating](https://img.shields.io/badge/rating-5%2F5-brightgreen) ![License](https://img.shields.io/badge/license-MIT-green)
+[License](https://img.shields.io/badge/license-MIT-green)
 
 ## 📦 Install
 
@@ -9,22 +9,19 @@
 npm install @secondcloset/mobile-components
 ```
 
-```bash
-yarn add @secondcloset/mobile-components
-```
-
 ## Components
 
 - [Avatar](https://github.com/SecondCloset/mobile-components/blob/master/docs/Avatar.md)
-- [Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/Button.md)
 - [BottomUpMenu](https://github.com/SecondCloset/mobile-components/blob/master/docs/BottomUpMenu.md)
 - [BottomUpModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/BottomUpModal.md)
+- [Button](https://github.com/SecondCloset/mobile-components/blob/master/docs/Button.md)
+- [ButtonGroup](https://github.com/SecondCloset/mobile-components/blob/master/docs/ButtonGroup.md)
 - [Card](https://github.com/SecondCloset/mobile-components/blob/master/docs/Card.md)
+- [Collapse](https://github.com/SecondCloset/mobile-components/blob/master/docs/Collapse.md)
 - [Drawer](https://github.com/SecondCloset/mobile-components/blob/master/docs/Drawer.md)
 - [DropdownSelect](https://github.com/SecondCloset/mobile-components/blob/master/docs/DropdownSelect.md)
 - [PhotoSelectModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/PhotoSelectModal.md)
 - [SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/SearchInputBar.md)
-- [ButtonGroup](https://github.com/SecondCloset/mobile-components/blob/master/docs/ButtonGroup.md)
 
 ```jsx
 import { Button } from "@secondcloset/mobile-components";

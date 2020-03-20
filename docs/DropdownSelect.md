@@ -54,6 +54,6 @@ const DropdownSelectShowcase = () => {
 };
 ```
 
-![Sample Dropdown](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/DropdownSelect/sample_dropdown.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/DropdownSelect/sample_dropdown.png?raw=true" alt="DropdownSelect" width="200">
 
 <br/>

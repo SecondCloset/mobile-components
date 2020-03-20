@@ -37,5 +37,6 @@ const BottomUpModalShowcase = props => {
 };
 ```
 
-![Sample Modal](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/BottomUpModal/bottom_modal.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/BottomUpModal/bottom_modal.png?raw=true" alt="BottomUpModal" width="200">
+
 <br/>
