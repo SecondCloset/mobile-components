@@ -43,6 +43,6 @@ const DrawerShowcase = props => {
 };
 ```
 
-![Sample Drawer](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Drawer/drawer.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Drawer/drawer.png?raw=true" alt="Drawer" width="200">
 
 <br/>

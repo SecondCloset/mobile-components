@@ -57,6 +57,6 @@ const ButtonUpMenuShowcase = () => {
 };
 ```
 
-![Sample Menu](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/BottomUpMenu/bottom_menu.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/BottomUpMenu/bottom_menu.png?raw=true" alt="BottomUpMenu" width="200">
 
 <br/>
