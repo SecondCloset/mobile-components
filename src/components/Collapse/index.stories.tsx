@@ -27,7 +27,7 @@ const CollapseShowcase = () => {
     );
   };
   return (
-    <Collapse triggerElement={renderTriggerButton()}>
+    <Collapse triggerElement={renderTriggerButton()} defaultOpen>
       {renderContent()}
     </Collapse>
   );
