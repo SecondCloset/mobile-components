@@ -4,7 +4,7 @@ import { Animated, TouchableOpacity } from "react-native";
 import { Container } from "./styles";
 
 interface CollapseProps {
-  triggerElement: React.ReactElement;
+  triggerElement: React.ReactElement | React.ReactElement[];
   children: React.ReactChild;
 }
 
