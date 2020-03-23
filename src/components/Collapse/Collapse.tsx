@@ -4,8 +4,9 @@ import { Animated, TouchableOpacity } from "react-native";
 import { Container } from "./styles";
 
 interface CollapseProps {
-  triggerElement: React.ReactElement | React.ReactElement[];
-  children: React.ReactChild;
+  triggerElement: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
+  defaultOpen?: boolean;
 }
 
 const Collapse: React.FC<CollapseProps> = props => {
@@ -39,6 +40,7 @@ const Collapse: React.FC<CollapseProps> = props => {
     if (height > maxHeight) {
       setMaxHeight(height);
       setIsInitialized(true);
+      if (props.defaultOpen) setIsOpen(true);
     }
   };
 
@@ -59,12 +61,15 @@ const Collapse: React.FC<CollapseProps> = props => {
     );
   };
 
+  const renderInitializingContainer = () => {
+    if (isInitialized) return null;
+    return <Container onLayout={onLayout}>{props.children}</Container>;
+  };
+
   return (
     <Container>
       {renderTriggerButton()}
-      {!isInitialized && (
-        <Container onLayout={onLayout}>{props.children}</Container>
-      )}
+      {renderInitializingContainer()}
       {renderAnimatedContent()}
     </Container>
   );

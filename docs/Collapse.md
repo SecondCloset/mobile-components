@@ -6,6 +6,7 @@
 | -------------- | ----------- | -------------- |
 | triggerElement | yes         | React Element  |
 | children       | no          | React Children |
+| defaultOpen    | no          | React Children |
 
 <br/>
 
