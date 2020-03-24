@@ -4,18 +4,19 @@ A toggle button component.
 
 #### ButtonGroupProps
 
-| prop           | isRequired? | dataType         |
-| -------------- | ----------- | ---------------- |
-| options        | yes         | array            |
-| defaultValue   | no          | Option[text]     |
-| onOptionSelect | yes         | function(Option) |
+| prop               | isRequired? | dataType               |
+| ------------------ | ----------- | ---------------------- |
+| options            | yes         | array                  |
+| selectedOptionText | no          | Option[text]           |
+| onOptionSelect     | yes         | function(Option[text]) |
 
 #### Options
 
-| key     | isRequired? | dataType |
-| ------- | ----------- | -------- |
-| text    | yes         | string   |
-| subtext | no          | string   |
+| key      | isRequired? | dataType |
+| -------- | ----------- | -------- |
+| text     | yes         | string   |
+| subtext  | no          | string   |
+| disabled | no          | boolean  |
 
 <br/>
 <br/>
@@ -28,7 +29,7 @@ A toggle button component.
 import React, { useState } from "react";
 import { ButtonGroup } from "@secondcloset/mobile-components";
 
-const [selectedOption, setSelectedOption] = useState("Mrs. Nesbitt");
+const [selectedOptionText, setSelectedOptionTex] = useState("Mrs. Nesbitt");
 
 const options = [
   {
@@ -38,16 +39,21 @@ const options = [
   {
     text: "Buzz Lightyear",
     subtext: "Flying Space Ranger Toy",
+    //disabled: true
   },
 ];
 
 return (
   <ButtonGroup
     options={options}
-    defaultValue={selectedOption}
-    onOptionSelect={setSelectedOption}
+    selectedOptionText={selectedOptionText}
+    onOptionSelect={setSelectedOptionText}
   />
 );
 ```
 
-![ButtonGroup With Subtexts](https://github.com/SecondCloset/mobile-components/blob/master/docs/images/ButtonGroup/button_group.png?raw=true)
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/ButtonGroup/button_group.png?raw=true" alt="BottomUpModal" width="200">
+
+<br/>
+
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/ButtonGroup/button_group_disabled.png?raw=true" alt="BottomUpModal" width="200">

@@ -6,6 +6,7 @@ import ButtonGroup from "./ButtonGroup";
 interface Option {
   text: string;
   subtext?: string;
+  disabled?: boolean;
 }
 
 interface ButtonGroupProps {
@@ -13,8 +14,19 @@ interface ButtonGroupProps {
 }
 
 const ButtonGroupShowcase: React.FC<ButtonGroupProps> = props => {
-  const [selectedOption, setSelectedOption] = useState<string>();
+  const [selectedOptionText, setSelectedOptionText] = useState("");
   const { options } = props;
+
+  const renderSelectedMessage = () => {
+    if (!selectedOptionText) return null;
+    return (
+      <Text>
+        {selectedOptionText === "Mrs. Nesbitt"
+          ? "Great answer!"
+          : "I guess he's pretty cool.."}
+      </Text>
+    );
+  };
 
   return (
     <View
@@ -35,18 +47,12 @@ const ButtonGroupShowcase: React.FC<ButtonGroupProps> = props => {
       >
         <ButtonGroup
           options={options}
-          defaultValue={selectedOption}
-          onOptionSelect={setSelectedOption}
+          selectedOptionText={selectedOptionText}
+          onOptionSelect={setSelectedOptionText}
         />
       </View>
 
-      {selectedOption && (
-        <Text>
-          {selectedOption === "Mrs. Nesbitt"
-            ? "Great answer!"
-            : "I guess he's pretty cool.."}
-        </Text>
-      )}
+      {renderSelectedMessage()}
     </View>
   );
 };
@@ -59,6 +65,7 @@ const options1 = [
   {
     text: "Buzz Lightyear",
     subtext: "Flying Space Ranger Toy",
+    disabled: true,
   },
 ];
 
@@ -70,6 +77,7 @@ const options2 = [
   {
     text: "Buzz Lightyear",
     subtext: "Flying Space Ranger Toy",
+    disabled: true,
   },
   {
     text: "Sheriff Woody",
