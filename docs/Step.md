@@ -1,6 +1,6 @@
 # Step
 
-A standard card component.
+#### Step Props
 
 | prop     | isRequired? | dataType        |
 | -------- | ----------- | --------------- |

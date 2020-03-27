@@ -19,6 +19,7 @@ npm install @secondcloset/mobile-components
 - [Drawer](https://github.com/SecondCloset/mobile-components/blob/master/docs/Drawer.md)
 - [DropdownSelect](https://github.com/SecondCloset/mobile-components/blob/master/docs/DropdownSelect.md)
 - [PhotoSelectModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/PhotoSelectModal.md)
+- [ScannerModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/ScannerModal.md)
 - [SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/SearchInputBar.md)
 - [Step](https://github.com/SecondCloset/mobile-components/blob/master/docs/Step.md)
 
