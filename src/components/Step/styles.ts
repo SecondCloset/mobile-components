@@ -9,10 +9,15 @@ export const TitleContainer = styled.View`
   margin-bottom: 10px;
 `;
 
-export const TitleText = styled.Text`
+interface TitleTextProps {
+  completed?: boolean;
+}
+
+export const TitleText = styled.Text<TitleTextProps>`
   font-size: 13px;
   margin-left: 5px;
   flex: 0.9;
+  color: ${props => (props.completed ? COLORS.GREY : COLORS.CHARCOAL)};
 `;
 
 export const ImageWrap = styled.View`
