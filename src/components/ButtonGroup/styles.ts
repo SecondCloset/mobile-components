@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 
 export const Container = styled.View`
   border-radius: 5px;
@@ -15,8 +15,8 @@ interface ButtonProps {
 }
 
 const getBackgroundColor = (selected: boolean, disabled: boolean): string => {
-  if (disabled) return colors.GREY_LIGHT;
-  return selected ? colors.BLUE : colors.WHITE;
+  if (disabled) return COLORS.GREY_LIGHT;
+  return selected ? COLORS.BLUE : COLORS.WHITE;
 };
 
 export const Button = styled.TouchableOpacity<ButtonProps>`
@@ -26,7 +26,7 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
   align-items: center;
   padding: 5px;
   border-width: 1px;
-  border-color: ${props => (props.disabled ? colors.GREY : colors.BLUE)};
+  border-color: ${props => (props.disabled ? COLORS.GREY : COLORS.BLUE)};
   border-right-width: ${props =>
     props.isFirst && !props.isTwoButtons ? "0px" : "1px"};
   border-left-width: ${props => (props.isLast ? "0px" : "1px")};
@@ -37,8 +37,8 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
 `;
 
 const getTextColor = (selected: boolean, disabled: boolean): string => {
-  if (disabled) return colors.GREY;
-  return selected ? colors.WHITE : colors.BLUE;
+  if (disabled) return COLORS.GREY;
+  return selected ? COLORS.WHITE : COLORS.BLUE;
 };
 
 interface ButtonTextProps {

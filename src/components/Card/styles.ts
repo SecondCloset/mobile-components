@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 import { CardProps } from "./Card";
 
 interface ContainerProps {
@@ -8,8 +8,8 @@ interface ContainerProps {
 
 export const Container = styled.View<ContainerProps>`
   width: 100%;
-  background-color: ${colors.WHITE};
-  border-color: ${colors.GREY_MID};
+  background-color: ${COLORS.WHITE};
+  border-color: ${COLORS.GREY_MID};
   border-radius: 8px;
   border-width: ${props => (props.withBorder ? 1 : 0)}px;
   elevation: 5;
@@ -17,7 +17,7 @@ export const Container = styled.View<ContainerProps>`
 `;
 
 export const BoxShadowContainer = styled.View`
-  box-shadow: 0px 2px 3.84px ${colors.GREY};
+  box-shadow: 0px 2px 3.84px ${COLORS.GREY};
   shadow-opacity: 0.25;
   width: 100%;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 // Constants
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 
 // Helpers
 import { sample } from "lodash";
@@ -45,7 +45,7 @@ interface InitialsProps {
 }
 
 export const Initials = styled.Text<InitialsProps>`
-  color: ${colors.WHITE};
+  color: ${COLORS.WHITE};
   font-size: ${props => props.fontSize || 16}px;
   font-weight: 700;
 `;

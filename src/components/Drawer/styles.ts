@@ -1,12 +1,12 @@
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 
 export const DrawerContainer = styled.View`
   z-index: 5000;
   position: absolute;
-  background: ${colors.TRANSPARENT_GREY};
+  background: ${COLORS.TRANSPARENT_GREY};
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -63,5 +63,5 @@ interface ClosetAreaProps {
 export const ClosetArea = styled.TouchableOpacity<ClosetAreaProps>`
   flex: 1;
   width: ${props => props.width}px;
-  background: ${colors.TRANSPARENT};
+  background: ${COLORS.TRANSPARENT};
 `;

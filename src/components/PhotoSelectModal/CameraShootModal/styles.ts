@@ -1,10 +1,10 @@
 import styled from "styled-components/native";
 import { getStatusBarHeight } from "react-native-status-bar-height";
-import colors from "../../../styles/colors";
+import COLORS from "../../../styles/colors";
 
 export const Container = styled.View`
   width: 100%;
-  background: ${colors.TRANSPARENT};
+  background: ${COLORS.TRANSPARENT};
   flex: 1;
   padding: ${getStatusBarHeight()}px 20px 0px;
   align-items: center;
@@ -25,7 +25,7 @@ export const ErrorMessageWrap = styled.View`
 `;
 
 export const ErrorMessageText = styled.Text`
-  color: ${colors.GREY};
+  color: ${COLORS.GREY};
 `;
 
 export const Footer = styled.View`
@@ -40,7 +40,7 @@ export const SnapButtonWrap = styled.TouchableOpacity`
   width: 80px;
   height: 80px;
   border-radius: 100px;
-  background: ${colors.WHITE};
+  background: ${COLORS.WHITE};
   justify-content: center;
   align-items: center;
 `;
@@ -49,6 +49,6 @@ export const SnapButtonInnerWrap = styled.View`
   width: 90%;
   height: 90%;
   border-radius: 100px;
-  background: ${colors.WHITE};
+  background: ${COLORS.WHITE};
   border: 3px solid black;
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonText } from "./styles";
 import { AntDesign } from "@expo/vector-icons";
-import colors from "../../../styles/colors";
+import COLORS from "../../../styles/colors";
 import { DropdownSelectProps } from "../DropdownSelect";
 
 export interface DropdownButtonProps {
@@ -19,7 +19,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = props => {
       <ButtonText fontSize={fontSize} isCharcoal={isCharcoal}>
         {buttonText || placeholder}
       </ButtonText>
-      <AntDesign name="down" size={15} color={colors.BLUE} />
+      <AntDesign name="down" size={15} color={COLORS.BLUE} />
     </Button>
   );
 };
