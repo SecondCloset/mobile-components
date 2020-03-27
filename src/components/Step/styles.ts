@@ -20,13 +20,6 @@ export const ImageWrap = styled.View`
   align-items: center;
 `;
 
-export const Image = styled.Image`
-  margin-top: -5px;
-  width: 20px;
-  height: 20px;
-  margin-left: -2px;
-`;
-
 export const ContentWrap = styled.View`
   flex-direction: row;
 `;

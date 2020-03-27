@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 //components
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 import COLORS from "../../styles/colors";
 
 //styles
@@ -10,15 +10,11 @@ import {
   TitleContainer,
   TitleText,
   ImageWrap,
-  Image,
   ContentWrap,
   DotsWrap,
   Dot,
   ChildrenWrap,
 } from "./styles";
-
-//asset
-const arrow = require("./images/arrow.png");
 
 interface StepProps {
   title: string;
@@ -32,7 +28,7 @@ const Step: React.FC<StepProps> = props => {
     if (props.isLast) {
       return (
         <ImageWrap>
-          <Image source={arrow} />
+          <AntDesign name="caretdown" color={COLORS.BLUE} size={20} />
         </ImageWrap>
       );
     } else
