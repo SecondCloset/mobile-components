@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-//asset
-import arrow from "./images/arrow.png";
-
 //components
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import COLORS from "../../styles/colors";
@@ -19,6 +16,9 @@ import {
   Dot,
   ChildrenWrap,
 } from "./styles";
+
+//asset
+const arrow = require("./images/arrow.png");
 
 interface StepProps {
   title: string;
