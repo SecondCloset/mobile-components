@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 import BottomUpMenu from "../BottomUpMenu";
 import CameraShootModal from "./CameraShootModal";
 import ImagePickerModal from "./ImagePickerModal";
@@ -18,12 +18,12 @@ const PhotoSelectModal: React.FC<PhotoSelectModalProps> = props => {
     {
       label: "Take Photo",
       onPress: () => setCameraShootModalVisible(true),
-      textColor: colors.BLUE,
+      textColor: COLORS.BLUE,
     },
     {
       label: "Choose From Gallery",
       onPress: () => setImagePickerVisible(true),
-      textColor: colors.BLUE,
+      textColor: COLORS.BLUE,
     },
   ];
 

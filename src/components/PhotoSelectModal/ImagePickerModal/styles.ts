@@ -1,12 +1,12 @@
 import styled from "styled-components/native";
-import colors from "../../../styles/colors";
+import COLORS from "../../../styles/colors";
 
 export const Container = styled.View`
   width: 100%;
   flex: 1;
   justify-content: center;
   align-items: center;
-  background: ${colors.TRANSPARENT_GREY};
+  background: ${COLORS.TRANSPARENT_GREY};
   z-index: 100;
 `;
 

@@ -1,8 +1,6 @@
 <h1 align=center>Second Closet's React Native Component Library</h1>
 <p align=center>A World Class Component Library </p>
 
-[License](https://img.shields.io/badge/license-MIT-green)
-
 ## 📦 Install
 
 ```bash
@@ -22,6 +20,7 @@ npm install @secondcloset/mobile-components
 - [DropdownSelect](https://github.com/SecondCloset/mobile-components/blob/master/docs/DropdownSelect.md)
 - [PhotoSelectModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/PhotoSelectModal.md)
 - [SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/SearchInputBar.md)
+- [Step](https://github.com/SecondCloset/mobile-components/blob/master/docs/Step.md)
 
 ```jsx
 import { Button } from "@secondcloset/mobile-components";

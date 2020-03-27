@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import colors from "../../../styles/colors";
+import COLORS from "../../../styles/colors";
 
 const ButtonContainer = styled.TouchableOpacity`
-  background-color: ${colors.WHITE};
+  background-color: ${COLORS.WHITE};
   border-radius: 10px;
   margin-top: 20px;
   padding: 20px 0;
@@ -11,7 +11,7 @@ const ButtonContainer = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: ${colors.CHARCOAL};
+  color: ${COLORS.CHARCOAL};
 `;
 
 const List = styled.View`
@@ -25,7 +25,7 @@ interface ListItemProps {
 
 const ListItem = styled.TouchableOpacity<ListItemProps>`
   border-bottom-width: ${props => (props.isLast ? "0px" : "1px")};
-  border-color: ${colors.GREY_LIGHT};
+  border-color: ${COLORS.GREY_LIGHT};
   width: 100%;
   padding: 20px 0;
   flex-direction: row;
@@ -38,7 +38,7 @@ interface ListItemTextProps {
 }
 
 const ListItemText = styled.Text<ListItemTextProps>`
-  color: ${props => props.color || colors.CHARCOAL};
+  color: ${props => props.color || COLORS.CHARCOAL};
 `;
 
 export { ButtonContainer, ButtonText, List, ListItem, ListItemText };

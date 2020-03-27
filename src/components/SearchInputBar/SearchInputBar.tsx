@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ActivityIndicator } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 import {
   Container,
   InputBar,
@@ -107,7 +107,7 @@ const SearchInputBar: React.FC<SearchInputBarProps> = props => {
     const loadingCircle = (
       <SearchResultRow key="loading" activeOpacity={1}>
         <Loader>
-          <ActivityIndicator size={"small"} color={colors.GREY} />
+          <ActivityIndicator size={"small"} color={COLORS.GREY} />
         </Loader>
       </SearchResultRow>
     );

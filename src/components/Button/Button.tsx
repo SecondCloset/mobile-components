@@ -1,7 +1,7 @@
 import React from "react";
 import { ActivityIndicator } from "react-native";
 import { Container, ButtonText, ButtonLoader } from "./styles";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 
 export interface ButtonProps {
   disabled?: boolean;
@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = props => {
   if (loading)
     return (
       <ButtonLoader>
-        <ActivityIndicator size={"small"} color={colors.GREY} />
+        <ActivityIndicator size={"small"} color={COLORS.GREY} />
       </ButtonLoader>
     );
 

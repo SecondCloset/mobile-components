@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 import { ButtonProps } from "./Button";
 
 const DEFAULT_COLOR = "blue";
@@ -10,8 +10,8 @@ const DEFAULT_WIDTH = "100%";
 //helpers
 const getColorHexCodeFromString = (color: string = DEFAULT_COLOR): string => {
   const c = color.toUpperCase();
-  if (c === "YELLOWLIGHT") return colors.YELLOW_LIGHT;
-  return colors[c] || color;
+  if (c === "YELLOWLIGHT") return COLORS.YELLOW_LIGHT;
+  return COLORS[c] || color;
 };
 
 const getBackgroundColor = (
@@ -19,7 +19,7 @@ const getBackgroundColor = (
   type: string = DEFAULT_TYPE
 ): string => {
   if (type === "primary") return getColorHexCodeFromString(color);
-  else return colors.TRANSPARENT;
+  else return COLORS.TRANSPARENT;
 };
 
 const getBorderColor = (
@@ -28,7 +28,7 @@ const getBorderColor = (
 ): string => {
   if (type === "outline") return getColorHexCodeFromString(color);
   else if (type === "primary") return getBackgroundColor(color, type);
-  else return colors.TRANSPARENT;
+  else return COLORS.TRANSPARENT;
 };
 
 const getTextColor = (
@@ -39,9 +39,9 @@ const getTextColor = (
     switch (color) {
       case "yellow":
       case "yellowLight":
-        return colors.CHARCOAL;
+        return COLORS.CHARCOAL;
       default:
-        return colors.WHITE;
+        return COLORS.WHITE;
     }
   } else return getColorHexCodeFromString(color);
 };
@@ -65,12 +65,12 @@ const Container = styled.TouchableOpacity<ContainerProps>`
   padding: 10px 20px;
   background-color: ${props =>
     props.disabled
-      ? colors.GREY_LIGHT
+      ? COLORS.GREY_LIGHT
       : getBackgroundColor(props.color, props.type)};
   border-radius: ${props => (props.shape === "rounded" ? "30px" : "5px")};
   border-color: ${props =>
     props.disabled
-      ? colors.GREY_LIGHT
+      ? COLORS.GREY_LIGHT
       : getBorderColor(props.color, props.type)};
   border-width: 1px;
   display: flex;
@@ -89,7 +89,7 @@ interface ButtonTextProps {
 
 const ButtonText = styled.Text<ButtonTextProps>`
   color: ${props =>
-    props.disabled ? colors.GREY_MID : getTextColor(props.color, props.type)};
+    props.disabled ? COLORS.GREY_MID : getTextColor(props.color, props.type)};
   font-size: ${props => props.fontSize || DEFAULT_FONT_SIZE}px;
 `;
 

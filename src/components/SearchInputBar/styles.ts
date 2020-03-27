@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import colors from "../../styles/colors";
+import COLORS from "../../styles/colors";
 
 interface ContainerProps {
   listVisible?: boolean;
@@ -11,7 +11,7 @@ export const Container = styled.View<ContainerProps>`
   width: 100%;
   border-width: 1px;
   border-radius: 5px;
-  border-color: ${colors.GREY_LIGHT};
+  border-color: ${COLORS.GREY_LIGHT};
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
@@ -29,7 +29,7 @@ interface InputBarProps {
 export const InputBar = styled.TouchableOpacity<InputBarProps>`
   flex-direction: row;
   padding: 5px 0;
-  border-bottom-color: ${colors.GREY_MID};
+  border-bottom-color: ${COLORS.GREY_MID};
   border-bottom-width: ${props => (props.listVisible ? 1 : 0)}px;
   align-items: center;
 `;
@@ -52,7 +52,7 @@ interface HighlightedTextProps {
 
 export const HighlightedText = styled.Text<HighlightedTextProps>`
   font-weight: ${props => (props.isBlack ? "400" : "300")};
-  color: ${props => (props.isBlack ? colors.BLACK : colors.GREY)};
+  color: ${props => (props.isBlack ? COLORS.BLACK : COLORS.GREY)};
 `;
 
 interface ResultsContainerProps {
@@ -65,7 +65,7 @@ export const ResultsContainer = styled.ScrollView<ResultsContainerProps>`
   left: -1px;
   right: -1px;
   padding: 0 15px;
-  border: 1px solid ${colors.GREY_LIGHT};
+  border: 1px solid ${COLORS.GREY_LIGHT};
   border-top-width: 0px;
   border-radius: 5px;
   border-top-left-radius: 0;
