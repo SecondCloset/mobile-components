@@ -2,11 +2,12 @@
 
 #### Step Props
 
-| prop     | isRequired? | dataType        |
-| -------- | ----------- | --------------- |
-| title    | yes         | string          |
-| isLast   | no          | boolean         |
-| children | yes         | React.ReactNode |
+| prop      | isRequired? | dataType        |
+| --------- | ----------- | --------------- |
+| title     | yes         | string          |
+| children  | yes         | React.ReactNode |
+| isLast    | no          | boolean         |
+| completed | no          | boolean         |
 
 <br/>
 <br/>
@@ -24,7 +25,7 @@ import { Text } from "react-native";
     padding: 20,
   }}
 >
-  <Step title="Step One">
+  <Step title="Step One" completed>
     <Text>This is step 1</Text>
   </Step>
   <Step title="Step Two">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 //components
+import GreenCheckMark from "./GreenCheckMark";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 import COLORS from "../../styles/colors";
 
@@ -20,11 +21,18 @@ interface StepProps {
   title: string;
   isLast?: boolean;
   children: React.ReactElement | React.ReactElement[];
+  completed?: boolean;
 }
 
 const Step: React.FC<StepProps> = props => {
   const [numOfDots, setNumOfDots] = useState(0);
   const renderIcon = () => {
+    if (props.completed)
+      return (
+        <ImageWrap>
+          <GreenCheckMark isGreenBackground size="small" />
+        </ImageWrap>
+      );
     if (props.isLast) {
       return (
         <ImageWrap>
@@ -62,7 +70,7 @@ const Step: React.FC<StepProps> = props => {
     <Container>
       <TitleContainer>
         {renderIcon()}
-        <TitleText>{props.title || ""}</TitleText>
+        <TitleText completed={props.completed}>{props.title || ""}</TitleText>
       </TitleContainer>
       <ContentWrap>
         {renderDots()}

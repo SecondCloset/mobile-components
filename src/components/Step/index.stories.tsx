@@ -12,7 +12,7 @@ const StepShowcase = props => {
         padding: 20,
       }}
     >
-      <Step title="Step One">
+      <Step title="Step One" completed>
         <Text>This is step 1</Text>
       </Step>
       <Step title="Step Two">
