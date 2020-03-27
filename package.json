@@ -19,6 +19,7 @@
   "author": "Anthony Langford <anthony.langford@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "expo-barcode-scanner": "^8.1.0",
     "expo-camera": "^8.0.0",
     "expo-image-manipulator": "^8.0.0",
     "expo-image-picker": "^8.0.2",
