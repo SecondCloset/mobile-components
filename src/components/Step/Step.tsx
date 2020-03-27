@@ -20,7 +20,7 @@ import {
 interface StepProps {
   title: string;
   isLast?: boolean;
-  children: React.ReactElement | React.ReactElement[];
+  children?: React.ReactElement | React.ReactElement[];
   completed?: boolean;
 }
 
@@ -52,6 +52,7 @@ const Step: React.FC<StepProps> = props => {
   };
 
   const renderDots = () => {
+    if (!props.children) return <DotsWrap />;
     const dots: React.ReactElement[] = [];
     for (let i = 0; i < numOfDots; i++) {
       dots.push(<Dot key={i} transparent={props.isLast} />);
@@ -74,7 +75,9 @@ const Step: React.FC<StepProps> = props => {
       </TitleContainer>
       <ContentWrap>
         {renderDots()}
-        <ChildrenWrap onLayout={onLayout}>{props.children}</ChildrenWrap>
+        {props.children && (
+          <ChildrenWrap onLayout={onLayout}>{props.children}</ChildrenWrap>
+        )}
       </ContentWrap>
     </Container>
   );

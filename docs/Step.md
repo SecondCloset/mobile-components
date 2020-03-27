@@ -5,7 +5,7 @@
 | prop      | isRequired? | dataType        |
 | --------- | ----------- | --------------- |
 | title     | yes         | string          |
-| children  | yes         | React.ReactNode |
+| children  | no          | React.ReactNode |
 | isLast    | no          | boolean         |
 | completed | no          | boolean         |
 
