@@ -14,7 +14,6 @@ function loadStories() {
 	require('../src/components/Drawer/index.stories');
 	require('../src/components/DropdownSelect/index.stories');
 	require('../src/components/PhotoSelectModal/index.stories');
-	require('../src/components/ScannerModal/index.stories');
 	require('../src/components/SearchInputBar/index.stories');
 	require('../src/components/Step/index.stories');
 }
@@ -30,7 +29,6 @@ const stories = [
 	'../src/components/Drawer/index.stories',
 	'../src/components/DropdownSelect/index.stories',
 	'../src/components/PhotoSelectModal/index.stories',
-	'../src/components/ScannerModal/index.stories',
 	'../src/components/SearchInputBar/index.stories',
 	'../src/components/Step/index.stories'
 ];
