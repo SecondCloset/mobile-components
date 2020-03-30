@@ -8,6 +8,5 @@ export { default as Collapse } from "./Collapse";
 export { default as Drawer } from "./Drawer";
 export { default as DropdownSelect } from "./DropdownSelect";
 export { default as PhotoSelectModal } from "./PhotoSelectModal";
-export { default as ScannerModal } from "./ScannerModal";
 export { default as SearchInputBar } from "./SearchInputBar";
 export { default as Step } from "./Step";
