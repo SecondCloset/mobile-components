@@ -64,7 +64,9 @@ storiesOf("Button", module)
     <Button
       loading
       text="BUTTON"
-      shape="rounded"
+      color="green"
+      width="60%"
+      type="outline"
       onPress={action("clicked-text")}
     />
   ))

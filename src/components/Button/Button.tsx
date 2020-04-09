@@ -15,35 +15,28 @@ export interface ButtonProps {
   onPress: () => void;
 }
 
-const Button: React.FC<ButtonProps> = props => {
-  const {
-    disabled,
-    text,
-    type,
-    loading,
-    color,
-    shape,
-    onPress,
-    fontSize,
-    width,
-  } = props;
-
-  if (loading)
-    return (
-      <ButtonLoader>
-        <ActivityIndicator size={"small"} color={COLORS.GREY} />
-      </ButtonLoader>
-    );
-
-  return (
-    <Container
-      disabled={disabled}
-      color={color}
-      type={type}
-      shape={shape}
-      onPress={onPress}
-      width={width}
-    >
+const Button: React.FC<ButtonProps> = ({
+  disabled,
+  text,
+  type,
+  loading,
+  color,
+  shape,
+  onPress,
+  fontSize,
+  width,
+}) => (
+  <Container
+    disabled={disabled || loading}
+    color={color}
+    type={type}
+    shape={shape}
+    onPress={onPress}
+    width={width}
+  >
+    {loading ? (
+      <ActivityIndicator size={"small"} color={COLORS.GREY} />
+    ) : (
       <ButtonText
         disabled={disabled}
         color={color}
@@ -52,8 +45,8 @@ const Button: React.FC<ButtonProps> = props => {
       >
         {text}
       </ButtonText>
-    </Container>
-  );
-};
+    )}
+  </Container>
+);
 
 export default Button;
