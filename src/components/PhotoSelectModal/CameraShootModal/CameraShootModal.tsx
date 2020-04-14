@@ -21,6 +21,10 @@ interface CameraShootModalProps {
   onSnap: (photo: string) => any;
 }
 
+interface Subscriptions {
+  remove: () => void;
+}
+
 //helpers
 const orientationCalculation = deviceMotion => {
   // ref: https://github.com/expo/expo/issues/2430
@@ -54,9 +58,9 @@ const orientationCalculation = deviceMotion => {
 };
 
 const CameraShootModal: React.FC<CameraShootModalProps> = props => {
-  const [hasPermission, setHasPermission] = useState();
+  const [hasPermission, setHasPermission] = useState(false);
   const [deviceOrientation, setDeviceOrientation] = useState(0);
-  const [listener, setListener] = useState();
+  const [listener, setListener] = useState<Subscriptions>();
   const camera = useRef<Camera>(null);
 
   const onMotionChange = motion => {
