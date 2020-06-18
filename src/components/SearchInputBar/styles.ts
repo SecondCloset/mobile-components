@@ -12,12 +12,10 @@ export const Container = styled.View<ContainerProps>`
   border-width: 1px;
   border-radius: 5px;
   border-color: ${COLORS.GREY_LIGHT};
-  align-items: center;
   justify-content: center;
-  padding: 10px 15px;
-  border-bottom-width: ${props => (props.listVisible ? 0 : 1)}px;
-  border-bottom-left-radius: ${props => (props.listVisible ? 0 : 5)}px;
-  border-bottom-right-radius: ${props => (props.listVisible ? 0 : 5)}px;
+  padding: 10px 15px ${props => (props.listVisible ? "2px" : "")};
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   z-index: 5000;
   background: ${props => props.backgroundColor || "white"};
 `;
@@ -60,16 +58,7 @@ interface ResultsContainerProps {
 }
 
 export const ResultsContainer = styled.ScrollView<ResultsContainerProps>`
-  position: absolute;
-  top: 50px;
-  left: -1px;
-  right: -1px;
-  padding: 0 15px;
-  border: 1px solid ${COLORS.GREY_LIGHT};
-  border-top-width: 0px;
-  border-radius: 5px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  padding: 5px 0 0;
   background: ${props => props.backgroundColor || "white"};
   max-height: 165px;
 `;
