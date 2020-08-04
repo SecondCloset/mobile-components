@@ -20,7 +20,7 @@ interface DrawerProps {
   backgroundColor?: string;
 }
 
-const Drawer: React.FC<DrawerProps> = props => {
+const Drawer: React.FC<DrawerProps> = (props) => {
   const windowWidth = Dimensions.get("window").width;
   const width = props.width || windowWidth;
   let drawerWidth = windowWidth;
@@ -38,6 +38,7 @@ const Drawer: React.FC<DrawerProps> = props => {
     Animated.timing(animatedModalWidth, {
       toValue: drawerWidth,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
 
@@ -45,6 +46,7 @@ const Drawer: React.FC<DrawerProps> = props => {
     Animated.timing(animatedModalWidth, {
       toValue: 0,
       duration: 200,
+      useNativeDriver: false,
     }).start(props.onHide);
   };
 

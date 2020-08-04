@@ -9,7 +9,7 @@ interface CollapseProps {
   defaultOpen?: boolean;
 }
 
-const Collapse: React.FC<CollapseProps> = props => {
+const Collapse: React.FC<CollapseProps> = (props) => {
   const [maxHeight, setMaxHeight] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
@@ -19,6 +19,7 @@ const Collapse: React.FC<CollapseProps> = props => {
     Animated.timing(animatedHeight, {
       toValue: maxHeight,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
 
@@ -26,6 +27,7 @@ const Collapse: React.FC<CollapseProps> = props => {
     Animated.timing(animatedHeight, {
       toValue: 0,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
 
@@ -35,7 +37,7 @@ const Collapse: React.FC<CollapseProps> = props => {
     else close();
   }, [isOpen]);
 
-  const onLayout = event => {
+  const onLayout = (event) => {
     const height = event?.nativeEvent?.layout?.height;
     if (height > maxHeight) {
       setMaxHeight(height);

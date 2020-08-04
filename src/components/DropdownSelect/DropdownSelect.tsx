@@ -19,7 +19,7 @@ export interface DropdownSelectProps {
   fontSize?: number;
 }
 
-const DropdownSelect: React.FC<DropdownSelectProps> = props => {
+const DropdownSelect: React.FC<DropdownSelectProps> = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [animatedMaxHeight] = useState(new Animated.Value(0));
   const optionHeight = 100;
@@ -29,6 +29,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = props => {
     Animated.timing(animatedMaxHeight, {
       toValue: maxHeight,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
 
@@ -36,6 +37,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = props => {
     Animated.timing(animatedMaxHeight, {
       toValue: 0,
       duration: 100,
+      useNativeDriver: false,
     }).start();
   };
 
@@ -46,12 +48,12 @@ const DropdownSelect: React.FC<DropdownSelectProps> = props => {
 
   const renderDropdownButton = (): React.ReactElement => {
     const { placeholder, selectedKey, options, fontSize } = props;
-    const selectedName = options.find(opt => opt.key === selectedKey)?.name;
+    const selectedName = options.find((opt) => opt.key === selectedKey)?.name;
     return (
       <DropdownButton
         placeholder={placeholder}
         buttonText={selectedName}
-        onPress={() => setExpanded(e => !e)}
+        onPress={() => setExpanded((e) => !e)}
         fontSize={fontSize}
       />
     );

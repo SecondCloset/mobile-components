@@ -37,4 +37,4 @@ import { Text } from "react-native";
 </View>;
 ```
 
-<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Step/step.png?raw=true" alt="Menu" width="200">
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Step/step.png?raw=true" alt="Step" width="200">
