@@ -12,7 +12,7 @@ interface BottomUpModalProps {
   onHide: () => void;
 }
 
-const BottomUpModal: React.FC<BottomUpModalProps> = props => {
+const BottomUpModal: React.FC<BottomUpModalProps> = (props) => {
   const windowHeight = Dimensions.get("window").height;
   const [animatedModalHeight] = useState(new Animated.Value(0));
 
@@ -22,6 +22,7 @@ const BottomUpModal: React.FC<BottomUpModalProps> = props => {
       Animated.timing(animatedModalHeight, {
         toValue: windowHeight,
         duration: 400,
+        useNativeDriver: false,
       }),
     ]).start();
   };
@@ -30,6 +31,7 @@ const BottomUpModal: React.FC<BottomUpModalProps> = props => {
     Animated.timing(animatedModalHeight, {
       toValue: 0,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
 

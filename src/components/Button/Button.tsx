@@ -1,6 +1,6 @@
 import React from "react";
 import { ActivityIndicator } from "react-native";
-import { Container, ButtonText, ButtonLoader } from "./styles";
+import { Container, ButtonText } from "./styles";
 import COLORS from "../../styles/colors";
 
 export interface ButtonProps {
