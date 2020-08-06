@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect, useState, Component } from "react";
+import React, { FC, useRef, useEffect, useState } from "react";
 import { Animated, PanResponder, Image, View } from "react-native";
 import {
   styles,
@@ -7,7 +7,7 @@ import {
   SwipeIcon,
   DefaultSwipeIcon,
 } from "./styles";
-import colors from "styles/colors";
+import colors from "../../../styles/colors";
 
 interface Props {
   wrapperWidth: number;

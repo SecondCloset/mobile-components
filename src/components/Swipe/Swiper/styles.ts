@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
-import colors from "styles/colors";
+import colors from "../../../styles/colors";
 
 export const borderWidth = 3;
 export const margin = 1;
