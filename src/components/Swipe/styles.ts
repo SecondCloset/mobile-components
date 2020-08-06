@@ -8,15 +8,14 @@ interface SwipeWrapperProps {
 }
 
 export const SwipeWrapper = styled.View<SwipeWrapperProps>`
-  border-radius: 50px;
-  border-width: 1px;
   justify-content: center;
-  margin: 5px;
+  border-radius: 4px;
+  border-width: 1px;
   width: ${(props) => (props.totalWidth ? `${props.totalWidth}px` : "auto")};
   background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : colors.WHITE};
   border-color: ${(props) =>
-    props.borderColor ? props.borderColor : colors.GREY_LIGHT};
+    props.borderColor ? props.borderColor : colors.GREEN};
 `;
 
 interface TitleProps {
