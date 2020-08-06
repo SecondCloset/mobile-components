@@ -37,5 +37,6 @@ storiesOf("Swipe", module)
       }
       swipeIconBorderColor={colors.TRANSPARENT}
       swipeIconBackgroundColor={colors.WHITE}
+      shouldResetAfterSuccess={false}
     />
   ));

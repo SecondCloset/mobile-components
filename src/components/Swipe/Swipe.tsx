@@ -1,7 +1,7 @@
-import React, { FC, useState, Component } from "react";
+import React, { FC, useState } from "react";
 import { SwipeWrapper, Title } from "./styles";
 import Swiper from "./Swiper";
-import colors from "styles/colors";
+import colors from "../../styles/colors";
 
 interface Props {
   backgroundColor?: string;
