@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react-native";
 import CenterView from "../CenterView";
 import Swipe from "./Swipe";
-import { Alert } from "react-native";
+import { Alert, ScrollView } from "react-native";
 import colors from "../../styles/colors";
 import { Entypo } from "@expo/vector-icons";
 
@@ -39,4 +39,20 @@ storiesOf("Swipe", module)
       swipeIconBackgroundColor={colors.WHITE}
       shouldResetAfterSuccess={false}
     />
+  ))
+  .add("Inside ScrollView", () => (
+    <ScrollView>
+      <Swipe
+        width={180}
+        title="Confirm Pickup"
+        titleColor={colors.GREEN}
+        fontSize={14}
+        swipeIconComponent={
+          <Entypo name="arrow-long-right" size={14} color={colors.GREEN} />
+        }
+        swipeIconBorderColor={colors.TRANSPARENT}
+        swipeIconBackgroundColor={colors.WHITE}
+        shouldResetAfterSuccess={false}
+      />
+    </ScrollView>
   ));

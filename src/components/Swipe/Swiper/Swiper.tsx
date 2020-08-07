@@ -110,6 +110,7 @@ const Swiper: FC<Props> = ({
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
       onShouldBlockNativeResponder: () => true,
+      onPanResponderTerminationRequest: () => false,
       onPanResponderStart,
       onPanResponderMove,
       onPanResponderRelease,
