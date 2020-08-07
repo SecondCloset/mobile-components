@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
 import CenterView from "../CenterView";
 import Swipe from "./Swipe";
-import { Alert, ScrollView } from "react-native";
+import { Alert, ScrollView, Button } from "react-native";
 import colors from "../../styles/colors";
 import { Entypo } from "@expo/vector-icons";
+
+const DisabledSwipe = () => {
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  return (
+    <ScrollView>
+      <Button
+        title={isDisabled ? "Enable" : "Disable"}
+        onPress={() => setIsDisabled(!isDisabled)}
+      />
+      <Swipe
+        disabled={isDisabled}
+        width={180}
+        title="Confirm Pickup"
+        titleColor={colors.GREEN}
+        fontSize={14}
+        swipeIconComponent={
+          <Entypo
+            name="arrow-long-right"
+            size={14}
+            color={isDisabled ? colors.GREY_MID : colors.GREEN}
+          />
+        }
+        swipeIconBorderColor={colors.TRANSPARENT}
+        swipeIconBackgroundColor={colors.WHITE}
+      />
+    </ScrollView>
+  );
+};
 
 storiesOf("Swipe", module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
@@ -56,19 +85,4 @@ storiesOf("Swipe", module)
       />
     </ScrollView>
   ))
-  .add("Disabled", () => (
-    <ScrollView>
-      <Swipe
-        width={180}
-        title="Confirm Pickup"
-        titleColor={colors.GREEN}
-        fontSize={14}
-        swipeIconComponent={
-          <Entypo name="arrow-long-right" size={14} color={colors.GREY_MID} />
-        }
-        swipeIconBorderColor={colors.TRANSPARENT}
-        swipeIconBackgroundColor={colors.WHITE}
-        disabled
-      />
-    </ScrollView>
-  ));
+  .add("Disabled", () => <DisabledSwipe />);

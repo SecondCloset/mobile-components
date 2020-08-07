@@ -21,7 +21,6 @@ interface Props {
   resetAfterSuccessAnimDelay?: number;
   swipeIconStyles?: Object;
   iconSize: number;
-  disabledSwipeIconBackgroundColor?: string;
   swipeIconBackgroundColor?: string;
   disabledSwipeIconBorderColor?: string;
   swipeIconBorderColor?: string;
@@ -43,7 +42,6 @@ const Swiper: FC<Props> = ({
   shouldResetAfterSuccess,
   swipeIconStyles = {},
   iconSize,
-  disabledSwipeIconBackgroundColor,
   swipeIconBackgroundColor,
   disabledSwipeIconBorderColor,
   swipeIconBorderColor,
@@ -196,7 +194,10 @@ const Swiper: FC<Props> = ({
   };
 
   return (
-    <Animated.View style={[swiperStyles]} {...panResponder.panHandlers}>
+    <Animated.View
+      style={[swiperStyles]}
+      {...(disabled ? null : panResponder.panHandlers)}
+    >
       {renderSwipeIcon()}
     </Animated.View>
   );
