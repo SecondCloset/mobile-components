@@ -67,10 +67,13 @@ const Swipe: FC<Props> = ({
     <SwipeWrapper
       totalWidth={width}
       backgroundColor={backgroundColor}
-      borderColor={borderColor}
+      borderColor={disabled ? colors.GREY_MID : borderColor}
       onLayout={handleOnLayout}
     >
-      <Title color={titleColor} fontSize={fontSize}>
+      <Title
+        color={disabled ? colors.GREY_MID : titleColor}
+        fontSize={fontSize}
+      >
         {title}
       </Title>
       {wrapperWidth > 0 && (

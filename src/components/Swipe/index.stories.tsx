@@ -55,4 +55,20 @@ storiesOf("Swipe", module)
         shouldResetAfterSuccess={false}
       />
     </ScrollView>
+  ))
+  .add("Disabled", () => (
+    <ScrollView>
+      <Swipe
+        width={180}
+        title="Confirm Pickup"
+        titleColor={colors.GREEN}
+        fontSize={14}
+        swipeIconComponent={
+          <Entypo name="arrow-long-right" size={14} color={colors.GREY_MID} />
+        }
+        swipeIconBorderColor={colors.TRANSPARENT}
+        swipeIconBackgroundColor={colors.WHITE}
+        disabled
+      />
+    </ScrollView>
   ));

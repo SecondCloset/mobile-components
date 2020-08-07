@@ -47,9 +47,14 @@ export const SwipeIcon = styled.View<ViewProps>`
   overflow: hidden;
 `;
 
-export const DefaultSwipeIcon = styled.View`
+interface DefaultSwipeIconProps {
+  disabled?: boolean;
+}
+
+export const DefaultSwipeIcon = styled.View<DefaultSwipeIconProps>`
   width: 50px;
   height: 50px;
   border-radius: 3px;
-  background-color: ${colors.GREEN};
+  background-color: ${(props) =>
+    props.disabled ? colors.GREY_MID : colors.GREEN};
 `;

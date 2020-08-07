@@ -170,9 +170,7 @@ const Swiper: FC<Props> = ({
       <SwipeIcon
         height={iconSize}
         iconWidth={iconSize}
-        backgroundColor={
-          disabled ? disabledSwipeIconBackgroundColor : swipeIconBackgroundColor
-        }
+        backgroundColor={swipeIconBackgroundColor}
         borderColor={
           disabled ? disabledSwipeIconBorderColor : swipeIconBorderColor
         }
@@ -182,7 +180,9 @@ const Swiper: FC<Props> = ({
           <Image resizeMethod="resize" source={{ uri: swipeIconImageSource }} />
         )}
         {SwipeIconComponent && <View>{SwipeIconComponent}</View>}
-        {!SwipeIconComponent && !swipeIconImageSource && <DefaultSwipeIcon />}
+        {!SwipeIconComponent && !swipeIconImageSource && (
+          <DefaultSwipeIcon disabled={disabled} />
+        )}
       </SwipeIcon>
     );
   };
