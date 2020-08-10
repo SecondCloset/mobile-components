@@ -2,9 +2,8 @@ import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import colors from "../../../styles/colors";
 
-export const borderWidth = 3;
+export const borderWidth = 2;
 export const margin = 0;
-const maxContainerHeight = 50;
 
 export const styles = StyleSheet.create({
   container: {
@@ -35,7 +34,7 @@ interface ViewProps {
 export const SwipeIcon = styled.View<ViewProps>`
   align-items: center;
   justify-content: center;
-  margin: ${`${-borderWidth}px`} 0;
+  margin: ${`${-borderWidth}px`} 0 ${`${-borderWidth}px`} -2px;
   height: ${(props) => (props.height ? `${props.height}px` : "auto")};
   width: ${(props) => (props.iconWidth ? `${props.iconWidth}px` : "auto")};
   background-color: ${(props) =>

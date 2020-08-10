@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
 import CenterView from "../CenterView";
 import Swipe from "./Swipe";
-import { Alert, ScrollView, Button } from "react-native";
+import { Alert, ScrollView, Button, View } from "react-native";
 import colors from "../../styles/colors";
 import { Entypo } from "@expo/vector-icons";
 
@@ -37,8 +37,10 @@ const DisabledSwipe = () => {
 
 storiesOf("Swipe", module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add("Default with title and width 200px", () => (
-    <Swipe width={220} title="Confirm Pickup" />
+  .add("Default with title", () => (
+    <View style={{ width: 200 }}>
+      <Swipe title="Confirm Pickup" />
+    </View>
   ))
   .add("With onSwipeSuccess", () => (
     <Swipe

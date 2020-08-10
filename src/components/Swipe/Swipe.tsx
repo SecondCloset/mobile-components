@@ -29,7 +29,7 @@ interface Props {
   title?: string;
   titleColor?: string;
   fontSize?: number;
-  width: number;
+  width?: number | string;
 }
 
 const Swipe: FC<Props> = ({
@@ -54,7 +54,7 @@ const Swipe: FC<Props> = ({
   title,
   titleColor,
   fontSize = 20,
-  width,
+  width = "auto",
 }) => {
   const [wrapperWidth, setWrapperWidth] = useState(0);
 
@@ -65,7 +65,7 @@ const Swipe: FC<Props> = ({
 
   return (
     <SwipeWrapper
-      totalWidth={width}
+      totalWidth={width === 0 ? "auto" : width}
       backgroundColor={backgroundColor}
       borderColor={disabled ? colors.GREY_MID : borderColor}
       onLayout={handleOnLayout}
