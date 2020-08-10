@@ -17,7 +17,8 @@ const DisabledSwipe = () => {
       />
       <Swipe
         disabled={isDisabled}
-        width={180}
+        height={36}
+        width="180px"
         title="Confirm Pickup"
         titleColor={colors.GREEN}
         fontSize={14}
@@ -25,11 +26,13 @@ const DisabledSwipe = () => {
           <Entypo
             name="arrow-long-right"
             size={14}
-            color={isDisabled ? colors.GREY_MID : colors.GREEN}
+            color={isDisabled ? colors.GREY : colors.GREEN}
           />
         }
+        backgroundColor={colors.WHITE}
         swipeIconBorderColor={colors.TRANSPARENT}
         swipeIconBackgroundColor={colors.WHITE}
+        shouldResetAfterSuccess={false}
       />
     </ScrollView>
   );

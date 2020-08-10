@@ -178,9 +178,7 @@ const Swiper: FC<Props> = ({
           <Image resizeMethod="resize" source={{ uri: swipeIconImageSource }} />
         )}
         {SwipeIconComponent && <View>{SwipeIconComponent}</View>}
-        {!SwipeIconComponent && !swipeIconImageSource && (
-          <DefaultSwipeIcon disabled={disabled} />
-        )}
+        {!SwipeIconComponent && !swipeIconImageSource && <DefaultSwipeIcon />}
       </SwipeIcon>
     );
   };
