@@ -54,7 +54,7 @@ const Swipe: FC<Props> = ({
   title,
   titleColor,
   fontSize = 20,
-  width,
+  width = "auto",
 }) => {
   const [wrapperWidth, setWrapperWidth] = useState(0);
 
