@@ -4,21 +4,21 @@ https://github.com/UdaySravanK/RNSwipeButton#readme
 
 #### Swipe Props
 
-| prop                    | isRequired? | dataType    |
-| ----------------------- | ----------- | ----------- |
-| width                   | yes         | number      |
-| backgroundColor         | no          | string      |
-| title                   | no          | string      |
-| titleColor              | no          | string      |
-| fontSize                | no          | number      |
-| borderColor             | no          | string      |
-| disabled                | no          | boolean     |
-| enableRightToLeftSwipe  | no          | boolean     |
-| swipeSuccessThreshold   | no          | number      |
-| shouldResetAfterSuccess | no          | boolean     |
-| onSwipeStart            | no          | function    |
-| onSwipeSuccess          | no          | function    |
-| swipeIconComponent      | no          | JSX.Element |
+| prop                    | isRequired? | dataType       |
+| ----------------------- | ----------- | -------------- |
+| width                   | no          | number, string |
+| backgroundColor         | no          | string         |
+| title                   | no          | string         |
+| titleColor              | no          | string         |
+| fontSize                | no          | number         |
+| borderColor             | no          | string         |
+| disabled                | no          | boolean        |
+| enableRightToLeftSwipe  | no          | boolean        |
+| swipeSuccessThreshold   | no          | number         |
+| shouldResetAfterSuccess | no          | boolean        |
+| onSwipeStart            | no          | function       |
+| onSwipeSuccess          | no          | function       |
+| swipeIconComponent      | no          | JSX.Element    |
 
 <br/>
 <br/>
