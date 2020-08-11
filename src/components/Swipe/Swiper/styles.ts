@@ -54,6 +54,4 @@ export const DefaultSwipeIcon = styled.View<DefaultSwipeIconProps>`
   width: 50px;
   height: 50px;
   border-radius: 3px;
-  background-color: ${(props) =>
-    props.disabled ? colors.GREY_MID : colors.GREEN};
 `;

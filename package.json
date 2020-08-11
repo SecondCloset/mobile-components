@@ -1,6 +1,6 @@
 {
   "name": "@secondcloset/mobile-components",
-  "version": "1.12.6",
+  "version": "1.12.7",
   "description": "Second Closet React Native Component Library",
   "scripts": {
     "start": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && expo start",
@@ -12,6 +12,7 @@
     "prepare": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc",
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
