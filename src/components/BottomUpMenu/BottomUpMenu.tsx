@@ -7,6 +7,7 @@ export interface Option {
   label: string;
   onPress: () => void;
   textColor?: string;
+  disabled?: boolean;
 }
 
 interface BottomUpMenuProps {
@@ -58,7 +59,7 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = (props) => {
   };
 
   return (
-    <Modal visible={props.visible} transparent={true} animationType="fade">
+    <Modal visible={props.visible} transparent animationType="fade">
       <Backdrop>{renderMenu()}</Backdrop>
     </Modal>
   );

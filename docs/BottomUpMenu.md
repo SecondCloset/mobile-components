@@ -19,6 +19,7 @@ A versatile menu component with a transparent overlaying view.
 | label     | yes         | string   |              |                                                                                   |
 | onPress   | yes         | function |              |                                                                                   |
 | textColor | no          | string   | "black"      | "blue", "green", "red" (or other colors/rgb value in string format ie. "#ff0000") |
+| disabled  | no          | boolean  |              |                                                                                   |
 
 <br/>
 
