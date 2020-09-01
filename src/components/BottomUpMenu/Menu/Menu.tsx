@@ -19,7 +19,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     return (
       <List>
         {options.map((option, index) => {
-          const { label, onPress, textColor } = option;
+          const { label, onPress } = option;
           const isLast = index === options.length - 1;
           return (
             <ListItem
@@ -31,7 +31,9 @@ const Menu: React.FC<MenuProps> = (props) => {
               key={label}
               disabled={option?.disabled}
             >
-              <ListItemText color={textColor}>{label}</ListItemText>
+              <ListItemText color={option?.textColor || "black"}>
+                {label}
+              </ListItemText>
             </ListItem>
           );
         })}

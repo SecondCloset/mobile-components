@@ -6,7 +6,7 @@ import Menu from "./Menu";
 export interface Option {
   label: string;
   onPress: () => void;
-  textColor: string;
+  textColor?: string;
   disabled?: boolean;
 }
 
@@ -59,7 +59,7 @@ const BottomUpMenu: React.FC<BottomUpMenuProps> = (props) => {
   };
 
   return (
-    <Modal visible={props.visible} transparent={true} animationType="fade">
+    <Modal visible={props.visible} transparent animationType="fade">
       <Backdrop>{renderMenu()}</Backdrop>
     </Modal>
   );
