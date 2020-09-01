@@ -6,7 +6,8 @@ import Menu from "./Menu";
 export interface Option {
   label: string;
   onPress: () => void;
-  textColor?: string;
+  textColor: string;
+  disabled?: boolean;
 }
 
 interface BottomUpMenuProps {

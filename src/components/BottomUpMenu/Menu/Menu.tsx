@@ -13,7 +13,7 @@ interface MenuProps {
   onHide: () => void;
 }
 
-const Menu: React.FC<MenuProps> = props => {
+const Menu: React.FC<MenuProps> = (props) => {
   const renderList = () => {
     const { options } = props;
     return (
@@ -29,6 +29,7 @@ const Menu: React.FC<MenuProps> = props => {
               }}
               isLast={isLast}
               key={label}
+              disabled={option?.disabled}
             >
               <ListItemText color={textColor}>{label}</ListItemText>
             </ListItem>
