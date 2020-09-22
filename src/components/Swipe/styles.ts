@@ -32,7 +32,9 @@ interface TitleProps {
 export const Title = styled.Text<TitleProps>`
   position: absolute;
   align-self: center;
-  left: 56px;
+  left: 40px;
+  right: 20px;
+  text-align: center;
   color: ${(props) => (props.color ? props.color : colors.CHARCOAL)};
   font-size: ${(props) => (props.fontSize ? `${props.fontSize}px` : "20px")};
 `;
