@@ -41,7 +41,7 @@ const DisabledSwipe = () => {
 storiesOf("Swipe", module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add("Default with title", () => (
-    <View style={{ width: 200 }}>
+    <View style={{ width: 240 }}>
       <Swipe title="Confirm Pickup" />
     </View>
   ))

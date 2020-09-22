@@ -27,13 +27,15 @@ export const SwipeWrapper = styled.View<SwipeWrapperProps>`
 interface TitleProps {
   color?: string;
   fontSize?: number;
+  width?: number;
 }
 
 export const Title = styled.Text<TitleProps>`
   position: absolute;
   align-self: center;
-  left: 40px;
-  right: 20px;
+  left: ${(props) => (props.width ? `${props.width + 8}px` : "40px")};
+  right: ${(props) => (props.width ? `${props.width / 2}px` : "20px")};
+  max-height: ${(props) => (props.width ? `${props.width}px` : "40px")};
   text-align: center;
   color: ${(props) => (props.color ? props.color : colors.CHARCOAL)};
   font-size: ${(props) => (props.fontSize ? `${props.fontSize}px` : "20px")};

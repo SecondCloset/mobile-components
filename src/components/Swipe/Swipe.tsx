@@ -73,6 +73,8 @@ const Swipe: FC<Props> = ({
       <Title
         color={disabled ? colors.GREY_MID : titleColor}
         fontSize={fontSize}
+        width={height}
+        numberOfLines={1}
       >
         {title}
       </Title>
