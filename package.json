@@ -9,9 +9,11 @@
     "web": "expo start --web",
     "prestorybook": "rnstl --searchDir ./src --pattern '**/*.stories.tsx'",
     "storybook": "start-storybook -p 5694",
-    "prepare": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc",
+    "build-static-webapp": "expo build:web",
+    "prepublishOnly": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc",
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -21,7 +23,7 @@
   "dependencies": {
     "babel-plugin-module-resolver": "^4.0.0",
     "expo-barcode-scanner": "~8.2.1",
-    "expo-camera": "~8.3.1",
+    "expo-camera": "~9.0.0",
     "expo-image-manipulator": "~8.2.1",
     "expo-image-picker": "~8.3.0",
     "expo-sensors": "~9.0.1",
@@ -33,11 +35,11 @@
     "@babel/core": "^7.11.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/react-native": "^5.3.19",
-    "@storybook/react-native-server": "^5.3.19",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/addons": "^6.0.26",
+    "@storybook/react-native": "^5.3.23",
+    "@storybook/react-native-server": "^5.3.23",
     "@types/node": "^13.1.6",
     "@types/react": "^16.9.11",
     "@types/react-native": "^0.60.22",
@@ -62,6 +64,7 @@
     "react-native-screens": "~2.9.0",
     "react-native-storybook-loader": "^2.0.2",
     "react-native-web": "^0.13.5",
+    "sharp-cli": "^1.14.1",
     "typescript": "^3.9.7"
   },
   "peerDependencies": {
