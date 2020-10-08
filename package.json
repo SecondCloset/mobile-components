@@ -30,6 +30,7 @@
     "expo": "^39.0.0",
     "expo-barcode-scanner": "~9.0.0",
     "expo-camera": "~9.0.0",
+    "expo-cli": "^3.27.14",
     "expo-image-manipulator": "~8.3.0",
     "expo-image-picker": "~9.1.0",
     "expo-sensors": "~9.1.0",
