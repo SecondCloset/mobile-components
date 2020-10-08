@@ -18,6 +18,8 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "githubUrl": "https://github.com/SecondCloset/mobile-components",
+    "scheme": "myapp"
   }
 }

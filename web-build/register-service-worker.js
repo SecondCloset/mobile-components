@@ -1,1 +1,0 @@
-"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("/SecondCloset/mobile-components/expo-service-worker.js",{scope:"/SecondCloset/mobile-components/"}).then((function(e){})).catch((function(e){console.info("Failed to register service-worker",e)}))}));

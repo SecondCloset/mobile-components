@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Modal } from "react-native";
+import { Modal, Platform } from "react-native";
 import { Camera } from "expo-camera";
 import * as ImageManipulator from "expo-image-manipulator";
 import { DeviceMotion } from "expo-sensors";
@@ -26,7 +26,7 @@ interface Subscriptions {
 }
 
 //helpers
-const orientationCalculation = deviceMotion => {
+const orientationCalculation = (deviceMotion) => {
   // ref: https://github.com/expo/expo/issues/2430
 
   const gamma = Number(deviceMotion?.rotation?.gamma || 0).toFixed(2);
@@ -57,23 +57,27 @@ const orientationCalculation = deviceMotion => {
   return orientation;
 };
 
-const CameraShootModal: React.FC<CameraShootModalProps> = props => {
+const CameraShootModal: React.FC<CameraShootModalProps> = (props) => {
   const [hasPermission, setHasPermission] = useState(false);
   const [deviceOrientation, setDeviceOrientation] = useState(0);
   const [listener, setListener] = useState<Subscriptions>();
   const camera = useRef<Camera>(null);
 
-  const onMotionChange = motion => {
+  const onMotionChange = (motion) => {
     const orientation = orientationCalculation(motion);
     setDeviceOrientation(orientation);
   };
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === "granted");
-      const isAvailable = await DeviceMotion.isAvailableAsync();
-      if (isAvailable) setListener(DeviceMotion.addListener(onMotionChange));
+      if (Platform.OS === "web") {
+        setHasPermission(true);
+      } else {
+        const { status } = await Camera.requestPermissionsAsync();
+        setHasPermission(status === "granted");
+        const isAvailable = await DeviceMotion.isAvailableAsync();
+        if (isAvailable) setListener(DeviceMotion.addListener(onMotionChange));
+      }
     })();
     return () => listener?.remove();
   }, []);
