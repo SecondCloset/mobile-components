@@ -39,4 +39,8 @@ import { Swipe } from "@secondcloset/mobile-components";
 </View>;
 ```
 
-<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Swipe/swipe.png?raw=true" alt="Swipe" width="200">
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Swipe/swipe-icon.png?raw=true" alt="Swipe with Icon" width="200">
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Swipe/swipe-icon-complete.png?raw=true" alt="Swipe" width="200">
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Swipe/swipe-success.png?raw=true" alt="Swipe" width="200">
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Swipe/swipe-disabled.png?raw=true" alt="Swipe" width="200">
+<img src="https://github.com/SecondCloset/mobile-components/blob/master/docs/images/Swipe/swipe2.png?raw=true" alt="Swipe" width="200">
