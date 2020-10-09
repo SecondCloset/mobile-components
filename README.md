@@ -21,6 +21,7 @@ npm install @secondcloset/mobile-components
 - [PhotoSelectModal](https://github.com/SecondCloset/mobile-components/blob/master/docs/PhotoSelectModal.md)
 - [SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/SearchInputBar.md)
 - [Step](https://github.com/SecondCloset/mobile-components/blob/master/docs/Step.md)
+- [Swipe](https://github.com/SecondCloset/mobile-components/blob/master/docs/Swipe.md)
 
 ```jsx
 import { Button } from "@secondcloset/mobile-components";
@@ -33,8 +34,7 @@ import { Button } from "@secondcloset/mobile-components";
 git clone git@github.com:SecondCloset/mobile-components.git
 cd mobile-components
 npm install
-npm run storybook # Compile the stories
 npm start # Start expo
 npm version [<newversion> | major | minor | patch ] # Bump the version number
-npm publish # Runs build script then publishes
+npm publish # Run build script then publish
 ```
