@@ -3,14 +3,14 @@
   "version": "1.12.11",
   "description": "Second Closet React Native Component Library",
   "scripts": {
-    "start": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && expo start",
+    "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "prestorybook": "rnstl --searchDir ./src --pattern '**/*.stories.tsx'",
     "storybook": "start-storybook -p 5694",
     "build-static-webapp": "expo build:web",
-    "prepublishOnly": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json && sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc",
+    "prepublishOnly": "sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc",
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
   "files": [
