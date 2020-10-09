@@ -36,7 +36,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={LinksScreen} />
+      <Stack.Screen name="Mobile Components" component={LinksScreen} />
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}

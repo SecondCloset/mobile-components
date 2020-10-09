@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react-native";
-import { Button } from "react-native";
+import { Button, View } from "react-native";
 import BottomUpMenu from "../../../src/components/BottomUpMenu";
 import CenterView from "../../../src/components/CenterView";
 
@@ -33,5 +33,9 @@ const BottomUpModalShowcase = () => {
 };
 
 storiesOf("BottomUpMenu", module)
-  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .addDecorator((getStory) => (
+    <View style={{ width: "100%", height: "100%", justifyContent: "center" }}>
+      {getStory()}
+    </View>
+  ))
   .add("Default", () => <BottomUpModalShowcase />);
