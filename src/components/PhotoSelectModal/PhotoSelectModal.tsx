@@ -6,12 +6,19 @@ import ImagePickerModal from "./ImagePickerModal";
 
 interface PhotoSelectModalProps {
   visible: boolean;
+  imageCompressed?: boolean;
   onHide: () => any;
   onSelectPhoto: (photoUri: string) => any;
 }
 
+/**
+ *
+ * @param imageCompressed setting to false is not recommended as the file size can get very big
+ *
+ */
 const PhotoSelectModal: React.FC<PhotoSelectModalProps> = ({
   visible,
+  imageCompressed = true,
   onHide,
   onSelectPhoto,
 }) => {
@@ -36,12 +43,14 @@ const PhotoSelectModal: React.FC<PhotoSelectModalProps> = ({
       <BottomUpMenu options={options} visible={visible} onHide={onHide} />
       <CameraShootModal
         visible={cameraShootModalVisible}
+        imageCompressed={imageCompressed}
         onHide={() => setCameraShootModalVisible(false)}
         onSnap={(uri) => onSelectPhoto(uri)}
       />
 
       <ImagePickerModal
         visible={imagePickerVisible}
+        imageCompressed={imageCompressed}
         onHide={() => setImagePickerVisible(false)}
         onSelect={(uri) => onSelectPhoto(uri)}
       />

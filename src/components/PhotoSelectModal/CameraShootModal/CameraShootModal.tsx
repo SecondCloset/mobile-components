@@ -17,6 +17,7 @@ import {
 
 interface CameraShootModalProps {
   visible: boolean;
+  imageCompressed?: boolean;
   onHide: () => any;
   onSnap: (photo: string) => any;
 }
@@ -57,8 +58,14 @@ const orientationCalculation = (deviceMotion) => {
   return orientation;
 };
 
+/**
+ *
+ * @param imageCompressed setting to false is not recommended as the file size can get very big
+ *
+ */
 const CameraShootModal: React.FC<CameraShootModalProps> = ({
   visible,
+  imageCompressed = true,
   onHide,
   onSnap,
 }) => {
@@ -66,6 +73,8 @@ const CameraShootModal: React.FC<CameraShootModalProps> = ({
   const [deviceOrientation, setDeviceOrientation] = useState(0);
   const [listener, setListener] = useState<Subscriptions>();
   const camera = useRef<Camera>(null);
+
+  const imageQuality = imageCompressed ? 0.5 : 1; // 1 is original, 0 is the lowest quality
 
   const onMotionChange = (motion) => {
     const orientation = orientationCalculation(motion);
@@ -101,10 +110,14 @@ const CameraShootModal: React.FC<CameraShootModalProps> = ({
     if (camera.current) {
       let photo = await camera.current.takePictureAsync();
       const uri = photo?.uri;
-      photo = await ImageManipulator.manipulateAsync(uri, [
-        { rotate: deviceOrientation },
-      ]);
-      onSnap(photo.uri);
+      photo = await ImageManipulator.manipulateAsync(
+        uri,
+        [{ rotate: deviceOrientation }],
+        {
+          compress: imageQuality,
+        }
+      );
+      onSnap(photo?.uri || "");
       onHide();
     }
   };
