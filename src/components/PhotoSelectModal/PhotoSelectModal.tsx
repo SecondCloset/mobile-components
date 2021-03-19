@@ -10,7 +10,11 @@ interface PhotoSelectModalProps {
   onSelectPhoto: (photoUri: string) => any;
 }
 
-const PhotoSelectModal: React.FC<PhotoSelectModalProps> = props => {
+const PhotoSelectModal: React.FC<PhotoSelectModalProps> = ({
+  visible,
+  onHide,
+  onSelectPhoto,
+}) => {
   const [cameraShootModalVisible, setCameraShootModalVisible] = useState(false);
   const [imagePickerVisible, setImagePickerVisible] = useState(false);
 
@@ -29,21 +33,17 @@ const PhotoSelectModal: React.FC<PhotoSelectModalProps> = props => {
 
   return (
     <>
-      <BottomUpMenu
-        options={options}
-        visible={props.visible}
-        onHide={props.onHide}
-      />
+      <BottomUpMenu options={options} visible={visible} onHide={onHide} />
       <CameraShootModal
         visible={cameraShootModalVisible}
         onHide={() => setCameraShootModalVisible(false)}
-        onSnap={uri => props.onSelectPhoto(uri)}
+        onSnap={(uri) => onSelectPhoto(uri)}
       />
 
       <ImagePickerModal
         visible={imagePickerVisible}
         onHide={() => setImagePickerVisible(false)}
-        onSelect={uri => props.onSelectPhoto(uri)}
+        onSelect={(uri) => onSelectPhoto(uri)}
       />
     </>
   );

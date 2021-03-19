@@ -26,7 +26,7 @@ interface Subscriptions {
 }
 
 //helpers
-const orientationCalculation = deviceMotion => {
+const orientationCalculation = (deviceMotion) => {
   // ref: https://github.com/expo/expo/issues/2430
 
   const gamma = Number(deviceMotion?.rotation?.gamma || 0).toFixed(2);
@@ -57,13 +57,17 @@ const orientationCalculation = deviceMotion => {
   return orientation;
 };
 
-const CameraShootModal: React.FC<CameraShootModalProps> = props => {
+const CameraShootModal: React.FC<CameraShootModalProps> = ({
+  visible,
+  onHide,
+  onSnap,
+}) => {
   const [hasPermission, setHasPermission] = useState(false);
   const [deviceOrientation, setDeviceOrientation] = useState(0);
   const [listener, setListener] = useState<Subscriptions>();
   const camera = useRef<Camera>(null);
 
-  const onMotionChange = motion => {
+  const onMotionChange = (motion) => {
     const orientation = orientationCalculation(motion);
     setDeviceOrientation(orientation);
   };
@@ -100,8 +104,8 @@ const CameraShootModal: React.FC<CameraShootModalProps> = props => {
       photo = await ImageManipulator.manipulateAsync(uri, [
         { rotate: deviceOrientation },
       ]);
-      props.onSnap(photo.uri);
-      props.onHide();
+      onSnap(photo.uri);
+      onHide();
     }
   };
 
@@ -116,10 +120,10 @@ const CameraShootModal: React.FC<CameraShootModalProps> = props => {
   };
 
   return (
-    <Modal visible={props.visible} animationType="slide">
+    <Modal visible={visible} animationType="slide">
       <Camera style={{ width: "100%", flex: 1 }} type="back" ref={camera}>
         <Container>
-          <CloseButton onPress={props.onHide}>
+          <CloseButton onPress={onHide}>
             <AntDesign name="close" size={32} color="white" />
           </CloseButton>
         </Container>

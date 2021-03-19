@@ -9,25 +9,29 @@ interface ImagePickerModalProps {
   onSelect: (photoUri: string) => any;
 }
 
-const ImagePickerModal: React.FC<ImagePickerModalProps> = props => {
+const ImagePickerModal: React.FC<ImagePickerModalProps> = ({
+  visible,
+  onHide,
+  onSelect,
+}) => {
   const launchImageLibraryAsync = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1
+      quality: 1,
     });
-    if (!result.cancelled) props.onSelect(result.uri);
-    props.onHide();
+    if (!result.cancelled) onSelect(result.uri);
+    onHide();
   };
 
   useEffect(() => {
-    if (props.visible) {
+    if (visible) {
       setTimeout(async () => {
         await launchImageLibraryAsync();
       }, 1000);
     }
-  }, [props.visible]);
+  }, [visible]);
 
   useEffect(() => {
     (async () => {
@@ -37,14 +41,14 @@ const ImagePickerModal: React.FC<ImagePickerModalProps> = props => {
         Alert.alert(
           "Sorry, we need camera roll permissions to make this work!"
         );
-        props.onHide();
+        onHide();
         return;
       }
     })();
   }, []);
 
   return (
-    <Modal visible={props.visible} transparent={true}>
+    <Modal visible={visible} transparent={true}>
       <Container>
         <ActivityIndicator color="white" />
         <LoadingText>Loading your gallery..</LoadingText>
