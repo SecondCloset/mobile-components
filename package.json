@@ -14,6 +14,7 @@
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
     "main": "dist/index.js",
+    "main": "dist/index.js",
   "files": [
     "dist"
   ],
