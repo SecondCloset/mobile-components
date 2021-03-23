@@ -3,9 +3,9 @@ import { storiesOf } from "@storybook/react-native";
 import { View, TouchableOpacity, Text, Image } from "react-native";
 import PhotoSelectModal from "./PhotoSelectModal";
 
-const PhotoSelectModalShowcase = props => {
+const PhotoSelectModalShowcase = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [imageURI, setImageURI] = useState();
+  const [imageURI, setImageURI] = useState("");
 
   return (
     <View
@@ -31,7 +31,7 @@ const PhotoSelectModalShowcase = props => {
       <PhotoSelectModal
         visible={modalVisible}
         onHide={() => setModalVisible(false)}
-        onSelectPhoto={uri => setImageURI(uri)}
+        onSelectPhoto={setImageURI}
       />
     </View>
   );
