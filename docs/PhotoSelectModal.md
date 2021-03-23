@@ -6,11 +6,12 @@ Combined Camera shoot and gallery image picker.
 
 #### PhotoSelectModal Props
 
-| prop          | isRequired? | dataType |
-| ------------- | ----------- | -------- |
-| visible       | yes         | boolean  |
-| onHide        | yes         | function |
-| onSelectPhoto | yes         | function |
+| prop            | isRequired? | dataType | default |
+| --------------- | ----------- | -------- | ------- |
+| visible         | yes         | boolean  |         |
+| imageCompressed | no          | boolean  | true    |
+| onHide          | yes         | function |         |
+| onSelectPhoto   | yes         | function |         |
 
 <br/>
 
@@ -21,7 +22,7 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import { PhotoSelectModal } from "@secondcloset/mobile-components";
 
-const PhotoSelectModalShowcase = props => {
+const PhotoSelectModalShowcase = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [imageURI, setImageURI] = useState();
 
@@ -49,7 +50,7 @@ const PhotoSelectModalShowcase = props => {
       <PhotoSelectModal
         visible={modalVisible}
         onHide={() => setModalVisible(false)}
-        onSelectPhoto={uri => setImageURI(uri)}
+        onSelectPhoto={setImageURI}
       />
     </View>
   );
