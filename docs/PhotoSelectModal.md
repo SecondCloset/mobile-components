@@ -50,7 +50,7 @@ const PhotoSelectModalShowcase = (props) => {
       <PhotoSelectModal
         visible={modalVisible}
         onHide={() => setModalVisible(false)}
-        onSelectPhoto={(uri) => setImageURI(uri)}
+        onSelectPhoto={setImageURI}
       />
     </View>
   );

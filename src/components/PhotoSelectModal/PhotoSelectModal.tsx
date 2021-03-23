@@ -45,14 +45,14 @@ const PhotoSelectModal: React.FC<PhotoSelectModalProps> = ({
         visible={cameraShootModalVisible}
         imageCompressed={imageCompressed}
         onHide={() => setCameraShootModalVisible(false)}
-        onSnap={(uri) => onSelectPhoto(uri)}
+        onSnap={onSelectPhoto}
       />
 
       <ImagePickerModal
         visible={imagePickerVisible}
         imageCompressed={imageCompressed}
         onHide={() => setImagePickerVisible(false)}
-        onSelect={(uri) => onSelectPhoto(uri)}
+        onSelect={onSelectPhoto}
       />
     </>
   );
