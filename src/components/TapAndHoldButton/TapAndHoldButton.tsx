@@ -1,10 +1,16 @@
-import React, { useEffect } from "react";
-import { Animated, LayoutChangeEvent, ActivityIndicator } from "react-native";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  Animated,
+  LayoutChangeEvent,
+  ActivityIndicator,
+  GestureResponderEvent,
+} from "react-native";
+
+// lib
 import * as Haptics from "expo-haptics";
 
+// styles
 import colors from "../../styles/colors";
-
 import * as S from "./styles";
 interface Props {
   disabled?: boolean;
@@ -12,7 +18,7 @@ interface Props {
   holdTime?: number;
   initialText: string;
   completedText: string;
-  onCompletePress: () => void;
+  onCompletePress: (event: GestureResponderEvent) => void;
 }
 
 const TapAndHoldButton: React.FC<Props> = ({
