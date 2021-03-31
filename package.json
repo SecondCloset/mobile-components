@@ -1,6 +1,6 @@
 {
   "name": "@secondcloset/mobile-components",
-  "version": "1.12.13",
+  "version": "1.13.0-beta-2",
   "description": "Second Closet React Native Component Library",
   "scripts": {
     "start": "expo start",
@@ -23,6 +23,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "expo-barcode-scanner": "~8.2.1",
     "expo-camera": "~8.3.1",
+    "expo-haptics": "^9.0.0",
     "expo-image-manipulator": "~8.2.1",
     "expo-image-picker": "~8.3.0",
     "expo-sensors": "~9.0.1",

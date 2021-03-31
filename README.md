@@ -22,6 +22,7 @@ npm install @secondcloset/mobile-components
 - [SearchInputBar](https://github.com/SecondCloset/mobile-components/blob/master/docs/SearchInputBar.md)
 - [Step](https://github.com/SecondCloset/mobile-components/blob/master/docs/Step.md)
 - [Swipe](https://github.com/SecondCloset/mobile-components/blob/master/docs/Swipe.md)
+- [TapAndHoldButton](https://github.com/SecondCloset/mobile-components/blob/master/docs/TapAndHoldButton.md)
 
 ```jsx
 import { Button } from "@secondcloset/mobile-components";

@@ -17,6 +17,7 @@ function loadStories() {
   require("../src/components/SearchInputBar/index.stories");
   require("../src/components/Step/index.stories");
   require("../src/components/Swipe/index.stories");
+  require("../src/components/TapAndHoldButton/index.stories");
 }
 
 const stories = [
@@ -33,6 +34,7 @@ const stories = [
   "../src/components/SearchInputBar/index.stories",
   "../src/components/Step/index.stories",
   "../src/components/Swipe/index.stories",
+  "../src/components/TapAndHoldButton/index.stories",
 ];
 
 module.exports = {
