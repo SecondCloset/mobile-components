@@ -8,7 +8,7 @@ interface StyledButtonProps {
 }
 
 export const HoldButton = nativeStyled.View<StyledButtonProps>`
-  padding: 12px;
+  padding: 16px;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
