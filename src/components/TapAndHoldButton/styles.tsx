@@ -38,6 +38,6 @@ export const ProgressBar = styled(Animated.View)`
 export const Text = nativeStyled.Text`
   color: ${colors.WHITE};
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
 `;
