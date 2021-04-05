@@ -3,12 +3,9 @@ import { storiesOf } from "@storybook/react-native";
 import TapAndHoldButton from "./index";
 
 storiesOf("TapAndHoldButton", module).add("default", () => {
-  const onComplete = () => {
-    alert("Complete");
-  };
   return (
     <TapAndHoldButton
-      onCompletePress={onComplete}
+      onCompletePress={() => alert("Complete")}
       initialText="Tap and Hold to Confirm Delivery"
       completedText="Clock Out"
     />

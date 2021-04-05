@@ -41,15 +41,14 @@ const TapAndHoldButton: React.FC<Props> = ({
     return (
       <S.Container>
         <S.ClickButton disabled>
-          <ActivityIndicator size={"small"} color={colors.GREY_MID} />
+          <ActivityIndicator size="small" color={colors.GREY_MID} />
         </S.ClickButton>
       </S.Container>
     );
   }
 
   useEffect(() => {
-    if (onCompletedState)
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    if (onCompletedState) Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
   }, [progressValue]);
 
   progress.addListener(({ value }) => setProgressValue(value));
