@@ -100,17 +100,17 @@ const TapAndHoldButton: React.FC<Props> = ({
           </S.ClickButton>
         </S.Container>
       ) : (
-        <S.Container
-          onPressIn={handlePressIn}
-          onPressOut={handlePressOut}
-          disabled={disabled}
-        >
-          <S.HoldButton onLayout={setButtonWidth} disabled={disabled}>
-            <S.ProgressBar style={progressStyles()} />
-            <S.Text>{holdLabel}</S.Text>
-          </S.HoldButton>
-        </S.Container>
-      )}
+          <S.Container
+            onPressIn={handlePressIn}
+            onPressOut={handlePressOut}
+            disabled={disabled}
+          >
+            <S.HoldButton onLayout={setButtonWidth} disabled={disabled}>
+              <S.ProgressBar style={progressStyles()} />
+              <S.Text>{holdLabel}</S.Text>
+            </S.HoldButton>
+          </S.Container>
+        )}
     </>
   );
 };
