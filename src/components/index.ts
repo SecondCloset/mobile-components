@@ -11,3 +11,4 @@ export { default as PhotoSelectModal } from "./PhotoSelectModal";
 export { default as SearchInputBar } from "./SearchInputBar";
 export { default as Step } from "./Step";
 export { default as Swipe } from "./Swipe";
+export { default as TapAndHoldButton } from "./TapAndHoldButton"
