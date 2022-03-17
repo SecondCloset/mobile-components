@@ -67,5 +67,4 @@
     "jest.config.js",
     ".vscode"
   ],
-  "extends": "expo/tsconfig.base"
 }
