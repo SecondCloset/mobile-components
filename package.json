@@ -1,6 +1,6 @@
 {
   "name": "@secondcloset/mobile-components",
-  "version": "1.15.0-beta.upgrades-1",
+  "version": "1.15.0-beta.upgrades-2",
   "description": "Second Closet React Native Component Library",
   "scripts": {
     "start": "expo start",
