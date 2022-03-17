@@ -1,6 +1,6 @@
 {
   "name": "@secondcloset/mobile-components",
-  "version": "1.14.0",
+  "version": "1.15.0-beta.upgrades-1",
   "description": "Second Closet React Native Component Library",
   "scripts": {
     "start": "expo start",
@@ -13,7 +13,7 @@
     "prepublishOnly": "sed -i '' -e $'/\"files\": / i\\\n  \"main\": \"dist/index.js\",\n' ./package.json && tsc --noEmit false",
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
-    "main": "dist/index.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -71,7 +71,7 @@
   },
   "peerDependencies": {
     "react": "17.0.1",
-    "react-dom":"17.0.1"
+    "react-dom": "17.0.1"
   },
   "title": "Second Closet React Native Component Library",
   "repository": {
