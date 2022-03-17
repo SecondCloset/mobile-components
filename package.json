@@ -25,9 +25,9 @@
     "expo-barcode-scanner": "~11.1.2",
     "expo-camera": "~12.0.3",
     "expo-haptics": "~11.0.3",
-    "expo-image-manipulator": "~9.2.2",
+    "expo-image-manipulator": "~10.1.2",
     "expo-image-picker": "~11.0.3",
-    "expo-sensors": "~10.2.2",
+    "expo-sensors": "~11.0.3",
     "react-native-status-bar-height": "^2.5.0",
     "styled-components": "^5.1.1",
     "typescript-styled-plugin": "^0.15.0"
