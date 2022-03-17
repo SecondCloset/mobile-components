@@ -10,9 +10,10 @@
     "prestorybook": "rnstl --searchDir ./src --pattern '**/*.stories.tsx'",
     "storybook": "start-storybook -p 5694",
     "build-static-webapp": "expo build:web",
-    "prepublishOnly": "sed -i '' -e $'/\"files\": / i\\\n  \\ \\ \"main\": \"dist/index.js\",\n' ./package.json && rm -rf dist && tsc --noEmit false",
+    "prepublishOnly": "sed -i '' -e $'/\"files\": / i\\\n  \"main\": \"dist/index.js\",\n' ./package.json && tsc --noEmit false",
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
+    "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -21,12 +22,12 @@
   "license": "MIT",
   "dependencies": {
     "babel-plugin-module-resolver": "^4.0.0",
-    "expo": "^42.0.0",
-    "expo-barcode-scanner": "~10.2.2",
-    "expo-camera": "~11.2.1",
+    "expo": "^43.0.0",
+    "expo-barcode-scanner": "~11.1.2",
+    "expo-camera": "~12.0.3",
     "expo-haptics": "~10.1.0",
     "expo-image-manipulator": "~9.2.2",
-    "expo-image-picker": "~10.2.2",
+    "expo-image-picker": "~11.0.3",
     "expo-sensors": "~10.2.2",
     "react-native-status-bar-height": "^2.5.0",
     "styled-components": "^5.1.1",
