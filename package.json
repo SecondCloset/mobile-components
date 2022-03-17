@@ -13,7 +13,6 @@
     "prepublishOnly": "sed -i '' -e $'/\"files\": / i\\\n  \"main\": \"dist/index.js\",\n' ./package.json && tsc --noEmit false",
     "postpublish": "sed -i '' '/\"main\": \"dist\\/index.js\",/d' ./package.json"
   },
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
